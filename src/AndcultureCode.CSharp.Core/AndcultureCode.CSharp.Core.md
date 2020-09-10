@@ -109,6 +109,8 @@
 - [IEmailProvider](#T-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider')
   - [Send(message)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider-Send-MimeKit-MimeMessage- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider.Send(MimeKit.MimeMessage)')
   - [SendLater(message)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider-SendLater-MimeKit-MimeMessage- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider.SendLater(MimeKit.MimeMessage)')
+- [IJobEnqueueConductor](#T-AndcultureCode-CSharp-Code-Interfaces-Conductors-Jobs-IJobEnqueueConductor 'AndcultureCode.CSharp.Code.Interfaces.Conductors.Jobs.IJobEnqueueConductor')
+  - [IsValidWorkerTypeWithImplementation\`\`1()](#M-AndcultureCode-CSharp-Code-Interfaces-Conductors-Jobs-IJobEnqueueConductor-IsValidWorkerTypeWithImplementation``1 'AndcultureCode.CSharp.Code.Interfaces.Conductors.Jobs.IJobEnqueueConductor.IsValidWorkerTypeWithImplementation``1')
 - [ILockingConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1')
   - [ExtendLock(id,lockUntil,updatedById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1-ExtendLock-System-Int64,System-DateTimeOffset,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1.ExtendLock(System.Int64,System.DateTimeOffset,System.Nullable{System.Int64})')
   - [Lock(id,lockUntil,lockedById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1-Lock-System-Int64,System-DateTimeOffset,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1.Lock(System.Int64,System.DateTimeOffset,System.Nullable{System.Int64})')
@@ -219,6 +221,10 @@
   - [RoleId](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUserRole-RoleId 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUserRole.RoleId')
   - [User](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUserRole-User 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUserRole.User')
   - [UserId](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUserRole-UserId 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUserRole.UserId')
+- [IWorker](#T-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker 'AndcultureCode.GB.Business.Core.Interfaces.Workers.IWorker')
+  - [Name](#P-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Name 'AndcultureCode.GB.Business.Core.Interfaces.Workers.IWorker.Name')
+  - [Action(job,cancellationToken)](#M-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Action-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job,System-Threading-CancellationToken- 'AndcultureCode.GB.Business.Core.Interfaces.Workers.IWorker.Action(AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job,System.Threading.CancellationToken)')
+  - [Execute(jobId,cancellationToken)](#M-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Execute-System-Int64,System-Threading-CancellationToken- 'AndcultureCode.GB.Business.Core.Interfaces.Workers.IWorker.Execute(System.Int64,System.Threading.CancellationToken)')
 - [IWorkerProvider](#T-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider')
   - [Delete(id)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider-Delete-System-String- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider.Delete(System.String)')
   - [DeletedCount()](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider-DeletedCount 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider.DeletedCount')
@@ -234,6 +240,26 @@
   - [Schedule(methodCall,enqueueOn)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider-Schedule-System-Linq-Expressions-Expression{System-Action},System-DateTimeOffset- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider.Schedule(System.Linq.Expressions.Expression{System.Action},System.DateTimeOffset)')
   - [Schedule\`\`1(methodCall,delay)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-TimeSpan- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider.Schedule``1(System.Linq.Expressions.Expression{System.Action{``0}},System.TimeSpan)')
   - [Schedule\`\`1(methodCall,enqueueOn)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-DateTimeOffset- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Worker.IWorkerProvider.Schedule``1(System.Linq.Expressions.Expression{System.Action{``0}},System.DateTimeOffset)')
+- [Job](#T-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job')
+  - [BackgroundJobId](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-BackgroundJobId 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.BackgroundJobId')
+  - [DebugJson](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-DebugJson 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.DebugJson')
+  - [EndedOn](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-EndedOn 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.EndedOn')
+  - [Error](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-Error 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.Error')
+  - [StartedById](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-StartedById 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.StartedById')
+  - [StartedOn](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-StartedOn 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.StartedOn')
+  - [Status](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-Status 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.Status')
+  - [WorkerArgs](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-WorkerArgs 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.WorkerArgs')
+  - [WorkerName](#P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-WorkerName 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.WorkerName')
+  - [IsCompleted()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsCompleted 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.IsCompleted')
+  - [IsErrored()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsErrored 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.IsErrored')
+  - [IsInProgress()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsInProgress 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.IsInProgress')
+  - [IsInitialState()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsInitialState 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.IsInitialState')
+  - [ResetToInitialState()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-ResetToInitialState 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.ResetToInitialState')
+  - [SetToCompleted(debugJson)](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToCompleted-System-Object- 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.SetToCompleted(System.Object)')
+  - [SetToErrored(error,debugJson)](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToErrored-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.SetToErrored(System.String,System.String)')
+  - [SetToErrored\`\`1(result,debugJson)](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToErrored``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.SetToErrored``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [SetToInProgress()](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToInProgress 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.SetToInProgress')
+  - [SetToInitialState(workerName,workerArgs,startedById)](#M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToInitialState-System-String,System-Collections-Generic-List{System-Object},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job.SetToInitialState(System.String,System.Collections.Generic.List{System.Object},System.Nullable{System.Int64})')
 - [JobStatus](#T-AndcultureCode-CSharp-Core-Enumerations-JobStatus 'AndcultureCode.CSharp.Core.Enumerations.JobStatus')
 - [LocalConfigurationProvider](#T-AndcultureCode-CSharp-Core-Providers-Configuration-LocalConfigurationProvider 'AndcultureCode.CSharp.Core.Providers.Configuration.LocalConfigurationProvider')
   - [#ctor(basePath)](#M-AndcultureCode-CSharp-Core-Providers-Configuration-LocalConfigurationProvider-#ctor-System-String- 'AndcultureCode.CSharp.Core.Providers.Configuration.LocalConfigurationProvider.#ctor(System.String)')
@@ -1566,6 +1592,40 @@ Send an email via a background job
 | ---- | ---- | ----------- |
 | message | [MimeKit.MimeMessage](#T-MimeKit-MimeMessage 'MimeKit.MimeMessage') | The message to be sent |
 
+<a name='T-AndcultureCode-CSharp-Code-Interfaces-Conductors-Jobs-IJobEnqueueConductor'></a>
+## IJobEnqueueConductor `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Code.Interfaces.Conductors.Jobs
+
+##### Summary
+
+Enqueue jobs with background job library support.
+
+ Using this conductor will track the jobs status and other debugging information.
+
+<a name='M-AndcultureCode-CSharp-Code-Interfaces-Conductors-Jobs-IJobEnqueueConductor-IsValidWorkerTypeWithImplementation``1'></a>
+### IsValidWorkerTypeWithImplementation\`\`1() `method`
+
+##### Summary
+
+Validates that a TWorker type/interface only has one implementing class.
+
+##### Returns
+
+Returns true for a valid TWorker.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TWorker | Interface for Worker to be enqueued. |
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1'></a>
 ## ILockingConductor\`1 `type`
 
@@ -2882,6 +2942,60 @@ Reference to IUser that has an Id equal to UserId
 
 Unique identifier of associated IUser
 
+<a name='T-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker'></a>
+## IWorker `type`
+
+##### Namespace
+
+AndcultureCode.GB.Business.Core.Interfaces.Workers
+
+##### Summary
+
+
+
+<a name='P-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Name'></a>
+### Name `property`
+
+##### Summary
+
+
+
+<a name='M-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Action-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job,System-Threading-CancellationToken-'></a>
+### Action(job,cancellationToken) `method`
+
+##### Summary
+
+Action handles the background job process.  i.e. The work that needs to be completed.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| job | [AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job](#T-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job 'AndcultureCode.CSharp.Core.Models.Entities.Jobs.Job') |  |
+| cancellationToken | [System.Threading.CancellationToken](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.CancellationToken 'System.Threading.CancellationToken') |  |
+
+<a name='M-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Execute-System-Int64,System-Threading-CancellationToken-'></a>
+### Execute(jobId,cancellationToken) `method`
+
+##### Summary
+
+Execute handles updating the job entity, call Action, and tracking the Action result.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| jobId | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| cancellationToken | [System.Threading.CancellationToken](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.CancellationToken 'System.Threading.CancellationToken') |  |
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Providers-Worker-IWorkerProvider'></a>
 ## IWorkerProvider `type`
 
@@ -3096,6 +3210,220 @@ Schedule a method to be enqueued at a specific time
 | ---- | ---- | ----------- |
 | methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
 | enqueueOn | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') |  |
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job'></a>
+## Job `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Entities.Jobs
+
+##### Summary
+
+Entity for tracking jobs enqueued through the JobEnqueueConductor.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-BackgroundJobId'></a>
+### BackgroundJobId `property`
+
+##### Summary
+
+JobId from Hangfire
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-DebugJson'></a>
+### DebugJson `property`
+
+##### Summary
+
+Data collected durring processing the job.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-EndedOn'></a>
+### EndedOn `property`
+
+##### Summary
+
+When the job is finished either by encountering an error or completing successfully.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-Error'></a>
+### Error `property`
+
+##### Summary
+
+Errors encountered during processing.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-StartedById'></a>
+### StartedById `property`
+
+##### Summary
+
+Id of User who started the job.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-StartedOn'></a>
+### StartedOn `property`
+
+##### Summary
+
+When the job begins processing.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-Status'></a>
+### Status `property`
+
+##### Summary
+
+Status of the job.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-WorkerArgs'></a>
+### WorkerArgs `property`
+
+##### Summary
+
+Arguments needed by the Worker class's action method.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-WorkerName'></a>
+### WorkerName `property`
+
+##### Summary
+
+Name property of Worker class to be run for the job.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsCompleted'></a>
+### IsCompleted() `method`
+
+##### Summary
+
+Test for completed job.
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsErrored'></a>
+### IsErrored() `method`
+
+##### Summary
+
+Test for errored job.
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsInProgress'></a>
+### IsInProgress() `method`
+
+##### Summary
+
+Test for job in progress.
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-IsInitialState'></a>
+### IsInitialState() `method`
+
+##### Summary
+
+Test for job in initial state.
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-ResetToInitialState'></a>
+### ResetToInitialState() `method`
+
+##### Summary
+
+Resets Job to initial state while keeping WorkerName, WorkerArgs, and StartedById.
+Use this when requeueing jobs.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToCompleted-System-Object-'></a>
+### SetToCompleted(debugJson) `method`
+
+##### Summary
+
+To be set when the job has successfully completed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| debugJson | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToErrored-System-String,System-String-'></a>
+### SetToErrored(error,debugJson) `method`
+
+##### Summary
+
+To be set when the job has errored.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| error | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| debugJson | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToErrored``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
+### SetToErrored\`\`1(result,debugJson) `method`
+
+##### Summary
+
+To be set when the job has errored.
+This provides an override that takes the result object from the calling method.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| debugJson | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToInProgress'></a>
+### SetToInProgress() `method`
+
+##### Summary
+
+To be set when the job's worker class Execute method begins processing the job.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job-SetToInitialState-System-String,System-Collections-Generic-List{System-Object},System-Nullable{System-Int64}-'></a>
+### SetToInitialState(workerName,workerArgs,startedById) `method`
+
+##### Summary
+
+Set job to initial state after the job has been created, but before it's enqueued.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| workerName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| workerArgs | [System.Collections.Generic.List{System.Object}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.List 'System.Collections.Generic.List{System.Object}') |  |
+| startedById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Enumerations-JobStatus'></a>
 ## JobStatus `type`
