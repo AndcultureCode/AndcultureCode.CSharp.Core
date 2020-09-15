@@ -4,17 +4,15 @@ using AndcultureCode.CSharp.Core.Models.Entities.Jobs;
 
 namespace AndcultureCode.GB.Business.Core.Interfaces.Workers
 {
-    // Savage: Add commet/description!
     /// <summary>
-    /// 
+    /// Interface for defining worker classes.
     /// </summary>
     public interface IWorker
     {
         #region Properties
 
-        // Savage: Add comment.
         /// <summary>
-        /// 
+        /// Unique name to reference worker.
         /// </summary>
         /// <value></value>
         string Name { get; }

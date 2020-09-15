@@ -2932,14 +2932,14 @@ AndcultureCode.GB.Business.Core.Interfaces.Workers
 
 ##### Summary
 
-
+Interface for defining worker classes.
 
 <a name='P-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Name'></a>
 ### Name `property`
 
 ##### Summary
 
-
+Unique name to reference worker.
 
 <a name='M-AndcultureCode-GB-Business-Core-Interfaces-Workers-IWorker-Action-AndcultureCode-CSharp-Core-Models-Entities-Jobs-Job,System-Threading-CancellationToken-'></a>
 ### Action(job,cancellationToken) `method`
