@@ -174,12 +174,11 @@ namespace AndcultureCode.CSharp.Core.Extensions
             result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, resourceIdentifier.ToString(), errors, methodName);
         }
 
-        public static void AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long? resourceIdentifier, IEnumerable<IError> errors = null)
+        public static void AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, IEnumerable<IError> errors = null)
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
             var logMessage = errorMessage;
-            var resourceIdentifierString = resourceIdentifier != null ? resourceIdentifier.ToString() : null;
-            result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, resourceIdentifierString, errors, methodName);
+            result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, null, errors, methodName);
         }
 
         /// <summary>
@@ -238,23 +237,6 @@ namespace AndcultureCode.CSharp.Core.Extensions
             var logMessage = localizer.Default(errorKey, arguments);
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
             result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, null, null, methodName);
-        }
-
-        /// <summary>
-        /// Add translated error record and log un-translated message
-        /// </summary>
-        /// <param name="result"></param>
-        /// <param name="logger"></param>
-        /// <param name="localizer"></param>
-        /// <param name="errorKey">Error key found in culture files</param>
-        /// <param name="resourceIdentifier"></param>
-        /// <param name="arguments">The values with which to format the translated error message</param>
-        public static void AddErrorAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, long? resourceIdentifier, params object[] arguments)
-        {
-            var errorMessage = localizer[errorKey, arguments];
-            var logMessage = localizer.Default(errorKey, arguments);
-            var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
-            result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, resourceIdentifier?.ToString(), null, methodName);
         }
 
         /// <summary>

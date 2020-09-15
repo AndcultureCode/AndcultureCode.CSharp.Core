@@ -157,7 +157,6 @@
   - [Update(entities,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Update-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.Update(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
 - [IResultExtensions](#T-AndcultureCode-CSharp-Core-Extensions-IResultExtensions 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions')
   - [AddErrorAndLog\`\`1(result,logger,localizer,errorKey,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
-  - [AddErrorAndLog\`\`1(result,logger,localizer,errorKey,resourceIdentifier,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Nullable{System-Int64},System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Nullable{System.Int64},System.Object[])')
   - [AddErrorAndLog\`\`1(result,logger,localizer,errorKey,resourceIdentifier,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Int64,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Int64,System.Object[])')
   - [AddError\`\`1(result,localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
   - [AddError\`\`1(result,localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,AndcultureCode.CSharp.Core.Enumerations.ErrorType,System.String,System.Object[])')
@@ -2238,24 +2237,6 @@ Add translated error record and log un-translated message
 | logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') |  |
 | localizer | [Microsoft.Extensions.Localization.IStringLocalizer](#T-Microsoft-Extensions-Localization-IStringLocalizer 'Microsoft.Extensions.Localization.IStringLocalizer') |  |
 | errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Error key found in culture files |
-| arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | The values with which to format the translated error message |
-
-<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Nullable{System-Int64},System-Object[]-'></a>
-### AddErrorAndLog\`\`1(result,logger,localizer,errorKey,resourceIdentifier,arguments) `method`
-
-##### Summary
-
-Add translated error record and log un-translated message
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
-| logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') |  |
-| localizer | [Microsoft.Extensions.Localization.IStringLocalizer](#T-Microsoft-Extensions-Localization-IStringLocalizer 'Microsoft.Extensions.Localization.IStringLocalizer') |  |
-| errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Error key found in culture files |
-| resourceIdentifier | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
 | arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | The values with which to format the translated error message |
 
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Int64,System-Object[]-'></a>

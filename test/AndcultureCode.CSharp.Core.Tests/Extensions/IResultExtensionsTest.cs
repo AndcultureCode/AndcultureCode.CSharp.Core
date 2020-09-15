@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using Xunit;
 using Xunit.Abstractions;
 using AndcultureCode.CSharp.Extensions;
-using AndcultureCode.CSharp.Testing;
 using AndcultureCode.CSharp.Testing.Extensions;
 using AndcultureCode.CSharp.Core.Models;
 using AndcultureCode.CSharp.Core.Extensions;
 using AndcultureCode.CSharp.Core.Interfaces;
 using AndcultureCode.CSharp.Core.Enumerations;
 using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
 using Moq;
-using AndcultureCode.CSharp.Testing.Tests;
+using Microsoft.Extensions.Logging.Internal;
 
 namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
 {
@@ -239,6 +239,522 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
         }
 
         #endregion AddError(localizer, key, arguments)
+
+        #region AddErrors(source)
+
+        [Fact]
+        public void
+            AddErrors_Source_Overload_When_Source_Errors_IsNull_Then_Returns_Destination_Errors_Without_Any_Additions()
+        {
+            // Arrange
+            var expected = new Error();
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { expected });
+            var source = new Result<string>();
+
+            // Act
+            var result = sut.AddErrors(source);
+
+            // Assert
+            result.Count.ShouldBe(1);
+            result.ShouldContain(expected);
+        }
+
+        [Fact]
+        public void AddErrors_Source_Overload_When_Source_Has_Errors_Then_Returns_Errors_From_Destination_And_Source()
+        {
+            // Arrange
+            var expected1 = new Error();
+            var expected2 = new Error();
+            var sut = new Result<bool>();
+            sut.Errors = new List<IError> { expected1 };
+            var source = new Result<string>();
+            source.Errors = new List<IError> { expected2 };
+
+            // Act
+            var result = sut.AddErrors(source);
+
+            // Assert
+            result.Count.ShouldBe(2);
+            result.ShouldContain(expected1);
+            result.ShouldContain(expected2);
+        }
+
+        #endregion AddErrors(source)
+
+        #region AddErrorsAndLog
+
+        // DEVELOPER NOTE: Some of the tests in this region will be testing to see if methods of the logger were called.
+        // Checking to see that one method calls another is typically seen as an antipattern but since we don't have any
+        // output to test against, the best we can do is test that the logger is called with the expected arguments.
+
+        #region AddErrorAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long? resourceIdentifier = null)
+
+        [Fact]
+        public void AddErrorAndLog_Adds_Error_To_Result()
+        {
+            // Arrange
+            var errorKey = "Error Key";
+            var errorMessage = "Error Message";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorAndLog(mockLogger.Object, errorKey, errorMessage);
+
+            // Assert
+            result.Errors.ShouldContain(e => e.Key == errorKey && e.Message == errorMessage);
+        }
+
+        [Fact]
+        public void AddErrorAndLog_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var errorKey = "ErrorKey";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+            var resourceIdentifier = 42;
+            var logMessage = "Log Message";
+
+            // Act
+            result.AddErrorAndLog(mockLogger.Object, errorKey, logMessage, resourceIdentifier);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long? resourceIdentifier = null)
+
+        #region AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long resourceIdentifier, IEnumerable<IError> errors = null)
+
+        [Fact]
+        public void AddErrorsAndLog_When_Provided_With_Error_List_Then_Adds_List_To_Result()
+        {
+            // Arrange
+            var errors = BuildList<Error>(2);
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(
+                logger: mockLogger.Object,
+                errorKey: null,
+                errorMessage: null,
+                resourceIdentifier: 1,
+                errors: errors);
+
+            // Assert
+            result.Errors.ShouldContain(errors[0]);
+            result.Errors.ShouldContain(errors[1]);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_When_Provided_With_Error_Key_Then_Adds_Single_Error_To_Result()
+        {
+            // Arrange
+            var errorKey = "Error Key";
+            var errorMessage = "Error Message";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, errorKey, errorMessage, 1);
+
+            // Assert
+            result.Errors.ShouldContain(e => e.Key == errorKey && e.Message == errorMessage);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var errorKey = "ErrorKey";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+            var resourceIdentifier = 42;
+            var logMessage = "Log Message";
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, errorKey, logMessage, resourceIdentifier);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long resourceIdentifier, IEnumerable<IError> errors = null)
+
+        #region AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, IEnumerable<IError> errors = null)
+
+        [Fact]
+        public void AddErrorsAndLog_Without_ResourceId_Overload_When_Provided_With_Error_List_Then_Adds_List_To_Result()
+        {
+            // Arrange
+            var errorList = BuildList<Error>(2);
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(
+                logger: mockLogger.Object,
+                errorKey: null,
+                errorMessage: null,
+                errors: errorList);
+
+            // Assert
+            result.Errors.ShouldContain(errorList[0]);
+            result.Errors.ShouldContain(errorList[1]);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_Without_ResourceId_Overload_When_Provided_With_Error_Key_Then_Adds_Single_Error_To_Result()
+        {
+            // Arrange
+            var errorKey = "Error Key";
+            var errorMessage = "Error Message";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, errorKey, errorMessage, null);
+
+            // Assert
+            result.Errors.ShouldContain(e => e.Key == errorKey && e.Message == errorMessage);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_Without_ResourceId_Overload_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var errorKey = "ErrorKey";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+            var logMessage = "Log Message";
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, errorKey, logMessage, null);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, IEnumerable<IError> errors = null)
+
+        #region AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, string logMessage, string resourceIdentifier, IEnumerable<IError> errors = null, string methodName = null)
+
+        [Fact]
+        public void AddErrorsAndLog_When_Given_Error_Key_Then_Adds_Single_Error_To_Result()
+        {
+            // Arrange
+            var errorKey = "Error Key";
+            var errorMessage = "Error Message";
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, errorKey, errorMessage, "Log Message", "ResourceId");
+
+            // Assert
+            result.Errors.ShouldContain(e => e.Key == errorKey && e.Message == errorMessage);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_When_Given_Error_List_Then_Adds_List_To_Result()
+        {
+            // Arrange
+            var errorList = BuildList<Error>(2);
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, null, null, null, null, errorList);
+
+            // Assert
+            result.Errors.ShouldContain(errorList[0]);
+            result.Errors.ShouldContain(errorList[1]);
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_Calls_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+            var methodName = "AddErrorsAndLog_Calls_LogError_Method_Of_The_Logger";
+            var resourceIdentifier = "ResourceId";
+            var logMessage = "Log Message";
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, null, null, logMessage, resourceIdentifier, null, methodName);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        [Fact]
+        public void
+            AddErrorsAndLog_When_MethodName_Is_Not_Provided_Then_Retrieves_MethodName_And_Adds_It_To_The_Formatted_Message()
+        {
+            // Arrange
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+            var resourceIdentifier = "ResourceId";
+            var logMessage = "Log Message";
+
+            // Act
+            result.AddErrorsAndLog(mockLogger.Object, null, null, logMessage, resourceIdentifier, null);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorsAndLog
+
+        #region AddErrorAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, params object[] arguments)
+
+        [Fact]
+        public void
+            AddErrorAndLog_Localizer_Without_ResourceId_Overload_When_No_Translation_Exists_Then_Adds_Error_Without_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var localizer = Mock.Of<IStringLocalizer>();
+            var mockLogger = Mock.Of<ILogger>();
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger, localizer, expectedKey, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+                e.ErrorType == ErrorType.Error && // <---- Error
+                e.Key == expectedKey &&
+                e.Message == String.Empty
+            );
+        }
+
+        [Fact]
+        public void AddErrorAndLog_Localizer_Without_ResourceId_Overload_Adds_Translated_Error()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = "expected key";
+            var expectedMessage = "expected message";
+            var translatedMessage = "translated message";
+            var mockLogger = Mock.Of<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, translatedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger, localizer, expectedKey, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+                e.ErrorType == ErrorType.Error && // <---- Error
+                e.Key == expectedKey &&
+                e.Message == translatedMessage
+            );
+        }
+
+        [Fact]
+        public void
+            AddErrorAndLog_Localizer_Without_ResourceId_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var mockLogger = new Mock<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, expectedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger.Object, localizer, expectedKey, expectedMessage);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, params object[] arguments)
+
+        #region AddErrorAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, long resourceIdentifier, params object[] arguments)
+
+        [Fact]
+        public void
+            AddErrorAndLog_Localizer_With_ResourceId_Overload_When_No_Translation_Exists_Then_Adds_Error_Without_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var localizer = Mock.Of<IStringLocalizer>();
+            var mockLogger = Mock.Of<ILogger>();
+            var resourceId = 42;
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger, localizer, expectedKey, resourceId, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+               e.ErrorType == ErrorType.Error && // <---- Error
+               e.Key == expectedKey &&
+               e.Message == String.Empty
+            );
+        }
+
+        [Fact]
+        public void AddErrorAndLog_Localizer_With_ResourceId_Overload_Adds_Translated_Error()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var mockLogger = Mock.Of<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, expectedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+            var resourceId = 42;
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger, localizer, expectedKey, resourceId, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+                e.ErrorType == ErrorType.Error && // <---- Error
+                e.Key == expectedKey &&
+                e.Message == expectedMessage
+            );
+        }
+
+        [Fact]
+        public void
+            AddErrorAndLog_Localizer_With_ResourceId_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var resourceId = 42;
+            var mockLogger = new Mock<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, expectedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+
+            // Act
+            destinationResult.AddErrorAndLog(mockLogger.Object, localizer, expectedKey, resourceId, expectedMessage);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, long resourceIdentifier, params object[] arguments)
+
+        #region AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, long resourceIdentifier, IEnumerable<IError> errors = null, params object[] arguments)
+
+        [Fact]
+        public void AddErrorsAndLog_Localizer_With_Errors_Overload_When_Provided_With_Error_List_Then_Adds_List_To_Result()
+        {
+            // Arrange
+            var errorList = BuildList<Error>(2);
+            var localizer = Mock.Of<IStringLocalizer>();
+            var result = new Result<bool>();
+            var mockLogger = new Mock<ILogger>();
+
+            // Act
+            result.AddErrorsAndLog(
+                logger: mockLogger.Object,
+                localizer: localizer,
+                errorKey: null,
+                resourceIdentifier: 1,
+                errors: errorList);
+
+            // Assert
+            result.Errors.ShouldContain(errorList[0]);
+            result.Errors.ShouldContain(errorList[1]);
+        }
+
+        [Fact]
+        public void
+            AddErrorsAndLog_Localizer_With_Errors_Overload_When_No_Translation_Exists_Then_Adds_Error_Without_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var localizer = Mock.Of<IStringLocalizer>();
+            var mockLogger = Mock.Of<ILogger>();
+            var resourceId = 42;
+
+            // Act
+            destinationResult.AddErrorsAndLog(mockLogger, localizer, expectedKey, resourceId, null, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+                e.ErrorType == ErrorType.Error && // <---- Error
+                e.Key == expectedKey &&
+                e.Message == String.Empty
+            );
+        }
+
+        [Fact]
+        public void AddErrorsAndLog_Localizer_With_Errors_Overload_Adds_Translated_Error()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var mockLogger = Mock.Of<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, expectedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+            var resourceId = 42;
+
+            // Act
+            destinationResult.AddErrorsAndLog(mockLogger, localizer, expectedKey, resourceId, null, expectedMessage);
+
+            // Assert
+            destinationResult.Errors.ShouldContain(e =>
+                e.ErrorType == ErrorType.Error && // <---- Error
+                e.Key == expectedKey &&
+                e.Message == expectedMessage
+            );
+        }
+
+        [Fact]
+        public void
+            AddErrorsAndLog_Localizer_With_Errors_Overload_Calls_The_Log_Method_Of_The_Logger_With_Formatted_Message()
+        {
+            // Arrange
+            var destinationResult = new Result<object>();
+            var expectedKey = Random.String();
+            var expectedMessage = Random.String();
+            var resourceId = 42;
+            var mockLogger = new Mock<ILogger>();
+            var localizedString = new LocalizedString(expectedKey, expectedMessage);
+            var localizer = Mock.Of<IStringLocalizer>(e => e[expectedKey, It.IsAny<object[]>()] == localizedString);
+
+            // Act
+            destinationResult.AddErrorsAndLog(mockLogger.Object, localizer, expectedKey, resourceId, null, expectedMessage);
+
+            // Assert
+            mockLogger.Verify(
+                x => x.Log(LogLevel.Error, It.IsAny<EventId>(), It.IsAny<FormattedLogValues>(), It.IsAny<Exception>(),
+                           It.IsAny<Func<object, Exception, string>>()), Times.Once);
+        }
+
+        #endregion AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, IStringLocalizer localizer, string errorKey, long resourceIdentifier, IEnumerable<IError> errors = null, params object[] arguments)
+
+        #endregion AddErrorsAndLog
 
         #region AddErrorsAndReturnDefault
 
@@ -637,6 +1153,240 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
 
         #endregion AddValidationError(localizer, key, arguments)
 
+        #region DoesNotHaveErrors<T>(this IResult<T> result, ErrorType errorType)
+
+        [Fact]
+        public void DoesNotHaveErrors_ErrorType_Overload_When_There_Are_No_Errors_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.DoesNotHaveErrors(ErrorType.Error);
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void DoesNotHaveErrors_When_There_Is_An_Error_With_Matching_ErrorType_Then_Returns_False()
+        {
+            // Arrange
+            var error = Build<Error>(e => e.ErrorType = ErrorType.Error);
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { error });
+
+            // Act
+            var result = sut.DoesNotHaveErrors(ErrorType.Error);
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        [Fact]
+        public void DoesNotHaveErrors_When_There_Is_An_Error_Without_Matching_ErrorType_Then_Returns_True()
+        {
+            // Arrange
+            var error = Build<Error>(e => e.ErrorType = ErrorType.Error);
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { error });
+
+            // Act
+            var result = sut.DoesNotHaveErrors(ErrorType.ValidationError);
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        #endregion DoesNotHaveErrors<T>(this IResult<T> result, ErrorType errorType)
+
+        #region DoesNotHaveErrors<T>(this IResult<T> result, string key)
+
+        [Fact]
+        public void DoesNotHaveErrors_String_Overload_When_There_Are_No_Errors_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.DoesNotHaveErrors("ErrorKey");
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void DoesNotHaveErrors_When_There_Is_An_Error_With_Matching_Key_Then_Returns_False()
+        {
+            // Arrange
+            var error = Build<Error>(e => e.ErrorType = ErrorType.Error);
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { error });
+
+            // Act
+            var result = sut.DoesNotHaveErrors(error.Key);
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        [Fact]
+        public void DoesNotHaveErrors_When_There_Is_An_Error_Without_Matching_Key_Then_Returns_True()
+        {
+            // Arrange
+            var error = Build<Error>(e => e.Key = "ErroryKey");
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { error });
+
+            // Act
+            var result = sut.DoesNotHaveErrors("Key");
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        #endregion DoesNotHaveErrors<T>(this IResult<T> result, string key)
+
+        #region GetErrors<T>(this IResult<T> result, ErrorType errorType)
+
+        [Fact]
+        public void GetErrors_ErrorType_Overload_When_There_Are_No_Errors_Then_Returns_Null()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.GetErrors(ErrorType.Error);
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Fact]
+        public void GetErrors_When_Errors_Do_Not_Match_Provided_ErrorType_Then_Returns_Null()
+        {
+            // Arrange
+            var error = Build<Error>(e => e.ErrorType = ErrorType.ValidationError);
+            var sut = BuildResult<bool>(e => e.Errors = new List<IError> { error });
+
+            // Act
+            var result = sut.GetErrors(ErrorType.Error);
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Fact]
+        public void GetErrors_When_ErrorType_Matches_Then_Returns_Errors_With_Matched_Type()
+        {
+            // Arrange
+            var errors = new List<IError>
+                {
+                    new Error { ErrorType = ErrorType.Error },
+                    new Error { ErrorType = ErrorType.Error },
+                    new Error { ErrorType = ErrorType.ValidationError }
+                };
+
+            var sut = new Result<bool> { Errors = errors };
+
+            // Act
+            var result = sut.GetErrors(ErrorType.Error);
+
+            // Assert
+            result.Count.ShouldBe(2);
+            result.ShouldNotContain(e => e.ErrorType == ErrorType.ValidationError);
+        }
+
+        #endregion GetErrors<T>(this IResult<T> result, ErrorType errorType)
+
+        #region GetErrors<T>(this IResult<T> result, string key)
+
+        [Fact]
+        public void GetErrors_Key_Overload_When_There_Are_No_Errors_Then_Returns_Null()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.GetErrors("ErrorKey");
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Fact]
+        public void GetErrors_When_Error_Key_Does_Not_Match_Provided_Key_Then_Returns_Null()
+        {
+            // Arrange
+            var sut = new Result<bool>
+            {
+                Errors = new List<IError> { new Error { Key = "ErrorKey" } }
+            };
+
+            // Act
+            var result = sut.GetErrors("NotErrorKey");
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Fact]
+        public void GetErrors_When_Error_Key_Matches_Then_Returns_Errors_With_Matched_Key()
+        {
+            // Arrange
+            var errors = new List<IError>
+                {
+                    new Error { Key = "ErrorKey1" },
+                    new Error { Key = "ErrorKey1" },
+                    new Error { Key = "ErrorKey2" }
+                };
+
+            var sut = new Result<bool> { Errors = errors };
+
+            // Act
+            var result = sut.GetErrors("ErrorKey1");
+
+            // Assert
+            result.Count.ShouldBe(2);
+            result.ShouldNotContain(e => e.Key == "ErrorKey2");
+        }
+
+        #endregion GetErrors<T>(this IResult<T> result, string key)
+
+        #region GetValidationErrors
+
+        [Fact]
+        public void GetValidationErrors_When_There_Are_Validation_Errors_Then_Returns_List_With_Validation_Errors()
+        {
+            // Arrange
+            var sut = new Result<bool>
+            {
+                Errors = new List<IError>
+                        {
+                            new Error { ErrorType = ErrorType.ValidationError },
+                            new Error { ErrorType = ErrorType.Error }
+                        }
+            };
+
+            // Act
+            var result = sut.GetValidationErrors();
+
+            // Assert
+            result.Count.ShouldBe(1);
+            result.ShouldNotContain(e => e.ErrorType == ErrorType.Error);
+        }
+
+        [Fact]
+        public void GetValidationErrors_When_There_Are_No_Validation_Errors_Then_Returns_Null()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.GetValidationErrors();
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        #endregion GetValidationErrors
+
         #region HasErrors
 
         #region HasErrors (IEnumerable<IResult<T>>)
@@ -746,6 +1496,141 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
 
         #endregion HasErrors
 
+        #region HasErrorsOrResultIsFalse
+
+        [Fact]
+        public void HasErrorsOrResultIsFalse_When_Has_Errors_Then_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool> { Errors = new List<IError> { new Error() } };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsFalse();
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void HasErrorsOrResultIsFalse_When_Result_Is_False_Then_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool> { ResultObject = false };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsFalse();
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void HasErrorsOrResultIsFalse_When_There_Are_No_Errors_And_Result_Is_Not_False_Then_Returns_False()
+        {
+            // Arrange
+            var sut = new Result<bool> { ResultObject = true };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsFalse();
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        #endregion HasErrorsOrResultIsFalse
+
+        #region HasErrorsOrResultIsNull
+
+        [Fact]
+        public void HasErrorsOrResultIsNull_When_Has_Errors_Then_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool> { Errors = new List<IError> { new Error() } };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsNull();
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void HasErrorsOrResultIsNull_When_Result_Is_False_Then_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<string> { ResultObject = null };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsNull();
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void HasErrorsOrResultIsNull_When_There_Are_No_Errors_And_Result_Is_Not_False_Then_Returns_False()
+        {
+            // Arrange
+            var sut = new Result<bool> { ResultObject = true };
+
+            // Act
+            var result = sut.HasErrorsOrResultIsNull();
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        #endregion HasErrorsOrResultIsNull
+
+        #region HasValidationErrors
+
+        [Fact]
+        public void HasValidationErrors_When_There_Are_Errors_With_ValidationError_Type_Then_Returns_True()
+        {
+            // Arrange
+            var sut = new Result<bool>
+            {
+                Errors = new List<IError> { new Error { ErrorType = ErrorType.ValidationError } }
+            };
+
+            // Act
+            var result = sut.HasValidationErrors();
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Fact]
+        public void HasValidationErrors_When_There_Are_Errors_That_Are_Not_Validation_Error_Type_Then_Returns_False()
+        {
+            // Arrange
+            var sut = new Result<bool>
+            {
+                Errors = new List<IError> { new Error { ErrorType = ErrorType.Error } }
+            };
+
+            // Act
+            var result = sut.HasValidationErrors();
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        [Fact]
+        public void HasValidationErrors_When_There_Are_No_Errors_Then_Returns_False()
+        {
+            // Arrange
+            var sut = new Result<bool>();
+
+            // Act
+            var result = sut.HasValidationErrors();
+
+            // Assert
+            result.ShouldBeFalse();
+        }
+
+        #endregion HasValidationErrors
+
         #region ListErrors
 
         #region ListErrors (IEnumerable<IResult<T>>, string)
@@ -832,6 +1717,149 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
 
         #endregion ListErrors
 
+        #region ThrowIfAnyErrors
+
+        [Fact]
+        public void ThrowIfAnyErrors_When_No_Errors_Then_Does_Not_Throw_Exception()
+        {
+            // Arrange
+            var result = new Result<bool>();
+
+            // Act && Assert
+            Should.NotThrow(() =>
+            {
+                result.ThrowIfAnyErrors();
+            });
+        }
+
+        [Fact]
+        public void ThrowIfAnyErrors_When_Result_Has_Errors_Then_Throws_Exception()
+        {
+            // Arrange
+            var result = new Result<bool> { Errors = new List<IError> { new Error() } };
+
+            // Act && Assert
+            Should.Throw<Exception>(() =>
+            {
+                result.ThrowIfAnyErrors();
+            });
+        }
+
+        [Fact]
+        public void
+            ThrowIfAnyErrors_When_No_Custom_Exception_Is_Provided_Then_Throws_Generic_Exception_With_Error_List()
+        {
+            // Arrange
+            var result = new Result<bool>
+            {
+                Errors = new List<IError>
+                        {
+                            new Error { Key = "ErrorKey1", Message = "Error message 1" },
+                            new Error { Key = "ErrorKey2", Message = "Error message 2" }
+                        }
+            };
+            var errorList = result.ListErrors();
+
+            // Act && Assert
+            var exception = Should.Throw<Exception>(() =>
+            {
+                result.ThrowIfAnyErrors();
+            });
+
+            exception.Message.ShouldBe(errorList);
+        }
+
+        [Fact]
+        public void ThrowIfAnyErrors_When_Provided_Custom_Exception_Then_Throws_Custom_Exception()
+        {
+            // Arrange
+            var customException = new ArgumentNullException();
+            var result = new Result<bool> { Errors = new List<IError> { new Error() } };
+
+            // Act && Assert
+            Should.Throw<ArgumentNullException>(() =>
+            {
+                result.ThrowIfAnyErrors(customException);
+            });
+        }
+
+        #endregion ThrowIfAnyErrors
+
+        #region ThrowIfAnyErrorsOrResultIsFalse
+
+        [Fact]
+        public void ThrowIfAnyErrorsOrResultIsFalse_When_No_Errors_And_Result_Is_True_Then_Returns_Result()
+        {
+            // Arrange
+            var sut = new Result<bool> { ResultObject = true };
+
+            // Act
+            var result = sut.ThrowIfAnyErrorsOrResultIsFalse();
+
+            // Assert
+            result.ShouldBe(sut);
+        }
+
+        [Fact]
+        public void ThrowIfAnyErrorsOrResultIsFalse_When_Provided_Exception_For_Errors_Then_Throws_Provided_Exception()
+        {
+            // Arrange
+            var result = new Result<bool> { Errors = new List<IError> { new Error() } };
+            var errorException = new ArgumentNullException();
+
+            // Act && Assert
+            Should.Throw<ArgumentNullException>(() => { result.ThrowIfAnyErrorsOrResultIsFalse(errorException); });
+        }
+
+        [Fact]
+        public void ThrowIfAnyErrorsOrResultIsFalse_When_Provided_Exception_For_False_Result_Then_Throws_Provided_Exception()
+        {
+            // Arrange
+            var result = new Result<bool> { ResultObject = false };
+            var errorException = new ArgumentNullException();
+
+            // Act && Assert
+            Should.Throw<ArgumentNullException>(() => { result.ThrowIfAnyErrorsOrResultIsFalse(null, errorException); });
+        }
+
+        [Fact]
+        public void ThrowIfAnyErrorsOrResultIsFalse_When_No_Exception_Is_Provided_For_Errors_Then_Throws_Generic_Exception_With_Error_List()
+        {
+            // Arrange
+            var sut = new Result<bool>
+            {
+                Errors = new List<IError>
+                        {
+                            new Error { Key = "ErrorKey1", Message = "Error message 1" },
+                            new Error { Key = "ErrorKey2", Message = "Error message 2" }
+                        }
+            };
+            var errorList = sut.ListErrors();
+
+            // Act && Assert
+            var exception = Should.Throw<Exception>(() => { sut.ThrowIfAnyErrorsOrResultIsFalse(); });
+
+            exception.Message.ShouldBe(errorList);
+        }
+
+        [Fact]
+        public void
+            ThrowIfAnyErrorsOrResultIsFalse_When_No_Exception_Provided_For_False_Result_Then_Throws_Generic_Exception_With_Default_Message()
+        {
+            // Arrange
+            var sut = new Result<bool> { ResultObject = false };
+            var defaultMessage = "Result object for IResult is false";
+
+            // Act && Assert
+            var exception = Should.Throw<Exception>(() => sut.ThrowIfAnyErrorsOrResultIsFalse());
+
+            exception.Message.ShouldBe(defaultMessage);
+        }
+
+
+
+        #endregion ThrowIfAnyErrorsOrResultIsFalse
+
         #region ThrowIfAnyErrorsOrResultIsNull
 
         [Fact]
@@ -912,5 +1940,6 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
         }
 
         #endregion ThrowIfAnyErrorsOrResultIsNull
+
     }
 }
