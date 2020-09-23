@@ -97,7 +97,7 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Data
         IResult<IQueryable<T>> FindAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null, int? skip = null, int? take = null, bool? ignoreQueryFilters = false, bool asNoTracking = false);
 
         /// <summary>
-        /// Find all filtered, sorted and paged and converts to an IList<T>
+        /// Find all filtered, sorted and paged and converts to an IList&lt;T&gt;
         /// </summary>
         /// <param name="filter"></param>
         /// <param name="orderBy"></param>
@@ -107,13 +107,60 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Data
         /// <param name="ignoreQueryFilters"></param>
         /// <returns></returns>
         IResult<IList<T>> FindAllCommitted(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null, int? skip = null, int? take = null, bool? ignoreQueryFilters = false);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="ignoreQueryFilters"></param>
+        /// <returns></returns>
         IResult<T> FindById(long id, bool? ignoreQueryFilters = false);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
         IResult<T> FindById(long id, params Expression<Func<T, object>>[] includeProperties);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="ignoreQueryFilters"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
         IResult<T> FindById(long id, bool? ignoreQueryFilters = false, params Expression<Func<T, object>>[] includeProperties);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns></returns>
         IResult<T> FindById(long id, params string[] includeProperties);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
         IResult<bool> Restore(T o);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         IResult<bool> Restore(long id);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="updatedBy"></param>
+        /// <returns></returns>
         IResult<bool> Update(T item, long? updatedBy = null);
 
         /// <summary>

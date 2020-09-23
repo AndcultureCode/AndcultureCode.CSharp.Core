@@ -53,11 +53,11 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Providers.Worker
         // Result<IJobDetails> GetJob(string id);
 
         // TODO: Not using so commenting out for now to reduce dependencies.
-        /// <summary>
-        /// Retrieves basic details about a given job id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// Retrieves basic details about a given job id
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
         // Result<IRecurringJobDetails> GetRecurringJob(string id);
 
         /// <summary>

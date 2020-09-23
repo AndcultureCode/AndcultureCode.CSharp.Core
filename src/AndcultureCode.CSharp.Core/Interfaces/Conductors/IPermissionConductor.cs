@@ -31,7 +31,7 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
         /// <summary>
         /// Determine if a given Role is allowed to perform either:
         ///   - at least one action in a list of actions (op = OR)
-        //    or
+        ///    or
         ///   - all of the actions in a list of actions (op = AND)
         /// </summary>
         /// <param name="op">A LogicalOperator value that dictates which validation method to use.</param>
@@ -43,7 +43,7 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
         /// <summary>
         /// Determine if a given Role is allowed to perform either:
         ///   - at least one action whose resource starts with the given prefix (op = OR)
-        //    or
+        ///    or
         ///   - all of the actions that start with the given prefix (op = AND)
         /// </summary>
         /// <param name="op">A LogicalOperator value that dictates which validation method to use.</param>

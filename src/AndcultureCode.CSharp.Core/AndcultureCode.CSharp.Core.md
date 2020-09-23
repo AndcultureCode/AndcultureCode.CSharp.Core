@@ -3,6 +3,11 @@
 
 ## Contents
 
+- [Acl](#T-AndcultureCode-CSharp-Core-Models-Entities-Acl 'AndcultureCode.CSharp.Core.Models.Entities.Acl')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Permission 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Permission')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Resource 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Resource')
+  - [Subject](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Subject 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Subject')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Verb 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Verb')
 - [AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider')
   - [CONFIGURATION_FILE_PATH](#F-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CONFIGURATION_FILE_PATH 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.CONFIGURATION_FILE_PATH')
   - [CachedConfiguration](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CachedConfiguration 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.CachedConfiguration')
@@ -52,6 +57,10 @@
   - [IP_ADDRESS_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-IP_ADDRESS_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.IP_ADDRESS_LENGTH')
   - [URL_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-URL_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.URL_LENGTH')
 - [Do\`1](#T-AndcultureCode-CSharp-Core-Do`1 'AndcultureCode.CSharp.Core.Do`1')
+  - [Exception](#P-AndcultureCode-CSharp-Core-Do`1-Exception 'AndcultureCode.CSharp.Core.Do`1.Exception')
+  - [Result](#P-AndcultureCode-CSharp-Core-Do`1-Result 'AndcultureCode.CSharp.Core.Do`1.Result')
+  - [Workload](#P-AndcultureCode-CSharp-Core-Do`1-Workload 'AndcultureCode.CSharp.Core.Do`1.Workload')
+  - [Catch\`\`1(handler)](#M-AndcultureCode-CSharp-Core-Do`1-Catch``1-System-Action{``0,AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Catch``1(System.Action{``0,AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
   - [Finally(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Finally-Microsoft-Extensions-Logging-ILogger,System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Finally(Microsoft.Extensions.Logging.ILogger,System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
   - [Try(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
   - [Try(logger,workload,retry)](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-UInt32,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.UInt32,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
@@ -72,6 +81,8 @@
 - [EncryptionUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils')
   - [GenerateHash(value,salt,iterationCount,bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateHash-System-String,System-String,System-Int32,System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateHash(System.String,System.String,System.Int32,System.UInt16)')
   - [GenerateSalt(bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateSalt-System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateSalt(System.UInt16)')
+- [Entity](#T-AndcultureCode-CSharp-Core-Models-Entities-Entity 'AndcultureCode.CSharp.Core.Models.Entities.Entity')
+  - [Id](#P-AndcultureCode-CSharp-Core-Models-Entities-Entity-Id 'AndcultureCode.CSharp.Core.Models.Entities.Entity.Id')
 - [EnumerableExtensions](#T-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions')
   - [Join(list,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-IEnumerable{System-String},System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [Join(list,keyValueDelimiter,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-IEnumerable{System-Collections-Generic-KeyValuePair{System-String,System-String}},System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String,System.String)')
@@ -79,6 +90,10 @@
   - [Join(pair,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-KeyValuePair{System-String,System-String},System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.KeyValuePair{System.String,System.String},System.String)')
 - [EnvironmentConstants](#T-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants')
   - [TESTING](#F-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants-TESTING 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants.TESTING')
+- [Error](#T-AndcultureCode-CSharp-Core-Models-Error 'AndcultureCode.CSharp.Core.Models.Error')
+  - [ErrorType](#P-AndcultureCode-CSharp-Core-Models-Error-ErrorType 'AndcultureCode.CSharp.Core.Models.Error.ErrorType')
+  - [Key](#P-AndcultureCode-CSharp-Core-Models-Error-Key 'AndcultureCode.CSharp.Core.Models.Error.Key')
+  - [Message](#P-AndcultureCode-CSharp-Core-Models-Error-Message 'AndcultureCode.CSharp.Core.Models.Error.Message')
 - [ErrorConstants](#T-AndcultureCode-CSharp-Core-Constants-ErrorConstants 'AndcultureCode.CSharp.Core.Constants.ErrorConstants')
   - [ERROR_RESOURCE_NOT_FOUND_KEY](#F-AndcultureCode-CSharp-Core-Constants-ErrorConstants-ERROR_RESOURCE_NOT_FOUND_KEY 'AndcultureCode.CSharp.Core.Constants.ErrorConstants.ERROR_RESOURCE_NOT_FOUND_KEY')
 - [GuidUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-GuidUtils 'AndcultureCode.CSharp.Core.Utilities.Security.GuidUtils')
@@ -87,11 +102,20 @@
 - [HttpHeaders](#T-AndcultureCode-CSharp-Core-Constants-HttpHeaders 'AndcultureCode.CSharp.Core.Constants.HttpHeaders')
   - [X_FORWARDED_FOR](#F-AndcultureCode-CSharp-Core-Constants-HttpHeaders-X_FORWARDED_FOR 'AndcultureCode.CSharp.Core.Constants.HttpHeaders.X_FORWARDED_FOR')
 - [HttpVerb](#T-AndcultureCode-CSharp-Core-Enumerations-HttpVerb 'AndcultureCode.CSharp.Core.Enumerations.HttpVerb')
+  - [DELETE](#F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-DELETE 'AndcultureCode.CSharp.Core.Enumerations.HttpVerb.DELETE')
+  - [GET](#F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-GET 'AndcultureCode.CSharp.Core.Enumerations.HttpVerb.GET')
+  - [HEAD](#F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-HEAD 'AndcultureCode.CSharp.Core.Enumerations.HttpVerb.HEAD')
+  - [PUT](#F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-PUT 'AndcultureCode.CSharp.Core.Enumerations.HttpVerb.PUT')
+- [IAcl](#T-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl 'AndcultureCode.CSharp.Core.Interfaces.Security.IAcl')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Permission 'AndcultureCode.CSharp.Core.Interfaces.Security.IAcl.Permission')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Resource 'AndcultureCode.CSharp.Core.Interfaces.Security.IAcl.Resource')
+  - [Subject](#P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Subject 'AndcultureCode.CSharp.Core.Interfaces.Security.IAcl.Subject')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Verb 'AndcultureCode.CSharp.Core.Interfaces.Security.IAcl.Verb')
 - [IAndcultureCodeWebHostBuilder](#T-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder 'AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder')
   - [Args](#P-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder-Args 'AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder.Args')
   - [CreateDefaultBuilder()](#M-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder-CreateDefaultBuilder 'AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder.CreateDefaultBuilder')
 - [IAndcultureCodeWebHostBuilderExtensions](#T-AndcultureCode-CSharp-Core-Extensions-IAndcultureCodeWebHostBuilderExtensions 'AndcultureCode.CSharp.Core.Extensions.IAndcultureCodeWebHostBuilderExtensions')
-  - [PreloadAmazonElasticBeanstalk(builder,stdoutEnabled)](#M-AndcultureCode-CSharp-Core-Extensions-IAndcultureCodeWebHostBuilderExtensions-PreloadAmazonElasticBeanstalk-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder,System-Boolean,AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider- 'AndcultureCode.CSharp.Core.Extensions.IAndcultureCodeWebHostBuilderExtensions.PreloadAmazonElasticBeanstalk(AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder,System.Boolean,AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider)')
+  - [PreloadAmazonElasticBeanstalk(builder,stdoutEnabled,configurationProvider)](#M-AndcultureCode-CSharp-Core-Extensions-IAndcultureCodeWebHostBuilderExtensions-PreloadAmazonElasticBeanstalk-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder,System-Boolean,AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider- 'AndcultureCode.CSharp.Core.Extensions.IAndcultureCodeWebHostBuilderExtensions.PreloadAmazonElasticBeanstalk(AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder,System.Boolean,AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider)')
 - [IApplicationContext](#T-AndcultureCode-CSharp-Core-Interfaces-Data-IApplicationContext 'AndcultureCode.CSharp.Core.Interfaces.Data.IApplicationContext')
   - [Acls](#P-AndcultureCode-CSharp-Core-Interfaces-Data-IApplicationContext-Acls 'AndcultureCode.CSharp.Core.Interfaces.Data.IApplicationContext.Acls')
 - [IConfigurationBuilderExtensions](#T-AndcultureCode-CSharp-Core-Extensions-IConfigurationBuilderExtensions 'AndcultureCode.CSharp.Core.Extensions.IConfigurationBuilderExtensions')
@@ -106,9 +130,25 @@
 - [ICulture](#T-AndcultureCode-CSharp-Core-Interfaces-ICulture 'AndcultureCode.CSharp.Core.Interfaces.ICulture')
   - [Code](#P-AndcultureCode-CSharp-Core-Interfaces-ICulture-Code 'AndcultureCode.CSharp.Core.Interfaces.ICulture.Code')
   - [IsDefault](#P-AndcultureCode-CSharp-Core-Interfaces-ICulture-IsDefault 'AndcultureCode.CSharp.Core.Interfaces.ICulture.IsDefault')
+- [ICultureExtensions](#T-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions 'AndcultureCode.CSharp.Core.Extensions.ICultureExtensions')
+  - [Default(cultures)](#M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-Default-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}- 'AndcultureCode.CSharp.Core.Extensions.ICultureExtensions.Default(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture})')
+  - [ToCultureCodes(cultures)](#M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureCodes-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}- 'AndcultureCode.CSharp.Core.Extensions.ICultureExtensions.ToCultureCodes(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture})')
+  - [ToCultureInfo(culture)](#M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureInfo-AndcultureCode-CSharp-Core-Interfaces-ICulture- 'AndcultureCode.CSharp.Core.Extensions.ICultureExtensions.ToCultureInfo(AndcultureCode.CSharp.Core.Interfaces.ICulture)')
+  - [ToCultureInfos(cultures)](#M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureInfos-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}- 'AndcultureCode.CSharp.Core.Extensions.ICultureExtensions.ToCultureInfos(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture})')
 - [IEmailProvider](#T-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider')
   - [Send(message)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider-Send-MimeKit-MimeMessage- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider.Send(MimeKit.MimeMessage)')
   - [SendLater(message)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider-SendLater-MimeKit-MimeMessage- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Mail.IEmailProvider.SendLater(MimeKit.MimeMessage)')
+- [IEntity](#T-AndcultureCode-CSharp-Core-Interfaces-Entity-IEntity 'AndcultureCode.CSharp.Core.Interfaces.Entity.IEntity')
+  - [Id](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IEntity-Id 'AndcultureCode.CSharp.Core.Interfaces.Entity.IEntity.Id')
+- [IError](#T-AndcultureCode-CSharp-Core-Interfaces-IError 'AndcultureCode.CSharp.Core.Interfaces.IError')
+  - [ErrorType](#P-AndcultureCode-CSharp-Core-Interfaces-IError-ErrorType 'AndcultureCode.CSharp.Core.Interfaces.IError.ErrorType')
+  - [Key](#P-AndcultureCode-CSharp-Core-Interfaces-IError-Key 'AndcultureCode.CSharp.Core.Interfaces.IError.Key')
+  - [Message](#P-AndcultureCode-CSharp-Core-Interfaces-IError-Message 'AndcultureCode.CSharp.Core.Interfaces.IError.Message')
+- [ILockable](#T-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable 'AndcultureCode.CSharp.Core.Interfaces.Entity.ILockable')
+  - [IsLocked](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-IsLocked 'AndcultureCode.CSharp.Core.Interfaces.Entity.ILockable.IsLocked')
+  - [LockedById](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedById 'AndcultureCode.CSharp.Core.Interfaces.Entity.ILockable.LockedById')
+  - [LockedOn](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedOn 'AndcultureCode.CSharp.Core.Interfaces.Entity.ILockable.LockedOn')
+  - [LockedUntil](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedUntil 'AndcultureCode.CSharp.Core.Interfaces.Entity.ILockable.LockedUntil')
 - [ILockingConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1')
   - [ExtendLock(id,lockUntil,updatedById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1-ExtendLock-System-Int64,System-DateTimeOffset,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1.ExtendLock(System.Int64,System.DateTimeOffset,System.Nullable{System.Int64})')
   - [Lock(id,lockUntil,lockedById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1-Lock-System-Int64,System-DateTimeOffset,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.ILockingConductor`1.Lock(System.Int64,System.DateTimeOffset,System.Nullable{System.Int64})')
@@ -123,6 +163,8 @@
 - [IPermissionConductor](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IPermissionConductor')
   - [GetAcls(resource,verb)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-GetAcls-System-String,System-String- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IPermissionConductor.GetAcls(System.String,System.String)')
   - [IsAllowed(resource,verb,subject)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-IsAllowed-System-String,System-String,System-String- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IPermissionConductor.IsAllowed(System.String,System.String,System.String)')
+  - [IsAllowed(op,resourceVerbs,subject)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-IsAllowed-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Models-Security-ResourceVerb},System-String- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IPermissionConductor.IsAllowed(AndcultureCode.CSharp.Core.Enumerations.LogicalOperator,System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Models.Security.ResourceVerb},System.String)')
+  - [IsAllowed(op,resourcePrefix,subject)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-IsAllowed-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator,System-String,System-String- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IPermissionConductor.IsAllowed(AndcultureCode.CSharp.Core.Enumerations.LogicalOperator,System.String,System.String)')
 - [IProvider](#T-AndcultureCode-CSharp-Core-Interfaces-Providers-IProvider 'AndcultureCode.CSharp.Core.Interfaces.Providers.IProvider')
   - [Implemented](#P-AndcultureCode-CSharp-Core-Interfaces-Providers-IProvider-Implemented 'AndcultureCode.CSharp.Core.Interfaces.Providers.IProvider.Implemented')
   - [Name](#P-AndcultureCode-CSharp-Core-Interfaces-Providers-IProvider-Name 'AndcultureCode.CSharp.Core.Interfaces.Providers.IProvider.Name')
@@ -141,8 +183,10 @@
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.CommandTimeout')
 - [IRepositoryReadConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.CommandTimeout')
-  - [FindAll(filter,orderBy,nextLinkParams)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAll(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Boolean},System.Boolean)')
-  - [FindAllCommitted(filter,orderBy,nextLinkParams)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAllCommitted(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Boolean})')
+  - [FindAll(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters,asNoTracking)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Boolean)')
+  - [FindAll(nextLinkParams,filter,orderBy,ignoreQueryFilters,asNoTracking)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAll(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Boolean},System.Boolean)')
+  - [FindAllCommitted(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAllCommitted(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})')
+  - [FindAllCommitted(nextLinkParams,filter,orderBy,ignoreQueryFilters)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAllCommitted(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Boolean})')
 - [IRepositoryUpdateConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1.CommandTimeout')
 - [IRepository\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1')
@@ -152,19 +196,56 @@
   - [BulkDelete(items,deletedById,soft)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-BulkDelete-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.BulkDelete(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64},System.Boolean)')
   - [CreateDistinct\`\`1(items,property,createdById)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-CreateDistinct``1-System-Collections-Generic-IEnumerable{`0},System-Func{`0,``0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.CreateDistinct``1(System.Collections.Generic.IEnumerable{`0},System.Func{`0,``0},System.Nullable{System.Int64})')
   - [FindAll(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters,asNoTracking)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindAll-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Boolean)')
+  - [FindAllCommitted(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindAllCommitted-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindAllCommitted(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})')
+  - [FindById(id,ignoreQueryFilters)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindById(System.Int64,System.Nullable{System.Boolean})')
+  - [FindById(id,includeProperties)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Linq-Expressions-Expression{System-Func{`0,System-Object}}[]- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindById(System.Int64,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])')
+  - [FindById(id,ignoreQueryFilters,includeProperties)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Nullable{System-Boolean},System-Linq-Expressions-Expression{System-Func{`0,System-Object}}[]- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindById(System.Int64,System.Nullable{System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])')
+  - [FindById(id,includeProperties)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-String[]- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.FindById(System.Int64,System.String[])')
+  - [Restore(o)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Restore-`0- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.Restore(`0)')
+  - [Restore(id)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Restore-System-Int64- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.Restore(System.Int64)')
+  - [Update(item,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Update-`0,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.Update(`0,System.Nullable{System.Int64})')
   - [Update(entities,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Update-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.Update(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
 - [IResultExtensions](#T-AndcultureCode-CSharp-Core-Extensions-IResultExtensions 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions')
+  - [AddErrorAndLog\`\`1(result,logger,errorKey,errorMessage,resourceIdentifier)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Nullable{System.Int64})')
   - [AddErrorAndLog\`\`1(result,logger,localizer,errorKey,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
   - [AddErrorAndLog\`\`1(result,logger,localizer,errorKey,resourceIdentifier,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Int64,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Int64,System.Object[])')
   - [AddError\`\`1(result,localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
-  - [AddError\`\`1(result,localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,AndcultureCode.CSharp.Core.Enumerations.ErrorType,System.String,System.Object[])')
+  - [AddError\`\`1(result,error)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IError- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Interfaces.IError)')
+  - [AddError\`\`1(result,errorType,key,message)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Enumerations.ErrorType,System.String,System.String)')
+  - [AddError\`\`1(result,localizer,type,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,AndcultureCode.CSharp.Core.Enumerations.ErrorType,System.String,System.Object[])')
+  - [AddError\`\`1(result,key,message)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String,System.String)')
   - [AddError\`\`1(result,message)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [AddErrorsAndLog\`\`1(result,logger,errorKey,errorMessage,resourceIdentifier,errors)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Int64,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorsAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Int64,System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError})')
+  - [AddErrorsAndLog\`\`1(result,logger,errorKey,errorMessage,errors)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorsAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError})')
   - [AddErrorsAndLog\`\`1(result,logger,errorKey,errorMessage,logMessage,resourceIdentifier,errors,methodName)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-String,System-String,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorsAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError},System.String)')
   - [AddErrorsAndLog\`\`1(result,logger,localizer,errorKey,resourceIdentifier,errors,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Int64,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError},System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorsAndLog``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Int64,System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError},System.Object[])')
   - [AddErrorsAndReturnDefault\`\`2(destination,source)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndReturnDefault``2-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IResult{``1}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrorsAndReturnDefault``2(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Interfaces.IResult{``1})')
+  - [AddErrors\`\`1(result,errors)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError})')
+  - [AddErrors\`\`2(destination,source)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrors``2-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IResult{``1}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddErrors``2(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Interfaces.IResult{``1})')
+  - [AddExceptionError\`\`1(result,key,exception)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddExceptionError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-Exception- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddExceptionError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String,System.Exception)')
   - [AddNextLinkParam\`\`1(result,key,value)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddNextLinkParam``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddNextLinkParam``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String,System.String)')
+  - [AddNextLinkParam\`\`1(result,key,value)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddNextLinkParam``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-Int32- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddNextLinkParam``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String,System.Int32)')
   - [AddNextLinkParams\`\`1(destinationResult,sourceResult)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddNextLinkParams``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IResult{``0}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddNextLinkParams``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Interfaces.IResult{``0})')
+  - [AddValidationError\`\`1(result,key,message)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddValidationError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddValidationError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String,System.String)')
   - [AddValidationError\`\`1(result,localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddValidationError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.AddValidationError``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
+  - [DoesNotHaveErrors\`\`1(result,errorType)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-DoesNotHaveErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.DoesNotHaveErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Enumerations.ErrorType)')
+  - [DoesNotHaveErrors\`\`1(result,key)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-DoesNotHaveErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.DoesNotHaveErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [GetErrors\`\`1(result,errorType)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.GetErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Enumerations.ErrorType)')
+  - [GetErrors\`\`1(result,key)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.GetErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [GetValidationErrors\`\`1(result)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetValidationErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.GetValidationErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0})')
+  - [HasErrorsOrResultIsFalse(result)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrorsOrResultIsFalse-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrorsOrResultIsFalse(AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean})')
+  - [HasErrorsOrResultIsNull\`\`1(result)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrorsOrResultIsNull``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrorsOrResultIsNull``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0})')
+  - [HasErrors\`\`1(resultList,errorType)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},AndcultureCode-CSharp-Core-Enumerations-ErrorType- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrors``1(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}},AndcultureCode.CSharp.Core.Enumerations.ErrorType)')
+  - [HasErrors\`\`1(resultList,key)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrors``1(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}},System.String)')
+  - [HasErrors\`\`1(resultList)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrors``1(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}})')
+  - [HasErrors\`\`1(result,errorType)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},AndcultureCode.CSharp.Core.Enumerations.ErrorType)')
+  - [HasErrors\`\`1(result,key)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [HasValidationErrors\`\`1(result)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasValidationErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.HasValidationErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0})')
+  - [ListErrors\`\`1(resultList,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ListErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.ListErrors``1(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}},System.String)')
+  - [ListErrors\`\`1(result,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ListErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.ListErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.String)')
+  - [ThrowIfAnyErrorsOrResultIsFalse(result,hasErrorsException,resultNullException)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrorsOrResultIsFalse-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean},System-Exception,System-Exception- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.ThrowIfAnyErrorsOrResultIsFalse(AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean},System.Exception,System.Exception)')
+  - [ThrowIfAnyErrorsOrResultIsNull\`\`1(result,hasErrorsException,resultNullException)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrorsOrResultIsNull``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Exception,System-Exception- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.ThrowIfAnyErrorsOrResultIsNull``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.Exception,System.Exception)')
+  - [ThrowIfAnyErrors\`\`1(result,customException)](#M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Exception- 'AndcultureCode.CSharp.Core.Extensions.IResultExtensions.ThrowIfAnyErrors``1(AndcultureCode.CSharp.Core.Interfaces.IResult{``0},System.Exception)')
 - [IResult\`1](#T-AndcultureCode-CSharp-Core-Interfaces-IResult`1 'AndcultureCode.CSharp.Core.Interfaces.IResult`1')
   - [ErrorCount](#P-AndcultureCode-CSharp-Core-Interfaces-IResult`1-ErrorCount 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.ErrorCount')
   - [Errors](#P-AndcultureCode-CSharp-Core-Interfaces-IResult`1-Errors 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.Errors')
@@ -184,6 +265,9 @@
   - [GetRemoteAccessDetails(relativeProviderPath,storageContainer,expiryTime,httpVerb,contentType)](#M-AndcultureCode-CSharp-Core-Interfaces-Providers-Storage-IStorageProvider-GetRemoteAccessDetails-System-String,System-String,System-Nullable{System-DateTimeOffset},AndcultureCode-CSharp-Core-Enumerations-HttpVerb,System-String- 'AndcultureCode.CSharp.Core.Interfaces.Providers.Storage.IStorageProvider.GetRemoteAccessDetails(System.String,System.String,System.Nullable{System.DateTimeOffset},AndcultureCode.CSharp.Core.Enumerations.HttpVerb,System.String)')
 - [IStringLocalizerExtensions](#T-AndcultureCode-CSharp-Core-Extensions-IStringLocalizerExtensions 'AndcultureCode.CSharp.Core.Extensions.IStringLocalizerExtensions')
   - [Default(localizer,key,arguments)](#M-AndcultureCode-CSharp-Core-Extensions-IStringLocalizerExtensions-Default-Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]- 'AndcultureCode.CSharp.Core.Extensions.IStringLocalizerExtensions.Default(Microsoft.Extensions.Localization.IStringLocalizer,System.String,System.Object[])')
+- [IUpdatable](#T-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUpdatable')
+  - [UpdatedById](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable-UpdatedById 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUpdatable.UpdatedById')
+  - [UpdatedOn](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable-UpdatedOn 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUpdatable.UpdatedOn')
 - [IUser](#T-AndcultureCode-CSharp-Core-Interfaces-Entity-IUser 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUser')
   - [Email](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUser-Email 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUser.Email')
   - [FirstName](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUser-FirstName 'AndcultureCode.CSharp.Core.Interfaces.Entity.IUser.FirstName')
@@ -248,6 +332,24 @@
   - [ClientSecret](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-ClientSecret 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.ClientSecret')
   - [IsDisabled](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-IsDisabled 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.IsDisabled')
   - [IsEnabled](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-IsEnabled 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.IsEnabled')
+- [OrderedList\`2](#T-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2')
+  - [Count](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Count 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Count')
+  - [IsReadOnly](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-IsReadOnly 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.IsReadOnly')
+  - [Item](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Item-`0- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Item(`0)')
+  - [Keys](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Keys 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Keys')
+  - [System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Values](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Values 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Values')
+  - [Add(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Add-`0,`1- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Add(`0,`1)')
+  - [Clear()](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Clear 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Clear')
+  - [ContainsKey(key)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-ContainsKey-`0- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.ContainsKey(`0)')
+  - [GetEnumerator()](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-GetEnumerator 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.GetEnumerator')
+  - [Remove(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Remove-`0,`1- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Remove(`0,`1)')
+  - [System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Add(item)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Add-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Add(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}})')
+  - [System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Contains(item)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Contains-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Contains(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}})')
+  - [System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#CopyTo(array,arrayIndex)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#CopyTo-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}[],System-Int32- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}}[],System.Int32)')
+  - [System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Remove(item)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Remove-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Remove(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}})')
+  - [System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Add(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Add-`0,System-Collections-Generic-ICollection{`1}- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Add(`0,System.Collections.Generic.ICollection{`1})')
+  - [System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Remove(key)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Remove-`0- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Remove(`0)')
+  - [TryGetValue(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-TryGetValue-`0,System-Collections-Generic-ICollection{`1}@- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.TryGetValue(`0,System.Collections.Generic.ICollection{`1}@)')
 - [Provider](#T-AndcultureCode-CSharp-Core-Providers-Provider 'AndcultureCode.CSharp.Core.Providers.Provider')
   - [Implemented](#P-AndcultureCode-CSharp-Core-Providers-Provider-Implemented 'AndcultureCode.CSharp.Core.Providers.Provider.Implemented')
   - [Name](#P-AndcultureCode-CSharp-Core-Providers-Provider-Name 'AndcultureCode.CSharp.Core.Providers.Provider.Name')
@@ -256,6 +358,22 @@
   - [DEFAULT](#F-AndcultureCode-CSharp-Core-Constants-Queue-DEFAULT 'AndcultureCode.CSharp.Core.Constants.Queue.DEFAULT')
 - [Recurrence](#T-AndcultureCode-CSharp-Core-Enumerations-Recurrence 'AndcultureCode.CSharp.Core.Enumerations.Recurrence')
 - [RecurringOption](#T-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption')
+  - [Day](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Day 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Day')
+  - [DayOfWeek](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-DayOfWeek 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.DayOfWeek')
+  - [Hour](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Hour 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Hour')
+  - [Minute](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Minute 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Minute')
+  - [Month](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Month 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Month')
+  - [Recurrence](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Recurrence 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Recurrence')
+- [ResourceVerb](#T-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Resource')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Verb')
+- [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Result`1 'AndcultureCode.CSharp.Core.Models.Result`1')
+  - [Errors](#P-AndcultureCode-CSharp-Core-Models-Result`1-Errors 'AndcultureCode.CSharp.Core.Models.Result`1.Errors')
+  - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Result`1.ResultObject')
+- [ReverseComparer\`1](#T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor')
+  - [#ctor(comparer)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})')
+  - [Compare(x,y)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-Compare-`0,`0- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.Compare(`0,`0)')
 - [Rfc4646LanguageCodes](#T-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes')
   - [AF_ZA](#F-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes-AF_ZA 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes.AF_ZA')
   - [AR_AE](#F-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes-AR_AE 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes.AR_AE')
@@ -424,6 +542,41 @@
 - [UserMetadataTypes](#T-AndcultureCode-CSharp-Core-Constants-UserMetadataTypes 'AndcultureCode.CSharp.Core.Constants.UserMetadataTypes')
   - [ExternalUserId](#F-AndcultureCode-CSharp-Core-Constants-UserMetadataTypes-ExternalUserId 'AndcultureCode.CSharp.Core.Constants.UserMetadataTypes.ExternalUserId')
 - [WorkerProvider](#T-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider')
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Acl'></a>
+## Acl `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Entities
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+Gets or sets the permission.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+Gets or sets the resource.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Subject'></a>
+### Subject `property`
+
+##### Summary
+
+Gets or serts the subject.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+Gets or sets the verb.
 
 <a name='T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider'></a>
 ## AmazonEBConfigurationProvider `type`
@@ -893,6 +1046,50 @@ TODO: Backfill tests https://github.com/AndcultureCode/AndcultureCode.CSharp.Cor
 | ---- | ----------- |
 | T |  |
 
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Exception'></a>
+### Exception `property`
+
+##### Summary
+
+Gets or sets the Exception.
+
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Result'></a>
+### Result `property`
+
+##### Summary
+
+Gets the Result.
+
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Workload'></a>
+### Workload `property`
+
+##### Summary
+
+Gets the Workload.
+
+<a name='M-AndcultureCode-CSharp-Core-Do`1-Catch``1-System-Action{``0,AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}-'></a>
+### Catch\`\`1(handler) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| handler | [System.Action{\`\`0,AndcultureCode.CSharp.Core.Interfaces.IResult{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0,AndcultureCode.CSharp.Core.Interfaces.IResult{`0}}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TException |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Do`1-Finally-Microsoft-Extensions-Logging-ILogger,System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}-'></a>
 ### Finally(logger,workload) `method`
 
@@ -1158,6 +1355,20 @@ Base 64 encoded string of the salt
 | ---- | ---- | ----------- |
 | bits | [System.UInt16](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt16 'System.UInt16') | Size of the salt to generate in bits (must be a multiple of 8) |
 
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Entity'></a>
+## Entity `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Entities
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Entity-Id'></a>
+### Id `property`
+
+##### Summary
+
+Get or sets the id.
+
 <a name='T-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions'></a>
 ## EnumerableExtensions `type`
 
@@ -1256,6 +1467,34 @@ Common environment related values
 
 Testing environment identifier
 
+<a name='T-AndcultureCode-CSharp-Core-Models-Error'></a>
+## Error `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Error-ErrorType'></a>
+### ErrorType `property`
+
+##### Summary
+
+Gets or sets the error type/
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Error-Key'></a>
+### Key `property`
+
+##### Summary
+
+Gets or sets the key.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Error-Message'></a>
+### Message `property`
+
+##### Summary
+
+Gets or sets the message.
+
 <a name='T-AndcultureCode-CSharp-Core-Constants-ErrorConstants'></a>
 ## ErrorConstants `type`
 
@@ -1339,6 +1578,69 @@ Enumeration of HttpVerbs
 
  TODO: Consider using Microsoft.AspNet.Mvc.HttpVerbs enum
 
+<a name='F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-DELETE'></a>
+### DELETE `constants`
+
+##### Summary
+
+HTTP Delete
+
+<a name='F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-GET'></a>
+### GET `constants`
+
+##### Summary
+
+HTTP Get
+
+<a name='F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-HEAD'></a>
+### HEAD `constants`
+
+##### Summary
+
+HTTP Head
+
+<a name='F-AndcultureCode-CSharp-Core-Enumerations-HttpVerb-PUT'></a>
+### PUT `constants`
+
+##### Summary
+
+HTTP Put
+
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl'></a>
+## IAcl `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces.Security
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+Gets or sets the permission.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+Gets or sets the resource.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Subject'></a>
+### Subject `property`
+
+##### Summary
+
+Gets or sets the subject.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Security-IAcl-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+Gets or sets the verb.
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder'></a>
 ## IAndcultureCodeWebHostBuilder `type`
 
@@ -1377,7 +1679,7 @@ This method has no parameters.
 AndcultureCode.CSharp.Core.Extensions
 
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IAndcultureCodeWebHostBuilderExtensions-PreloadAmazonElasticBeanstalk-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder,System-Boolean,AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-'></a>
-### PreloadAmazonElasticBeanstalk(builder,stdoutEnabled) `method`
+### PreloadAmazonElasticBeanstalk(builder,stdoutEnabled,configurationProvider) `method`
 
 ##### Summary
 
@@ -1394,6 +1696,7 @@ is started up. Namely, reading of ASPNET environment
 | ---- | ---- | ----------- |
 | builder | [AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder](#T-AndcultureCode-CSharp-Core-Interfaces-Hosting-IAndcultureCodeWebHostBuilder 'AndcultureCode.CSharp.Core.Interfaces.Hosting.IAndcultureCodeWebHostBuilder') |  |
 | stdoutEnabled | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Should errors be output to standard output for debugging being this could be run before logging starts |
+| configurationProvider | [AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Data-IApplicationContext'></a>
 ## IApplicationContext `type`
@@ -1528,6 +1831,81 @@ RFC-4646 5-character Culture code (xx-XX)
 
 Is this the default locale in the application? There can only be one
 
+<a name='T-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions'></a>
+## ICultureExtensions `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Extensions
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-Default-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}-'></a>
+### Default(cultures) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| cultures | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureCodes-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}-'></a>
+### ToCultureCodes(cultures) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| cultures | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureInfo-AndcultureCode-CSharp-Core-Interfaces-ICulture-'></a>
+### ToCultureInfo(culture) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| culture | [AndcultureCode.CSharp.Core.Interfaces.ICulture](#T-AndcultureCode-CSharp-Core-Interfaces-ICulture 'AndcultureCode.CSharp.Core.Interfaces.ICulture') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ICultureExtensions-ToCultureInfos-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-ICulture}-'></a>
+### ToCultureInfos(cultures) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| cultures | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.ICulture}') |  |
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Providers-Mail-IEmailProvider'></a>
 ## IEmailProvider `type`
 
@@ -1564,6 +1942,83 @@ Send an email via a background job
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | message | [MimeKit.MimeMessage](#T-MimeKit-MimeMessage 'MimeKit.MimeMessage') | The message to be sent |
+
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-Entity-IEntity'></a>
+## IEntity `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces.Entity
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-IEntity-Id'></a>
+### Id `property`
+
+##### Summary
+
+Gets or sets the id.
+
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-IError'></a>
+## IError `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-IError-ErrorType'></a>
+### ErrorType `property`
+
+##### Summary
+
+Gets or sets the error type/
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-IError-Key'></a>
+### Key `property`
+
+##### Summary
+
+Gets or sets the key.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-IError-Message'></a>
+### Message `property`
+
+##### Summary
+
+Gets or sets the message.
+
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable'></a>
+## ILockable `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces.Entity
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-IsLocked'></a>
+### IsLocked `property`
+
+##### Summary
+
+Gets if this instance is locked.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedById'></a>
+### LockedById `property`
+
+##### Summary
+
+Gets or sets locked by id.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedOn'></a>
+### LockedOn `property`
+
+##### Summary
+
+Gets or sets locked on.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-ILockable-LockedUntil'></a>
+### LockedUntil `property`
+
+##### Summary
+
+Gets or sets locked until.
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Conductors-ILockingConductor`1'></a>
 ## ILockingConductor\`1 `type`
@@ -1746,6 +2201,50 @@ resource/verb pair.
 | ---- | ---- | ----------- |
 | resource | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 | verb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The ID for the Role that we're checking permissions for. |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-IsAllowed-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Models-Security-ResourceVerb},System-String-'></a>
+### IsAllowed(op,resourceVerbs,subject) `method`
+
+##### Summary
+
+Determine if a given Role is allowed to perform either:
+  - at least one action in a list of actions (op = OR)
+   or
+  - all of the actions in a list of actions (op = AND)
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| op | [AndcultureCode.CSharp.Core.Enumerations.LogicalOperator](#T-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator 'AndcultureCode.CSharp.Core.Enumerations.LogicalOperator') | A LogicalOperator value that dictates which validation method to use. |
+| resourceVerbs | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Models.Security.ResourceVerb}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Models.Security.ResourceVerb}') | A list of actions as ResourceVerb objects. |
+| subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The ID for the Role that we're checking permissions for. |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IPermissionConductor-IsAllowed-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator,System-String,System-String-'></a>
+### IsAllowed(op,resourcePrefix,subject) `method`
+
+##### Summary
+
+Determine if a given Role is allowed to perform either:
+  - at least one action whose resource starts with the given prefix (op = OR)
+   or
+  - all of the actions that start with the given prefix (op = AND)
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| op | [AndcultureCode.CSharp.Core.Enumerations.LogicalOperator](#T-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator 'AndcultureCode.CSharp.Core.Enumerations.LogicalOperator') | A LogicalOperator value that dictates which validation method to use. |
+| resourcePrefix | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The resource prefix that we use to get the actions to check permissions on. |
 | subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The ID for the Role that we're checking permissions for. |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Providers-IProvider'></a>
@@ -1941,8 +2440,31 @@ AndcultureCode.CSharp.Core.Interfaces.Conductors
 
 Ability to set and get the underlying DbContext's command timeout
 
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean},System-Boolean-'></a>
+### FindAll(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters,asNoTracking) `method`
+
+##### Summary
+
+Configure lazy loaded queryable, given provided parameters, to load a list of <T>
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| filter | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
+| orderBy | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| includeProperties | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| skip | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| take | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
+| asNoTracking | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean},System-Boolean-'></a>
-### FindAll(filter,orderBy,nextLinkParams) `method`
+### FindAll(nextLinkParams,filter,orderBy,ignoreQueryFilters,asNoTracking) `method`
 
 ##### Summary
 
@@ -1957,12 +2479,38 @@ determinate pagination mechanisms, such as; skip and take.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| filter | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') |  |
-| orderBy | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
-| nextLinkParams | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| nextLinkParams | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') |  |
+| filter | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
+| orderBy | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
+| asNoTracking | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean}-'></a>
+### FindAllCommitted(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters) `method`
+
+##### Summary
+
+Similar to FindAll, this evaluates the parameters as given. The big difference here is that the query is executed
+inside the conductor and a List<T> is returned and NOT Queryable<T>.  This is primary used in cases where calculated
+fields need to be executed (committed) inside the conductor.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| filter | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
+| orderBy | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| includeProperties | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| skip | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| take | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
 
 <a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean}-'></a>
-### FindAllCommitted(filter,orderBy,nextLinkParams) `method`
+### FindAllCommitted(nextLinkParams,filter,orderBy,ignoreQueryFilters) `method`
 
 ##### Summary
 
@@ -1977,9 +2525,10 @@ determinate pagination mechanisms, such as; skip and take.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| filter | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') |  |
-| orderBy | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
-| nextLinkParams | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| nextLinkParams | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') |  |
+| filter | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
+| orderBy | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1'></a>
 ## IRepositoryUpdateConductor\`1 `type`
@@ -2136,6 +2685,153 @@ Find all filtered, sorted and paged
 | ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
 | asNoTracking | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
 
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindAllCommitted-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean}-'></a>
+### FindAllCommitted(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters) `method`
+
+##### Summary
+
+Find all filtered, sorted and paged and converts to an IList<T>
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| filter | [System.Linq.Expressions.Expression{System.Func{\`0,System.Boolean}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}') |  |
+| orderBy | [System.Func{System.Linq.IQueryable{\`0},System.Linq.IOrderedQueryable{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}}') |  |
+| includeProperties | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| skip | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| take | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Nullable{System-Boolean}-'></a>
+### FindById(id,ignoreQueryFilters) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Linq-Expressions-Expression{System-Func{`0,System-Object}}[]-'></a>
+### FindById(id,includeProperties) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| includeProperties | [System.Linq.Expressions.Expression{System.Func{\`0,System.Object}}[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[]') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-Nullable{System-Boolean},System-Linq-Expressions-Expression{System-Func{`0,System-Object}}[]-'></a>
+### FindById(id,ignoreQueryFilters,includeProperties) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| ignoreQueryFilters | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') |  |
+| includeProperties | [System.Linq.Expressions.Expression{System.Func{\`0,System.Object}}[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[]') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-FindById-System-Int64,System-String[]-'></a>
+### FindById(id,includeProperties) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| includeProperties | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Restore-`0-'></a>
+### Restore(o) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| o | [\`0](#T-`0 '`0') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Restore-System-Int64-'></a>
+### Restore(id) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Update-`0,System-Nullable{System-Int64}-'></a>
+### Update(item,updatedBy) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [\`0](#T-`0 '`0') |  |
+| updatedBy | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-Update-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}-'></a>
 ### Update(entities,updatedBy) `method`
 
@@ -2161,6 +2857,29 @@ True if entities updated without any exceptions. False if an exception was throw
 ##### Namespace
 
 AndcultureCode.CSharp.Core.Extensions
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Nullable{System-Int64}-'></a>
+### AddErrorAndLog\`\`1(result,logger,errorKey,errorMessage,resourceIdentifier) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') |  |
+| errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| resourceIdentifier | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
 
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]-'></a>
 ### AddErrorAndLog\`\`1(result,logger,localizer,errorKey,arguments) `method`
@@ -2213,12 +2932,66 @@ Add translated error record of type Error
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Error key found in culture files |
 | arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | The values with which to format the translated error message |
 
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IError-'></a>
+### AddError\`\`1(result,error) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| error | [AndcultureCode.CSharp.Core.Interfaces.IError](#T-AndcultureCode-CSharp-Core-Interfaces-IError 'AndcultureCode.CSharp.Core.Interfaces.IError') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-String-'></a>
+### AddError\`\`1(result,errorType,key,message) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| errorType | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,AndcultureCode-CSharp-Core-Enumerations-ErrorType,System-String,System-Object[]-'></a>
-### AddError\`\`1(result,localizer,key,arguments) `method`
+### AddError\`\`1(result,localizer,type,key,arguments) `method`
 
 ##### Summary
 
 Add translated error record
+
+##### Returns
+
+
 
 ##### Parameters
 
@@ -2226,8 +2999,40 @@ Add translated error record
 | ---- | ---- | ----------- |
 | result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
 | localizer | [Microsoft.Extensions.Localization.IStringLocalizer](#T-Microsoft-Extensions-Localization-IStringLocalizer 'Microsoft.Extensions.Localization.IStringLocalizer') |  |
-| key | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') | Error key found in culture files |
-| arguments | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The values with which to format the translated error message |
+| type | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String-'></a>
+### AddError\`\`1(result,key,message) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
 
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
 ### AddError\`\`1(result,message) `method`
@@ -2246,6 +3051,53 @@ Adds a new error with the calling class and method name as the key
 | ---- | ---- | ----------- |
 | result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
 | message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Int64,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}-'></a>
+### AddErrorsAndLog\`\`1(result,logger,errorKey,errorMessage,resourceIdentifier,errors) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') |  |
+| errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| resourceIdentifier | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| errors | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrorsAndLog``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Logging-ILogger,System-String,System-String,System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}-'></a>
+### AddErrorsAndLog\`\`1(result,logger,errorKey,errorMessage,errors) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') |  |
+| errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| errors | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}') |  |
 
 ##### Generic Types
 
@@ -2318,6 +3170,80 @@ returning null (or default for T type) to the parent
 | T |  |
 | TSource |  |
 
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}-'></a>
+### AddErrors\`\`1(result,errors) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| errors | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddErrors``2-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Interfaces-IResult{``1}-'></a>
+### AddErrors\`\`2(destination,source) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| destination | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| source | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`1}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``1} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``1}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+| TSource |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddExceptionError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-Exception-'></a>
+### AddExceptionError\`\`1(result,key,exception) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| exception | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddNextLinkParam``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String-'></a>
 ### AddNextLinkParam\`\`1(result,key,value) `method`
 
@@ -2337,6 +3263,31 @@ Reference to NextLinkParams
 | result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Unique key to add for next link params |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Value for supplied key. Can be null |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddNextLinkParam``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-Int32-'></a>
+### AddNextLinkParam\`\`1(result,key,value) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
 
 ##### Generic Types
 
@@ -2370,6 +3321,31 @@ Reference to NextLinkParams
 | ---- | ----------- |
 | T |  |
 
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddValidationError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String,System-String-'></a>
+### AddValidationError\`\`1(result,key,message) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-AddValidationError``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},Microsoft-Extensions-Localization-IStringLocalizer,System-String,System-Object[]-'></a>
 ### AddValidationError\`\`1(result,localizer,key,arguments) `method`
 
@@ -2385,6 +3361,423 @@ Add translated error record of type Validation
 | localizer | [Microsoft.Extensions.Localization.IStringLocalizer](#T-Microsoft-Extensions-Localization-IStringLocalizer 'Microsoft.Extensions.Localization.IStringLocalizer') |  |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Error key found in culture files |
 | arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | The values with which to format the translated error message |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-DoesNotHaveErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType-'></a>
+### DoesNotHaveErrors\`\`1(result,errorType) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| errorType | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-DoesNotHaveErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
+### DoesNotHaveErrors\`\`1(result,key) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType-'></a>
+### GetErrors\`\`1(result,errorType) `method`
+
+##### Summary
+
+Gets the errors.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| errorType | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
+### GetErrors\`\`1(result,key) `method`
+
+##### Summary
+
+Gets the errors.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-GetValidationErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}-'></a>
+### GetValidationErrors\`\`1(result) `method`
+
+##### Summary
+
+Gets the validation errors.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrorsOrResultIsFalse-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean}-'></a>
+### HasErrorsOrResultIsFalse(result) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean} 'AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrorsOrResultIsNull``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}-'></a>
+### HasErrorsOrResultIsNull\`\`1(result) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},AndcultureCode-CSharp-Core-Enumerations-ErrorType-'></a>
+### HasErrors\`\`1(resultList,errorType) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resultList | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}}') |  |
+| errorType | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},System-String-'></a>
+### HasErrors\`\`1(resultList,key) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resultList | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}}-'></a>
+### HasErrors\`\`1(resultList) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resultList | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},AndcultureCode-CSharp-Core-Enumerations-ErrorType-'></a>
+### HasErrors\`\`1(result,errorType) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| errorType | [AndcultureCode.CSharp.Core.Enumerations.ErrorType](#T-AndcultureCode-CSharp-Core-Enumerations-ErrorType 'AndcultureCode.CSharp.Core.Enumerations.ErrorType') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
+### HasErrors\`\`1(result,key) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-HasValidationErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0}-'></a>
+### HasValidationErrors\`\`1(result) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ListErrors``1-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IResult{``0}},System-String-'></a>
+### ListErrors\`\`1(resultList,delimiter) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resultList | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IResult{``0}}') |  |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ListErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-String-'></a>
+### ListErrors\`\`1(result,delimiter) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrorsOrResultIsFalse-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean},System-Exception,System-Exception-'></a>
+### ThrowIfAnyErrorsOrResultIsFalse(result,hasErrorsException,resultNullException) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{System-Boolean} 'AndcultureCode.CSharp.Core.Interfaces.IResult{System.Boolean}') |  |
+| hasErrorsException | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+| resultNullException | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrorsOrResultIsNull``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Exception,System-Exception-'></a>
+### ThrowIfAnyErrorsOrResultIsNull\`\`1(result,hasErrorsException,resultNullException) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| hasErrorsException | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+| resultNullException | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-IResultExtensions-ThrowIfAnyErrors``1-AndcultureCode-CSharp-Core-Interfaces-IResult{``0},System-Exception-'></a>
+### ThrowIfAnyErrors\`\`1(result,customException) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| result | [AndcultureCode.CSharp.Core.Interfaces.IResult{\`\`0}](#T-AndcultureCode-CSharp-Core-Interfaces-IResult{``0} 'AndcultureCode.CSharp.Core.Interfaces.IResult{``0}') |  |
+| customException | [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-IResult`1'></a>
 ## IResult\`1 `type`
@@ -2605,6 +3998,27 @@ Retrieve given translation for default configured culture
 | localizer | [Microsoft.Extensions.Localization.IStringLocalizer](#T-Microsoft-Extensions-Localization-IStringLocalizer 'Microsoft.Extensions.Localization.IStringLocalizer') |  |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 | arguments | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | The values with which to format the translated error message |
+
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable'></a>
+## IUpdatable `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces.Entity
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable-UpdatedById'></a>
+### UpdatedById `property`
+
+##### Summary
+
+Gets or sets the updated by identifier.
+
+<a name='P-AndcultureCode-CSharp-Core-Interfaces-Entity-IUpdatable-UpdatedOn'></a>
+### UpdatedOn `property`
+
+##### Summary
+
+Gets or sets the updated on.
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Entity-IUser'></a>
 ## IUser `type`
@@ -3218,6 +4632,239 @@ Is this integration disabled?
 
 Is this integration enabled?
 
+<a name='T-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2'></a>
+## OrderedList\`2 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Collections
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Count'></a>
+### Count `property`
+
+##### Summary
+
+Gets the count.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-IsReadOnly'></a>
+### IsReadOnly `property`
+
+##### Summary
+
+Gets if the instance is readonly.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Item-`0-'></a>
+### Item `property`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Keys'></a>
+### Keys `property`
+
+##### Summary
+
+
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Values'></a>
+### System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Values `property`
+
+##### Summary
+
+
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Add-`0,`1-'></a>
+### Add(key,value) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [\`1](#T-`1 '`1') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Clear'></a>
+### Clear() `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-ContainsKey-`0-'></a>
+### ContainsKey(key) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-GetEnumerator'></a>
+### GetEnumerator() `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Remove-`0,`1-'></a>
+### Remove(key,value) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [\`1](#T-`1 '`1') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Add-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}-'></a>
+### System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Add(item) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [System.Collections.Generic.KeyValuePair{\`0,System.Collections.Generic.ICollection{\`1}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.KeyValuePair 'System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Contains-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}-'></a>
+### System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Contains(item) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [System.Collections.Generic.KeyValuePair{\`0,System.Collections.Generic.ICollection{\`1}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.KeyValuePair 'System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#CopyTo-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}[],System-Int32-'></a>
+### System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#CopyTo(array,arrayIndex) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| array | [System.Collections.Generic.KeyValuePair{\`0,System.Collections.Generic.ICollection{\`1}}[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.KeyValuePair 'System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}}[]') |  |
+| arrayIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Remove-System-Collections-Generic-KeyValuePair{`0,System-Collections-Generic-ICollection{`1}}-'></a>
+### System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#ICollection{TValue}}}#Remove(item) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [System.Collections.Generic.KeyValuePair{\`0,System.Collections.Generic.ICollection{\`1}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.KeyValuePair 'System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.ICollection{`1}}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Add-`0,System-Collections-Generic-ICollection{`1}-'></a>
+### System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Add(key,value) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [System.Collections.Generic.ICollection{\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{`1}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Remove-`0-'></a>
+### System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#ICollection{TValue}}#Remove(key) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-TryGetValue-`0,System-Collections-Generic-ICollection{`1}@-'></a>
+### TryGetValue(key,value) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [System.Collections.Generic.ICollection{\`1}@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{`1}@') |  |
+
 <a name='T-AndcultureCode-CSharp-Core-Providers-Provider'></a>
 ## Provider `type`
 
@@ -3290,6 +4937,139 @@ AndcultureCode.CSharp.Core.Models.Entities.Worker
 ##### Summary
 
 Recurrance configuration for a given worker
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Day'></a>
+### Day `property`
+
+##### Summary
+
+Gets or sets the day.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-DayOfWeek'></a>
+### DayOfWeek `property`
+
+##### Summary
+
+Gets or sets the day of week.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Hour'></a>
+### Hour `property`
+
+##### Summary
+
+Gets or sets the hour.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Minute'></a>
+### Minute `property`
+
+##### Summary
+
+Gets or sets the minute.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Month'></a>
+### Month `property`
+
+##### Summary
+
+Gets or sets the month.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Recurrence'></a>
+### Recurrence `property`
+
+##### Summary
+
+Gets or sets the recurrence.
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb'></a>
+## ResourceVerb `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Security
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+Gets or sets the resource.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+Gets or sets the verb.
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Result`1'></a>
+## Result\`1 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-Errors'></a>
+### Errors `property`
+
+##### Summary
+
+Gets or sets the errors.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-ResultObject'></a>
+### ResultObject `property`
+
+##### Summary
+
+Gets or sets the result object.
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1'></a>
+## ReverseComparer\`1 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Collections
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Creates a new instance of the [ReverseComparer\`1.#ctor](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor') class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}-'></a>
+### #ctor(comparer) `constructor`
+
+##### Summary
+
+Creates a new instance of the [ReverseComparer\`1.#ctor](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| comparer | [System.Collections.Generic.IComparer{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IComparer 'System.Collections.Generic.IComparer{`0}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-Compare-`0,`0-'></a>
+### Compare(x,y) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [\`0](#T-`0 '`0') |  |
+| y | [\`0](#T-`0 '`0') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes'></a>
 ## Rfc4646LanguageCodes `type`

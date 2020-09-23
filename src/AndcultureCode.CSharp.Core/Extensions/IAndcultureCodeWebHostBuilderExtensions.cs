@@ -21,6 +21,7 @@ namespace AndcultureCode.CSharp.Core.Extensions
         /// </summary>
         /// <param name="builder"></param>
         /// <param name="stdoutEnabled">Should errors be output to standard output for debugging being this could be run before logging starts</param>
+        /// <param name="configurationProvider"></param>
         /// <returns></returns>
         public static IAndcultureCodeWebHostBuilder PreloadAmazonElasticBeanstalk(
             this IAndcultureCodeWebHostBuilder builder,

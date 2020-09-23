@@ -10,9 +10,17 @@ namespace AndcultureCode.CSharp.Core.Models
         #region Properties
 
         public virtual int                        ErrorCount     => Errors != null ? Errors.Count : 0;
+       
+        /// <summary>
+        /// Gets or sets the errors.
+        /// </summary>
         public virtual List<IError>               Errors         { get; set; }
         public virtual bool                       HasErrors      => Errors != null && Errors.Any();
         public virtual Dictionary<string, string> NextLinkParams { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the result object.
+        /// </summary>
         public virtual T                          ResultObject   { get; set; }
 
         #endregion Properties

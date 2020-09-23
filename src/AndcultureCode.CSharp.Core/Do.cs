@@ -15,8 +15,19 @@ namespace AndcultureCode.CSharp.Core
     {
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the Exception.
+        /// </summary>
         public Exception Exception { get; set; }
+
+        /// <summary>
+        /// Gets the Result.
+        /// </summary>
         public IResult<T> Result { get; private set; }
+
+        /// <summary>
+        /// Gets the Workload.
+        /// </summary>
         public Func<IResult<T>, T> Workload { get; }
 
         #endregion Properties
@@ -35,6 +46,12 @@ namespace AndcultureCode.CSharp.Core
 
         #region Public Methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TException"></typeparam>
+        /// <param name="handler"></param>
+        /// <returns></returns>
         public Do<T> Catch<TException>(Action<TException, IResult<T>> handler)
             where TException : Exception
         {

@@ -12,6 +12,11 @@ namespace AndcultureCode.CSharp.Core.Extensions
     {
         #region Default
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cultures"></param>
+        /// <returns></returns>
         public static ICulture Default(this IEnumerable<ICulture> cultures)
         {
             var matches = cultures?.Where(e => e.IsDefault).ToList();
@@ -47,6 +52,11 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ToCultureNames
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cultures"></param>
+        /// <returns></returns>
         public static List<string> ToCultureCodes(this IEnumerable<ICulture> cultures)
              => cultures?.Select(e => e.Code).ToList();
 
@@ -70,9 +80,19 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ToCultureInfo/s
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public static CultureInfo ToCultureInfo(this ICulture culture)
             => new CultureInfo(culture?.Code);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cultures"></param>
+        /// <returns></returns>
         public static List<CultureInfo> ToCultureInfos(this IEnumerable<ICulture> cultures)
             => cultures?.Select(x => x.ToCultureInfo()).ToList();
 

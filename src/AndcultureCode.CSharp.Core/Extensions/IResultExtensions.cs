@@ -26,6 +26,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
         public static IError AddError<T>(this IResult<T> result, IStringLocalizer localizer, string key, params object[] arguments)
             => result.AddError(key, localizer[key, arguments]);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
         public static IError AddError<T>(this IResult<T> result, IError error)
         {
             if (result.Errors == null)
@@ -41,6 +48,15 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return error;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="errorType"></param>
+        /// <param name="key"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static IError AddError<T>(this IResult<T> result, ErrorType errorType, string key, string message)
         {
             if (result.Errors == null)
@@ -61,15 +77,26 @@ namespace AndcultureCode.CSharp.Core.Extensions
         }
 
         /// <summary>
-        /// Add translated error record
+        ///  Add translated error record
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="result"></param>
         /// <param name="localizer"></param>
-        /// <param name="key">Error key found in culture files</param>
-        /// <param name="arguments">The values with which to format the translated error message</param>
+        /// <param name="type"></param>
+        /// <param name="key"></param>
+        /// <param name="arguments"></param>
+        /// <returns></returns>
         public static IError AddError<T>(this IResult<T> result, IStringLocalizer localizer, ErrorType type, string key, params object[] arguments)
             => result.AddError(type, key, localizer[key, arguments]);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static IError AddError<T>(this IResult<T> result, string key, string message) => result.AddError(ErrorType.Error, key, message);
 
         /// <summary>
@@ -94,6 +121,14 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region AddExceptionError
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
         public static IError AddExceptionError<T>(this IResult<T> result, string key, Exception exception)
         {
             var message = $"{exception.Message}\n{exception.StackTrace}";
@@ -104,6 +139,14 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region AddValidationError
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
         public static IError AddValidationError<T>(this IResult<T> result, string key, string message) => result.AddError(ErrorType.ValidationError, key, message);
 
         /// <summary>
@@ -120,6 +163,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region AddErrors
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="errors"></param>
+        /// <returns></returns>
         public static List<IError> AddErrors<T>(this IResult<T> result, IEnumerable<IError> errors)
         {
             if (errors == null || !errors.Any())
@@ -135,6 +185,14 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return result.Errors;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TSource"></typeparam>
+        /// <param name="destination"></param>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static List<IError> AddErrors<T, TSource>(this IResult<T> destination, IResult<TSource> source)
         {
             destination.AddErrors(source?.Errors);
@@ -160,6 +218,15 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region AddErrorsAndLog
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="logger"></param>
+        /// <param name="errorKey"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="resourceIdentifier"></param>
         public static void AddErrorAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long? resourceIdentifier = null)
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
@@ -167,6 +234,16 @@ namespace AndcultureCode.CSharp.Core.Extensions
             result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, resourceIdentifier?.ToString(), null, methodName);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="logger"></param>
+        /// <param name="errorKey"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="resourceIdentifier"></param>
+        /// <param name="errors"></param>
         public static void AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, long resourceIdentifier, IEnumerable<IError> errors = null)
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
@@ -174,6 +251,15 @@ namespace AndcultureCode.CSharp.Core.Extensions
             result.AddErrorsAndLog<T>(logger, errorKey, errorMessage, logMessage, resourceIdentifier.ToString(), errors, methodName);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="logger"></param>
+        /// <param name="errorKey"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="errors"></param>
         public static void AddErrorsAndLog<T>(this IResult<T> result, ILogger logger, string errorKey, string errorMessage, IEnumerable<IError> errors = null)
         {
             var methodName = new StackTrace().GetFrame(1).GetMethod().Name;
@@ -304,6 +390,14 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return result.NextLinkParams;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static Dictionary<string, string> AddNextLinkParam<T>(this IResult<T> result, string key, int value) => result.AddNextLinkParam(key, value.ToString());
 
         #endregion AddNextLinkParam
@@ -343,13 +437,35 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region DoesNotHaveErrors
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="errorType"></param>
+        /// <returns></returns>
         public static bool DoesNotHaveErrors<T>(this IResult<T> result, ErrorType errorType) => !result.HasErrors(errorType);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static bool DoesNotHaveErrors<T>(this IResult<T> result, string key) => !result.HasErrors(key);
 
         #endregion DoesNotHaveErrors
 
         #region GetErrors
 
+        /// <summary>
+        /// Gets the errors.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="errorType"></param>
+        /// <returns></returns>
         public static List<IError> GetErrors<T>(this IResult<T> result, ErrorType errorType)
         {
             if (!result.HasErrors(errorType))
@@ -360,6 +476,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return result.Errors.Where(e => e.ErrorType == errorType).ToList();
         }
 
+        /// <summary>
+        /// Gets the errors.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static List<IError> GetErrors<T>(this IResult<T> result, string key)
         {
             if (!result.HasErrors(key))
@@ -370,33 +493,90 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return result.Errors.Where(e => e.Key == key).ToList();
         }
 
+        /// <summary>
+        /// Gets the validation errors.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public static List<IError> GetValidationErrors<T>(this IResult<T> result) => result.GetErrors(ErrorType.ValidationError);
 
         #endregion GetErrors
 
         #region HasErrors
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resultList"></param>
+        /// <param name="errorType"></param>
+        /// <returns></returns>
         public static bool HasErrors<T>(this IEnumerable<IResult<T>> resultList, ErrorType errorType)
             => resultList != null && resultList.Any(r => r.HasErrors(errorType));
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resultList"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static bool HasErrors<T>(this IEnumerable<IResult<T>> resultList, string key)
             => resultList != null && resultList.Any(r => r.HasErrors(key));
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resultList"></param>
+        /// <returns></returns>
         public static bool HasErrors<T>(this IEnumerable<IResult<T>> resultList)
             => resultList != null && resultList.Any(r => r.HasErrors);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="errorType"></param>
+        /// <returns></returns>
         public static bool HasErrors<T>(this IResult<T> result, ErrorType errorType)
             => result.HasErrors && result.Errors.Any(e => e.ErrorType == errorType);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static bool HasErrors<T>(this IResult<T> result, string key)
             => result.HasErrors && result.Errors.Any(e => e.Key == key);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public static bool HasErrorsOrResultIsFalse(this IResult<bool> result)
             => result.HasErrors || !result.ResultObject;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public static bool HasErrorsOrResultIsNull<T>(this IResult<T> result)
             => result.HasErrors || result.ResultObject == null;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public static bool HasValidationErrors<T>(this IResult<T> result)
             => result.HasErrors(ErrorType.ValidationError);
 
@@ -404,6 +584,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ListErrors
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resultList"></param>
+        /// <param name="delimiter"></param>
+        /// <returns></returns>
         public static string ListErrors<T>(this IEnumerable<IResult<T>> resultList, string delimiter = "\n")
         {
             if (resultList.IsNullOrEmpty())
@@ -420,6 +607,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
             return resultsWithErrors.Select(e => e.ListErrors(delimiter)).Join(delimiter);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="delimiter"></param>
+        /// <returns></returns>
         public static string ListErrors<T>(this IResult<T> result, string delimiter = "\n")
         {
             if (!result.HasErrors)
@@ -442,6 +636,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ThrowIfAnyErrors
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="customException"></param>
+        /// <returns></returns>
         public static IResult<T> ThrowIfAnyErrors<T>(this IResult<T> result, Exception customException = null)
         {
             if (!result.HasErrors)
@@ -456,6 +657,14 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ThrowIfAnyErrorsOrResultIsNull
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="hasErrorsException"></param>
+        /// <param name="resultNullException"></param>
+        /// <returns></returns>
         public static IResult<T> ThrowIfAnyErrorsOrResultIsNull<T>(
             this IResult<T> result,
             Exception hasErrorsException = null,
@@ -480,6 +689,13 @@ namespace AndcultureCode.CSharp.Core.Extensions
 
         #region ThrowIfAnyErrorsOrResultIsFalse
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="result"></param>
+        /// <param name="hasErrorsException"></param>
+        /// <param name="resultNullException"></param>
+        /// <returns></returns>
         public static IResult<bool> ThrowIfAnyErrorsOrResultIsFalse(
             this IResult<bool> result,
             Exception hasErrorsException = null,

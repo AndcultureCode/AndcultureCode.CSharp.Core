@@ -6,7 +6,14 @@ namespace AndcultureCode.CSharp.Core.Models.Security
     {
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the resource.
+        /// </summary>
         public string Resource { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the verb.
+        /// </summary>
         public string Verb { get; set; }
 
         #endregion Properties
