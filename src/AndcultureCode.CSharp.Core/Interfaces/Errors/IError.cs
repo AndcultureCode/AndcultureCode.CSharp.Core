@@ -5,7 +5,7 @@ namespace AndcultureCode.CSharp.Core.Interfaces
     public interface IError
     {
         /// <summary>
-        /// Gets or sets the error type/
+        /// Gets or sets the error type.
         /// </summary>
         ErrorType ErrorType { get; set; }
         

@@ -2,6 +2,10 @@
 
 namespace AndcultureCode.CSharp.Core.Interfaces
 {
+    /// <summary>
+    /// TODO: Fill in XML comment with interface summary
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IResult<T>
     {
         /// <summary>

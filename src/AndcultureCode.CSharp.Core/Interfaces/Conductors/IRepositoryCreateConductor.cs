@@ -19,6 +19,12 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
 
         #region Methods
 
+        /// <summary>
+        /// TODO: Fill in XML comment with method summary
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="createdById"></param>
+        /// <returns></returns>
         IResult<List<T>> BulkCreate(IEnumerable<T> items, long? createdById = null);
 
         /// <summary>

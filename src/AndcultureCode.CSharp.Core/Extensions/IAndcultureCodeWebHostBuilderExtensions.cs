@@ -8,6 +8,9 @@ namespace AndcultureCode.CSharp.Core.Extensions
     {
         #region Constants
 
+        /// <summary>
+        /// TODO: Fill in XML comment with method summary
+        /// </summary>
         public const string ASPNETCORE_ENVIRONMENT = "ASPNETCORE_ENVIRONMENT";
 
         #endregion Constants

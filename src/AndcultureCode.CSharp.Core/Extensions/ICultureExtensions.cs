@@ -13,7 +13,7 @@ namespace AndcultureCode.CSharp.Core.Extensions
         #region Default
 
         /// <summary>
-        /// 
+        /// TODO: Fill in XML comment with method summary
         /// </summary>
         /// <param name="cultures"></param>
         /// <returns></returns>
@@ -53,7 +53,7 @@ namespace AndcultureCode.CSharp.Core.Extensions
         #region ToCultureNames
 
         /// <summary>
-        /// 
+        /// TODO: Fill in XML comment with method summary
         /// </summary>
         /// <param name="cultures"></param>
         /// <returns></returns>
@@ -81,7 +81,7 @@ namespace AndcultureCode.CSharp.Core.Extensions
         #region ToCultureInfo/s
 
         /// <summary>
-        /// 
+        /// TODO: Fill in XML comment with method summary
         /// </summary>
         /// <param name="culture"></param>
         /// <returns></returns>
@@ -89,7 +89,7 @@ namespace AndcultureCode.CSharp.Core.Extensions
             => new CultureInfo(culture?.Code);
 
         /// <summary>
-        /// 
+        /// TODO: Fill in XML comment with method summary
         /// </summary>
         /// <param name="cultures"></param>
         /// <returns></returns>

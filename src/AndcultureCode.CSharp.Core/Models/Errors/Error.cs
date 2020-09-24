@@ -6,7 +6,7 @@ namespace AndcultureCode.CSharp.Core.Models
     public class Error : IError
     {
         /// <summary>
-        /// Gets or sets the error type/
+        /// Gets or sets the error type.
         /// </summary>
         public ErrorType ErrorType { get; set; }
 

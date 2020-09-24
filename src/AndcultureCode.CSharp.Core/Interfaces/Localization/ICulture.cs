@@ -3,6 +3,9 @@ using AndcultureCode.CSharp.Core.Models.Localization;
 
 namespace AndcultureCode.CSharp.Core.Interfaces
 {
+    /// <summary>
+    /// TODO: Fill in XML comment with interface summary
+    /// </summary>
     public interface ICulture
     {
         #region Properties
@@ -22,6 +25,9 @@ namespace AndcultureCode.CSharp.Core.Interfaces
 
         #region Navigation Properties
 
+        /// <summary>
+        /// Gets the culture translations.
+        /// </summary>
         List<CultureTranslation> CultureTranslations { get; }
 
         #endregion Navigation Properties

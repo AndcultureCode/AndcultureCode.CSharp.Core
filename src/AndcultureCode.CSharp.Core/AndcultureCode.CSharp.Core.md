@@ -127,6 +127,8 @@
   - [Password](#P-AndcultureCode-CSharp-Core-Interfaces-Data-IConnection-Password 'AndcultureCode.CSharp.Core.Interfaces.Data.IConnection.Password')
   - [UserId](#P-AndcultureCode-CSharp-Core-Interfaces-Data-IConnection-UserId 'AndcultureCode.CSharp.Core.Interfaces.Data.IConnection.UserId')
   - [ToString()](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IConnection-ToString-System-String- 'AndcultureCode.CSharp.Core.Interfaces.Data.IConnection.ToString(System.String)')
+- [IContext](#T-AndcultureCode-CSharp-Core-Interfaces-IContext 'AndcultureCode.CSharp.Core.Interfaces.IContext')
+  - [Add\`\`1(entity)](#M-AndcultureCode-CSharp-Core-Interfaces-IContext-Add``1-``0- 'AndcultureCode.CSharp.Core.Interfaces.IContext.Add``1(``0)')
 - [ICulture](#T-AndcultureCode-CSharp-Core-Interfaces-ICulture 'AndcultureCode.CSharp.Core.Interfaces.ICulture')
   - [Code](#P-AndcultureCode-CSharp-Core-Interfaces-ICulture-Code 'AndcultureCode.CSharp.Core.Interfaces.ICulture.Code')
   - [IsDefault](#P-AndcultureCode-CSharp-Core-Interfaces-ICulture-IsDefault 'AndcultureCode.CSharp.Core.Interfaces.ICulture.IsDefault')
@@ -177,10 +179,16 @@
   - [CreateOrUpdate(items,createdOrUpdatedById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryConductor`1-CreateOrUpdate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryConductor`1.CreateOrUpdate(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
 - [IRepositoryCreateConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryCreateConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryCreateConductor`1.CommandTimeout')
+  - [BulkCreate(items,createdById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-BulkCreate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryCreateConductor`1.BulkCreate(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
   - [BulkCreateDistinct\`\`1(items,property,createdById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-BulkCreateDistinct``1-System-Collections-Generic-IEnumerable{`0},System-Func{`0,``0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryCreateConductor`1.BulkCreateDistinct``1(System.Collections.Generic.IEnumerable{`0},System.Func{`0,``0},System.Nullable{System.Int64})')
   - [CreateDistinct\`\`1(items,property,createdById)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-CreateDistinct``1-System-Collections-Generic-IEnumerable{`0},System-Func{`0,``0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryCreateConductor`1.CreateDistinct``1(System.Collections.Generic.IEnumerable{`0},System.Func{`0,``0},System.Nullable{System.Int64})')
 - [IRepositoryDeleteConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.CommandTimeout')
+  - [BulkDelete(items,deletedById,soft)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-BulkDelete-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.BulkDelete(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64},System.Boolean)')
+  - [Delete(id,deletedById,soft)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-System-Int64,System-Nullable{System-Int64},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.Delete(System.Int64,System.Nullable{System.Int64},System.Boolean)')
+  - [Delete(o,deletedById,soft)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-`0,System-Nullable{System-Int64},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.Delete(`0,System.Nullable{System.Int64},System.Boolean)')
+  - [Delete(items,deletedById,batchSize,soft)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64},System-Int64,System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.Delete(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64},System.Int64,System.Boolean)')
+  - [Restore(o)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Restore-`0- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryDeleteConductor`1.Restore(`0)')
 - [IRepositoryReadConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.CommandTimeout')
   - [FindAll(filter,orderBy,includeProperties,skip,take,ignoreQueryFilters,asNoTracking)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAll-System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-String,System-Nullable{System-Int32},System-Nullable{System-Int32},System-Nullable{System-Boolean},System-Boolean- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Boolean)')
@@ -189,6 +197,9 @@
   - [FindAllCommitted(nextLinkParams,filter,orderBy,ignoreQueryFilters)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1-FindAllCommitted-System-Collections-Generic-Dictionary{System-String,System-String},System-Linq-Expressions-Expression{System-Func{`0,System-Boolean}},System-Func{System-Linq-IQueryable{`0},System-Linq-IOrderedQueryable{`0}},System-Nullable{System-Boolean}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryReadConductor`1.FindAllCommitted(System.Collections.Generic.Dictionary{System.String,System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Boolean})')
 - [IRepositoryUpdateConductor\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1.CommandTimeout')
+  - [BulkUpdate(items,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-BulkUpdate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1.BulkUpdate(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
+  - [Update(item,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-Update-`0,System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1.Update(`0,System.Nullable{System.Int64})')
+  - [Update(items,updatedBy)](#M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-Update-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Conductors.IRepositoryUpdateConductor`1.Update(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
 - [IRepository\`1](#T-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1')
   - [CommandTimeout](#P-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-CommandTimeout 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.CommandTimeout')
   - [BulkCreate(items,createdById)](#M-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1-BulkCreate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}- 'AndcultureCode.CSharp.Core.Interfaces.Data.IRepository`1.BulkCreate(System.Collections.Generic.IEnumerable{`0},System.Nullable{System.Int64})')
@@ -367,6 +378,9 @@
 - [ResourceVerb](#T-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb')
   - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Resource')
   - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Verb')
+- [ResourceVerbExtensions](#T-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions 'AndcultureCode.CSharp.Core.Extensions.ResourceVerbExtensions')
+  - [ToResourceVerb(resourceVerbString)](#M-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions-ToResourceVerb-System-String- 'AndcultureCode.CSharp.Core.Extensions.ResourceVerbExtensions.ToResourceVerb(System.String)')
+  - [ToResourceVerbs(resourceVerbStrings)](#M-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions-ToResourceVerbs-System-Collections-Generic-IEnumerable{System-String}- 'AndcultureCode.CSharp.Core.Extensions.ResourceVerbExtensions.ToResourceVerbs(System.Collections.Generic.IEnumerable{System.String})')
 - [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Result`1 'AndcultureCode.CSharp.Core.Models.Result`1')
   - [Errors](#P-AndcultureCode-CSharp-Core-Models-Result`1-Errors 'AndcultureCode.CSharp.Core.Models.Result`1.Errors')
   - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Result`1.ResultObject')
@@ -1479,7 +1493,7 @@ AndcultureCode.CSharp.Core.Models
 
 ##### Summary
 
-Gets or sets the error type/
+Gets or sets the error type.
 
 <a name='P-AndcultureCode-CSharp-Core-Models-Error-Key'></a>
 ### Key `property`
@@ -1810,6 +1824,32 @@ Single flattened string representation for the connection
 
 This method has no parameters.
 
+<a name='T-AndcultureCode-CSharp-Core-Interfaces-IContext'></a>
+## IContext `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Interfaces
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-IContext-Add``1-``0-'></a>
+### Add\`\`1(entity) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| entity | [\`\`0](#T-``0 '``0') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-ICulture'></a>
 ## ICulture `type`
 
@@ -1969,7 +2009,7 @@ AndcultureCode.CSharp.Core.Interfaces
 
 ##### Summary
 
-Gets or sets the error type/
+Gets or sets the error type.
 
 <a name='P-AndcultureCode-CSharp-Core-Interfaces-IError-Key'></a>
 ### Key `property`
@@ -2358,6 +2398,24 @@ AndcultureCode.CSharp.Core.Interfaces.Conductors
 
 Ability to set and get the underlying DbContext's command timeout
 
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-BulkCreate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}-'></a>
+### BulkCreate(items,createdById) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`0}') |  |
+| createdById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryCreateConductor`1-BulkCreateDistinct``1-System-Collections-Generic-IEnumerable{`0},System-Func{`0,``0},System-Nullable{System-Int64}-'></a>
 ### BulkCreateDistinct\`\`1(items,property,createdById) `method`
 
@@ -2425,6 +2483,100 @@ AndcultureCode.CSharp.Core.Interfaces.Conductors
 ##### Summary
 
 Ability to set and get the underlying DbContext's command timeout
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-BulkDelete-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64},System-Boolean-'></a>
+### BulkDelete(items,deletedById,soft) `method`
+
+##### Summary
+
+v
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`0}') |  |
+| deletedById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+| soft | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-System-Int64,System-Nullable{System-Int64},System-Boolean-'></a>
+### Delete(id,deletedById,soft) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| deletedById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+| soft | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-`0,System-Nullable{System-Int64},System-Boolean-'></a>
+### Delete(o,deletedById,soft) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| o | [\`0](#T-`0 '`0') |  |
+| deletedById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+| soft | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Delete-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64},System-Int64,System-Boolean-'></a>
+### Delete(items,deletedById,batchSize,soft) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`0}') |  |
+| deletedById | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+| batchSize | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| soft | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryDeleteConductor`1-Restore-`0-'></a>
+### Restore(o) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| o | [\`0](#T-`0 '`0') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryReadConductor`1'></a>
 ## IRepositoryReadConductor\`1 `type`
@@ -2543,6 +2695,60 @@ AndcultureCode.CSharp.Core.Interfaces.Conductors
 ##### Summary
 
 Ability to set and get the underlying DbContext's command timeout
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-BulkUpdate-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}-'></a>
+### BulkUpdate(items,updatedBy) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`0}') |  |
+| updatedBy | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-Update-`0,System-Nullable{System-Int64}-'></a>
+### Update(item,updatedBy) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [\`0](#T-`0 '`0') |  |
+| updatedBy | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-Conductors-IRepositoryUpdateConductor`1-Update-System-Collections-Generic-IEnumerable{`0},System-Nullable{System-Int64}-'></a>
+### Update(items,updatedBy) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{`0}') |  |
+| updatedBy | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Data-IRepository`1'></a>
 ## IRepository\`1 `type`
@@ -5000,6 +5206,47 @@ Gets or sets the resource.
 ##### Summary
 
 Gets or sets the verb.
+
+<a name='T-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions'></a>
+## ResourceVerbExtensions `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Extensions
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions-ToResourceVerb-System-String-'></a>
+### ToResourceVerb(resourceVerbString) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resourceVerbString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Extensions-ResourceVerbExtensions-ToResourceVerbs-System-Collections-Generic-IEnumerable{System-String}-'></a>
+### ToResourceVerbs(resourceVerbStrings) `method`
+
+##### Summary
+
+TODO: Fill in XML comment with method summary
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resourceVerbStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Models-Result`1'></a>
 ## Result\`1 `type`
