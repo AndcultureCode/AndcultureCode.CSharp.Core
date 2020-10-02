@@ -1,11 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AndcultureCode.CSharp.Core.Extensions
 {
     // TODO: Move to AndcultureCode.CSharp.Extensions
+    /// <summary>
+    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/37
+    /// </summary>
     public static class EnumerableExtensions
     {
         /// <summary>

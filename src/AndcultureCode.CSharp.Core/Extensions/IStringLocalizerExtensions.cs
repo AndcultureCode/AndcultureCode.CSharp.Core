@@ -4,6 +4,9 @@ using Microsoft.Extensions.Localization;
 
 namespace AndcultureCode.CSharp.Core.Extensions
 {
+    /// <summary>
+    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/37
+    /// </summary>
     public static class IStringLocalizerExtensions
     {
         /// <summary>
