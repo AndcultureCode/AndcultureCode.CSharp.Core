@@ -52,8 +52,15 @@
   - [IP_ADDRESS_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-IP_ADDRESS_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.IP_ADDRESS_LENGTH')
   - [URL_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-URL_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.URL_LENGTH')
 - [Do\`1](#T-AndcultureCode-CSharp-Core-Do`1 'AndcultureCode.CSharp.Core.Do`1')
+  - [#ctor(workload)](#M-AndcultureCode-CSharp-Core-Do`1-#ctor-System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.#ctor(System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
+  - [Exception](#P-AndcultureCode-CSharp-Core-Do`1-Exception 'AndcultureCode.CSharp.Core.Do`1.Exception')
+  - [Result](#P-AndcultureCode-CSharp-Core-Do`1-Result 'AndcultureCode.CSharp.Core.Do`1.Result')
+  - [Workload](#P-AndcultureCode-CSharp-Core-Do`1-Workload 'AndcultureCode.CSharp.Core.Do`1.Workload')
+  - [Catch\`\`1(handler)](#M-AndcultureCode-CSharp-Core-Do`1-Catch``1-System-Action{``0,AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Catch``1(System.Action{``0,AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
   - [Finally(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Finally-Microsoft-Extensions-Logging-ILogger,System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Finally(Microsoft.Extensions.Logging.ILogger,System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
+  - [Finally(workload)](#M-AndcultureCode-CSharp-Core-Do`1-Finally-System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Finally(System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
   - [Try(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
+  - [Try(workload)](#M-AndcultureCode-CSharp-Core-Do`1-Try-System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
   - [Try(logger,workload,retry)](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-UInt32,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.UInt32,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
   - [TrySeed\`\`1(seeds,workload,seedName)](#M-AndcultureCode-CSharp-Core-Do`1-TrySeed``1-AndcultureCode-CSharp-Core-SeedsBase{``0},System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0},System-String- 'AndcultureCode.CSharp.Core.Do`1.TrySeed``1(AndcultureCode.CSharp.Core.SeedsBase{``0},System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0},System.String)')
 - [EmailProviderBase](#T-AndcultureCode-CSharp-Core-Providers-EmailProviderBase 'AndcultureCode.CSharp.Core.Providers.EmailProviderBase')
@@ -413,6 +420,8 @@
   - [DefaultUserPassword](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-SeedsConfiguration-DefaultUserPassword 'AndcultureCode.CSharp.Business.Core.Models.Configuration.SeedsConfiguration.DefaultUserPassword')
 - [StringExtensions](#T-AndcultureCode-CSharp-Core-Extensions-StringExtensions 'AndcultureCode.CSharp.Core.Extensions.StringExtensions')
   - [LoadTranslations()](#M-AndcultureCode-CSharp-Core-Extensions-StringExtensions-LoadTranslations-System-String,System-String,Newtonsoft-Json-JsonSerializerSettings- 'AndcultureCode.CSharp.Core.Extensions.StringExtensions.LoadTranslations(System.String,System.String,Newtonsoft.Json.JsonSerializerSettings)')
+- [Try](#T-AndcultureCode-CSharp-Core-Try 'AndcultureCode.CSharp.Core.Try')
+  - [Catch(action)](#M-AndcultureCode-CSharp-Core-Try-Catch-System-Action- 'AndcultureCode.CSharp.Core.Try.Catch(System.Action)')
 - [UriUtils](#T-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils 'AndcultureCode.CSharp.Core.Utilities.Network.UriUtils')
   - [IsInvalidHttpUrl()](#M-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils-IsInvalidHttpUrl-System-String- 'AndcultureCode.CSharp.Core.Utilities.Network.UriUtils.IsInvalidHttpUrl(System.String)')
   - [IsValidHttpUrl()](#M-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils-IsValidHttpUrl-System-String- 'AndcultureCode.CSharp.Core.Utilities.Network.UriUtils.IsValidHttpUrl(System.String)')
@@ -886,12 +895,70 @@ AndcultureCode.CSharp.Core
 ##### Summary
 
 TODO: Backfill tests https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/15
+Helper class to implement the Try/Catch pattern
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
 | T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Do`1-#ctor-System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}-'></a>
+### #ctor(workload) `constructor`
+
+##### Summary
+
+Instantiates a [Do\`1](#T-AndcultureCode-CSharp-Core-Do`1 'AndcultureCode.CSharp.Core.Do`1') object to perform a given workload
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| workload | [System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{\`0},\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0}') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Exception'></a>
+### Exception `property`
+
+##### Summary
+
+The thrown exception (if it exists)
+
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Result'></a>
+### Result `property`
+
+##### Summary
+
+The result of the [Try](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})') method
+
+<a name='P-AndcultureCode-CSharp-Core-Do`1-Workload'></a>
+### Workload `property`
+
+##### Summary
+
+Function to perform
+
+<a name='M-AndcultureCode-CSharp-Core-Do`1-Catch``1-System-Action{``0,AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}-'></a>
+### Catch\`\`1(handler) `method`
+
+##### Summary
+
+If an exception is present and it is of the TException type, than the handler will be called
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| handler | [System.Action{\`\`0,AndcultureCode.CSharp.Core.Interfaces.IResult{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0,AndcultureCode.CSharp.Core.Interfaces.IResult{`0}}') | Action that handles the exception |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TException | Type of the handled exception |
 
 <a name='M-AndcultureCode-CSharp-Core-Do`1-Finally-Microsoft-Extensions-Logging-ILogger,System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}-'></a>
 ### Finally(logger,workload) `method`
@@ -911,6 +978,23 @@ Extension of 'Finally' that will automatically log any thrown exceptions
 | logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') | Logger to use when an unhandled exception is caught |
 | workload | [System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}}') |  |
 
+<a name='M-AndcultureCode-CSharp-Core-Do`1-Finally-System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}-'></a>
+### Finally(workload) `method`
+
+##### Summary
+
+Execute a workload to clean up after [Try](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| workload | [System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}}') |  |
+
 <a name='M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}-'></a>
 ### Try(logger,workload) `method`
 
@@ -927,6 +1011,23 @@ Extension of 'Try' that will automatically log any thrown exceptions
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | logger | [Microsoft.Extensions.Logging.ILogger](#T-Microsoft-Extensions-Logging-ILogger 'Microsoft.Extensions.Logging.ILogger') | Logger to use when an unhandled exception is caught |
+| workload | [System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{\`0},\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Do`1-Try-System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}-'></a>
+### Try(workload) `method`
+
+##### Summary
+
+Tries to run the given workload and returns the result or an exception
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | workload | [System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{\`0},\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0}') |  |
 
 <a name='M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-UInt32,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}-'></a>
@@ -4484,6 +4585,38 @@ Loads a given translation .json file and maps contents to CultureTranslation obj
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-AndcultureCode-CSharp-Core-Try'></a>
+## Try `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core
+
+##### Summary
+
+Static helper class to implement the Try/Catch pattern
+
+<a name='M-AndcultureCode-CSharp-Core-Try-Catch-System-Action-'></a>
+### Catch(action) `method`
+
+##### Summary
+
+Executes the given actions and returns whether or not it threw an exception.
+
+##### Returns
+
+`true` if action completed, `false` otherwise
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') |  |
+
+##### Remarks
+
+WARNING: it hides the thrown exception
 
 <a name='T-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils'></a>
 ## UriUtils `type`

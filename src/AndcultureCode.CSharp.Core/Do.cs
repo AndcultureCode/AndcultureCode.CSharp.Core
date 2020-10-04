@@ -9,21 +9,36 @@ namespace AndcultureCode.CSharp.Core
 {
     /// <summary>
     /// TODO: Backfill tests https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/15
+    /// Helper class to implement the Try/Catch pattern
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Do<T>
     {
         #region Properties
 
+        /// <summary>
+        /// The thrown exception (if it exists)
+        /// </summary>
         public Exception Exception { get; set; }
+
+        /// <summary>
+        /// The result of the <see cref="Try(ILogger,Func{IResult{T},T})"/> method
+        /// </summary>
         public IResult<T> Result { get; private set; }
+
+        /// <summary>
+        /// Function to perform
+        /// </summary>
         public Func<IResult<T>, T> Workload { get; }
 
         #endregion Properties
 
-
         #region Constructor
 
+        /// <summary>
+        /// Instantiates a <see cref="Do{T}"/> object to perform a given workload
+        /// </summary>
+        /// <param name="workload"></param>
         public Do(Func<IResult<T>, T> workload)
         {
             Result = new Result<T>();
@@ -32,18 +47,21 @@ namespace AndcultureCode.CSharp.Core
 
         #endregion Constructor
 
-
         #region Public Methods
 
+        /// <summary>
+        /// If an exception is present and it is of the TException type, than the handler will be called
+        /// </summary>
+        /// <typeparam name="TException">Type of the handled exception</typeparam>
+        /// <param name="handler">Action that handles the exception</param>
+        /// <returns></returns>
         public Do<T> Catch<TException>(Action<TException, IResult<T>> handler)
             where TException : Exception
         {
-
             if (Exception == null)
             {
                 return this;
             }
-
 
             if (Exception.GetType() == typeof(TException)
                 || typeof(TException) == typeof(Exception))
@@ -75,6 +93,11 @@ namespace AndcultureCode.CSharp.Core
             return this;
         }
 
+        /// <summary>
+        /// Execute a workload to clean up after <see cref="Try(ILogger,Func{IResult{T},T})"/>
+        /// </summary>
+        /// <param name="workload"></param>
+        /// <returns></returns>
         public Do<T> Finally(Action<IResult<T>> workload) => Finally(logger: null, workload: workload);
 
         /// <summary>
@@ -103,6 +126,11 @@ namespace AndcultureCode.CSharp.Core
             return d;
         }
 
+        /// <summary>
+        /// Tries to run the given workload and returns the result or an exception
+        /// </summary>
+        /// <param name="workload"></param>
+        /// <returns></returns>
         public static Do<T> Try(Func<IResult<T>, T> workload) => Try(logger: null, workload: workload);
 
         /// <summary>
