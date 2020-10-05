@@ -2,6 +2,10 @@ using System.Collections.Generic;
 
 namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
 {
+    /// <summary>
+    /// Interface of a full repository conductor for an entity of type <typeparamref name="T"/>
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepositoryConductor<T> : IConductor,
         IRepositoryCreateConductor<T>,
         IRepositoryDeleteConductor<T>,

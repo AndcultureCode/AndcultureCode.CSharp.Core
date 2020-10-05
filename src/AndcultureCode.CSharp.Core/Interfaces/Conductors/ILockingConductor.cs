@@ -3,6 +3,10 @@ using AndcultureCode.CSharp.Core.Interfaces.Entity;
 
 namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
 {
+    /// <summary>
+    /// Interface to handle locking and unlocking <see cref="ILockable"/> records
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface ILockingConductor<T>
        where T : class, ILockable, IEntity
     {

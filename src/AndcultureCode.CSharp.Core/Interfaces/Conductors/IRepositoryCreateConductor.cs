@@ -4,6 +4,10 @@ using AndcultureCode.CSharp.Core.Interfaces.Entity;
 
 namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
 {
+    /// <summary>
+    /// Interface of a generic repository with create operations
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepositoryCreateConductor<T>
         where T : class, IEntity
     {
@@ -18,7 +22,12 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
 
 
         #region Methods
-
+        /// <summary>
+        /// Bulk creates a list of items
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="createdById">Optional id of creator</param>
+        /// <returns></returns>
         IResult<List<T>> BulkCreate(IEnumerable<T> items, long? createdById = null);
 
         /// <summary>
@@ -28,12 +37,24 @@ namespace AndcultureCode.CSharp.Core.Interfaces.Conductors
         /// </summary>
         /// <param name="items">List of items to attempt to create</param>
         /// <param name="property">Property or properties of the typed object to determine distinctness</param>
-        /// <param name="createdById">Id of the user creating the entity</param>
+        /// <param name="createdById">Id of the user creating the item</param>
         /// <typeparam name="TKey"></typeparam>
         /// <returns></returns>
         IResult<List<T>> BulkCreateDistinct<TKey>(IEnumerable<T> items, Func<T, TKey> property, long? createdById = null);
 
+        /// <summary>
+        /// Creates an item
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="createdById">Id of the user creating the item</param>
+        /// <returns></returns>
         IResult<T>       Create(T item, long? createdById = null);
+        /// <summary>
+        /// Creates a list of items
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="createdById">Id of the user creating the item</param>
+        /// <returns></returns>
         IResult<List<T>> Create(IEnumerable<T> items, long? createdById = null);
 
         /// <summary>
