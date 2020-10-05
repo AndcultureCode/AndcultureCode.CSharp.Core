@@ -3,14 +3,49 @@
 
 ## Contents
 
+- [AccessRule](#T-AndcultureCode-CSharp-Core-Models-Security-AccessRule 'AndcultureCode.CSharp.Core.Models.Security.AccessRule')
+  - [#ctor(resource,verb,subject)](#M-AndcultureCode-CSharp-Core-Models-Security-AccessRule-#ctor-System-String,System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.#ctor(System.String,System.String,System.String)')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Permission 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Permission')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Resource 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Resource')
+  - [Subject](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Subject 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Subject')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Verb 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Verb')
+- [Acl](#T-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Permission 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Permission')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Resource 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Resource')
+  - [Subject](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Subject 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Subject')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Verb 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Verb')
+- [Allow](#T-AndcultureCode-CSharp-Core-Models-Security-Allow 'AndcultureCode.CSharp.Core.Models.Security.Allow')
+  - [#ctor(resource,verb,subject)](#M-AndcultureCode-CSharp-Core-Models-Security-Allow-#ctor-System-String,System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Security.Allow.#ctor(System.String,System.String,System.String)')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Security-Allow-Permission 'AndcultureCode.CSharp.Core.Models.Security.Allow.Permission')
 - [AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-#ctor 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.#ctor')
+  - [#ctor(stdoutEnabled,configurationFilePath)](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-#ctor-System-Boolean,System-String- 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.#ctor(System.Boolean,System.String)')
   - [CONFIGURATION_FILE_PATH](#F-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CONFIGURATION_FILE_PATH 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.CONFIGURATION_FILE_PATH')
   - [CachedConfiguration](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CachedConfiguration 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.CachedConfiguration')
+  - [ConfigurationFilePath](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-ConfigurationFilePath 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.ConfigurationFilePath')
+  - [StdoutEnabled](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-StdoutEnabled 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.StdoutEnabled')
+  - [Get(key)](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Get-System-String- 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.Get(System.String)')
+  - [Has(key)](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Has-System-String- 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.Has(System.String)')
   - [Load()](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Load 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.Load')
+  - [Read()](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Read 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.Read')
+- [AmazonEBConfigurationSource](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationSource 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationSource')
+  - [Build(builder)](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationSource-Build-Microsoft-Extensions-Configuration-IConfigurationBuilder- 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)')
 - [AndcultureCodeWebHost](#T-AndcultureCode-CSharp-Core-Utilities-Hosting-AndcultureCodeWebHost 'AndcultureCode.CSharp.Core.Utilities.Hosting.AndcultureCodeWebHost')
   - [Preload()](#M-AndcultureCode-CSharp-Core-Utilities-Hosting-AndcultureCodeWebHost-Preload-System-String[]- 'AndcultureCode.CSharp.Core.Utilities.Hosting.AndcultureCodeWebHost.Preload(System.String[])')
+- [AndcultureCodeWebHostBuilder](#T-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder 'AndcultureCode.CSharp.Core.Models.Hosting.AndcultureCodeWebHostBuilder')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-#ctor 'AndcultureCode.CSharp.Core.Models.Hosting.AndcultureCodeWebHostBuilder.#ctor')
+  - [#ctor(args)](#M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-#ctor-System-String[]- 'AndcultureCode.CSharp.Core.Models.Hosting.AndcultureCodeWebHostBuilder.#ctor(System.String[])')
+  - [Args](#P-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-Args 'AndcultureCode.CSharp.Core.Models.Hosting.AndcultureCodeWebHostBuilder.Args')
+  - [CreateDefaultBuilder()](#M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-CreateDefaultBuilder 'AndcultureCode.CSharp.Core.Models.Hosting.AndcultureCodeWebHostBuilder.CreateDefaultBuilder')
 - [ApplicationConstants](#T-AndcultureCode-CSharp-Core-Constants-ApplicationConstants 'AndcultureCode.CSharp.Core.Constants.ApplicationConstants')
   - [API_DATABASE_CONFIGURATION_KEY](#F-AndcultureCode-CSharp-Core-Constants-ApplicationConstants-API_DATABASE_CONFIGURATION_KEY 'AndcultureCode.CSharp.Core.Constants.ApplicationConstants.API_DATABASE_CONFIGURATION_KEY')
+- [Auditable](#T-AndcultureCode-CSharp-Core-Models-Auditable 'AndcultureCode.CSharp.Core.Models.Auditable')
+  - [CreatedById](#P-AndcultureCode-CSharp-Core-Models-Auditable-CreatedById 'AndcultureCode.CSharp.Core.Models.Auditable.CreatedById')
+  - [CreatedOn](#P-AndcultureCode-CSharp-Core-Models-Auditable-CreatedOn 'AndcultureCode.CSharp.Core.Models.Auditable.CreatedOn')
+  - [DeletedById](#P-AndcultureCode-CSharp-Core-Models-Auditable-DeletedById 'AndcultureCode.CSharp.Core.Models.Auditable.DeletedById')
+  - [DeletedOn](#P-AndcultureCode-CSharp-Core-Models-Auditable-DeletedOn 'AndcultureCode.CSharp.Core.Models.Auditable.DeletedOn')
+  - [UpdatedById](#P-AndcultureCode-CSharp-Core-Models-Auditable-UpdatedById 'AndcultureCode.CSharp.Core.Models.Auditable.UpdatedById')
+  - [UpdatedOn](#P-AndcultureCode-CSharp-Core-Models-Auditable-UpdatedOn 'AndcultureCode.CSharp.Core.Models.Auditable.UpdatedOn')
 - [BasicAuthenticationConfiguration](#T-AndcultureCode-CSharp-Core-Models-Configuration-BasicAuthenticationConfiguration 'AndcultureCode.CSharp.Core.Models.Configuration.BasicAuthenticationConfiguration')
   - [IsEnabled](#P-AndcultureCode-CSharp-Core-Models-Configuration-BasicAuthenticationConfiguration-IsEnabled 'AndcultureCode.CSharp.Core.Models.Configuration.BasicAuthenticationConfiguration.IsEnabled')
   - [Password](#P-AndcultureCode-CSharp-Core-Models-Configuration-BasicAuthenticationConfiguration-Password 'AndcultureCode.CSharp.Core.Models.Configuration.BasicAuthenticationConfiguration.Password')
@@ -44,13 +79,26 @@
   - [LoginPath](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-CookieAuthenticationConfiguration-LoginPath 'AndcultureCode.CSharp.Business.Core.Models.Configuration.CookieAuthenticationConfiguration.LoginPath')
 - [CoreConfiguration](#T-AndcultureCode-CSharp-Core-Constants-CoreConfiguration 'AndcultureCode.CSharp.Core.Constants.CoreConfiguration')
   - [SEEDS](#F-AndcultureCode-CSharp-Core-Constants-CoreConfiguration-SEEDS 'AndcultureCode.CSharp.Core.Constants.CoreConfiguration.SEEDS')
+- [Culture](#T-AndcultureCode-CSharp-Core-Models-Localization-Culture 'AndcultureCode.CSharp.Core.Models.Localization.Culture')
+  - [Code](#P-AndcultureCode-CSharp-Core-Models-Localization-Culture-Code 'AndcultureCode.CSharp.Core.Models.Localization.Culture.Code')
+  - [CultureTranslations](#P-AndcultureCode-CSharp-Core-Models-Localization-Culture-CultureTranslations 'AndcultureCode.CSharp.Core.Models.Localization.Culture.CultureTranslations')
+  - [IsDefault](#P-AndcultureCode-CSharp-Core-Models-Localization-Culture-IsDefault 'AndcultureCode.CSharp.Core.Models.Localization.Culture.IsDefault')
 - [CultureTranslation](#T-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation 'AndcultureCode.CSharp.Core.Models.Localization.CultureTranslation')
+  - [CultureCode](#P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-CultureCode 'AndcultureCode.CSharp.Core.Models.Localization.CultureTranslation.CultureCode')
   - [FilePath](#P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-FilePath 'AndcultureCode.CSharp.Core.Models.Localization.CultureTranslation.FilePath')
   - [Key](#P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-Key 'AndcultureCode.CSharp.Core.Models.Localization.CultureTranslation.Key')
   - [Value](#P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-Value 'AndcultureCode.CSharp.Core.Models.Localization.CultureTranslation.Value')
 - [DataConfiguration](#T-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration')
+  - [EXTRA_SHORT_STRING_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-EXTRA_SHORT_STRING_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.EXTRA_SHORT_STRING_LENGTH')
   - [IP_ADDRESS_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-IP_ADDRESS_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.IP_ADDRESS_LENGTH')
+  - [LONG_DESCRIPTION_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-LONG_DESCRIPTION_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.LONG_DESCRIPTION_LENGTH')
+  - [SHORT_DESCRIPTION_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_DESCRIPTION_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.SHORT_DESCRIPTION_LENGTH')
+  - [SHORT_STRING_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_STRING_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.SHORT_STRING_LENGTH')
+  - [SHORT_TITLE_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_TITLE_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.SHORT_TITLE_LENGTH')
   - [URL_LENGTH](#F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-URL_LENGTH 'AndcultureCode.CSharp.Core.Models.Configuration.DataConfiguration.URL_LENGTH')
+- [Deny](#T-AndcultureCode-CSharp-Core-Models-Security-Deny 'AndcultureCode.CSharp.Core.Models.Security.Deny')
+  - [#ctor(resource,verb,subject)](#M-AndcultureCode-CSharp-Core-Models-Security-Deny-#ctor-System-String,System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Security.Deny.#ctor(System.String,System.String,System.String)')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Security-Deny-Permission 'AndcultureCode.CSharp.Core.Models.Security.Deny.Permission')
 - [Do\`1](#T-AndcultureCode-CSharp-Core-Do`1 'AndcultureCode.CSharp.Core.Do`1')
   - [Finally(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Finally-Microsoft-Extensions-Logging-ILogger,System-Action{AndcultureCode-CSharp-Core-Interfaces-IResult{`0}}- 'AndcultureCode.CSharp.Core.Do`1.Finally(Microsoft.Extensions.Logging.ILogger,System.Action{AndcultureCode.CSharp.Core.Interfaces.IResult{`0}})')
   - [Try(logger,workload)](#M-AndcultureCode-CSharp-Core-Do`1-Try-Microsoft-Extensions-Logging-ILogger,System-Func{AndcultureCode-CSharp-Core-Interfaces-IResult{`0},`0}- 'AndcultureCode.CSharp.Core.Do`1.Try(Microsoft.Extensions.Logging.ILogger,System.Func{AndcultureCode.CSharp.Core.Interfaces.IResult{`0},`0})')
@@ -72,6 +120,11 @@
 - [EncryptionUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils')
   - [GenerateHash(value,salt,iterationCount,bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateHash-System-String,System-String,System-Int32,System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateHash(System.String,System.String,System.Int32,System.UInt16)')
   - [GenerateSalt(bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateSalt-System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateSalt(System.UInt16)')
+- [EnglishUnitedStates](#T-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates')
+  - [Code](#P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-Code 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates.Code')
+  - [IsDefault](#P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-IsDefault 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates.IsDefault')
+- [Entity](#T-AndcultureCode-CSharp-Core-Models-Entities-Entity 'AndcultureCode.CSharp.Core.Models.Entities.Entity')
+  - [Id](#P-AndcultureCode-CSharp-Core-Models-Entities-Entity-Id 'AndcultureCode.CSharp.Core.Models.Entities.Entity.Id')
 - [EnumerableExtensions](#T-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions')
   - [Join(list,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-IEnumerable{System-String},System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [Join(list,keyValueDelimiter,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-IEnumerable{System-Collections-Generic-KeyValuePair{System-String,System-String}},System-String,System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.String,System.String)')
@@ -79,6 +132,10 @@
   - [Join(pair,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-KeyValuePair{System-String,System-String},System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.KeyValuePair{System.String,System.String},System.String)')
 - [EnvironmentConstants](#T-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants')
   - [TESTING](#F-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants-TESTING 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants.TESTING')
+- [Error](#T-AndcultureCode-CSharp-Core-Models-Errors-Error 'AndcultureCode.CSharp.Core.Models.Errors.Error')
+  - [ErrorType](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-ErrorType 'AndcultureCode.CSharp.Core.Models.Errors.Error.ErrorType')
+  - [Key](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-Key 'AndcultureCode.CSharp.Core.Models.Errors.Error.Key')
+  - [Message](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-Message 'AndcultureCode.CSharp.Core.Models.Errors.Error.Message')
 - [ErrorConstants](#T-AndcultureCode-CSharp-Core-Constants-ErrorConstants 'AndcultureCode.CSharp.Core.Constants.ErrorConstants')
   - [ERROR_RESOURCE_NOT_FOUND_KEY](#F-AndcultureCode-CSharp-Core-Constants-ErrorConstants-ERROR_RESOURCE_NOT_FOUND_KEY 'AndcultureCode.CSharp.Core.Constants.ErrorConstants.ERROR_RESOURCE_NOT_FOUND_KEY')
 - [GuidUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-GuidUtils 'AndcultureCode.CSharp.Core.Utilities.Security.GuidUtils')
@@ -259,9 +316,19 @@
   - [#ctor(basePath)](#M-AndcultureCode-CSharp-Core-Providers-Configuration-LocalConfigurationProvider-#ctor-System-String- 'AndcultureCode.CSharp.Core.Providers.Configuration.LocalConfigurationProvider.#ctor(System.String)')
   - [GetConfiguration()](#M-AndcultureCode-CSharp-Core-Providers-Configuration-LocalConfigurationProvider-GetConfiguration 'AndcultureCode.CSharp.Core.Providers.Configuration.LocalConfigurationProvider.GetConfiguration')
 - [LocalizationUtils](#T-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils')
+  - [CultureInfos](#P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureInfos 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.CultureInfos')
   - [Cultures](#P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-Cultures 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.Cultures')
+  - [DefaultCulture](#P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCulture 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.DefaultCulture')
+  - [DefaultCultureCode](#P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCultureCode 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.DefaultCultureCode')
+  - [DefaultCultureInfo](#P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCultureInfo 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.DefaultCultureInfo')
+  - [CultureByCode(cultureCode)](#M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureByCode-System-String- 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.CultureByCode(System.String)')
+  - [CultureCodes(delimiter)](#M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureCodes-System-String- 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.CultureCodes(System.String)')
+  - [CultureExists(cultureCode)](#M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureExists-System-String- 'AndcultureCode.CSharp.Core.Utilities.Localization.LocalizationUtils.CultureExists(System.String)')
 - [Lockable](#T-AndcultureCode-CSharp-Core-Models-Lockable 'AndcultureCode.CSharp.Core.Models.Lockable')
   - [IsLocked](#P-AndcultureCode-CSharp-Core-Models-Lockable-IsLocked 'AndcultureCode.CSharp.Core.Models.Lockable.IsLocked')
+  - [LockedById](#P-AndcultureCode-CSharp-Core-Models-Lockable-LockedById 'AndcultureCode.CSharp.Core.Models.Lockable.LockedById')
+  - [LockedOn](#P-AndcultureCode-CSharp-Core-Models-Lockable-LockedOn 'AndcultureCode.CSharp.Core.Models.Lockable.LockedOn')
+  - [LockedUntil](#P-AndcultureCode-CSharp-Core-Models-Lockable-LockedUntil 'AndcultureCode.CSharp.Core.Models.Lockable.LockedUntil')
   - [DetermineIfLocked()](#M-AndcultureCode-CSharp-Core-Models-Lockable-DetermineIfLocked 'AndcultureCode.CSharp.Core.Models.Lockable.DetermineIfLocked')
 - [LogicalOperator](#T-AndcultureCode-CSharp-Core-Enumerations-LogicalOperator 'AndcultureCode.CSharp.Core.Enumerations.LogicalOperator')
 - [OAuthAccountConfiguration](#T-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration')
@@ -269,6 +336,28 @@
   - [ClientSecret](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-ClientSecret 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.ClientSecret')
   - [IsDisabled](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-IsDisabled 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.IsDisabled')
   - [IsEnabled](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-OAuthAccountConfiguration-IsEnabled 'AndcultureCode.CSharp.Business.Core.Models.Configuration.OAuthAccountConfiguration.IsEnabled')
+- [OrderedList\`2](#T-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.#ctor')
+  - [#ctor(comparer)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-#ctor-System-Collections-Generic-IComparer{`0}- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.#ctor(System.Collections.Generic.IComparer{`0})')
+  - [Count](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Count 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Count')
+  - [IsReadOnly](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-IsReadOnly 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.IsReadOnly')
+  - [Item](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Item-`0- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Item(`0)')
+  - [Keys](#P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Keys 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Keys')
+  - [Add(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Add-`0,`1- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Add(`0,`1)')
+  - [Clear()](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Clear 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Clear')
+  - [ContainsKey(key)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-ContainsKey-`0- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.ContainsKey(`0)')
+  - [GetEnumerator()](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-GetEnumerator 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.GetEnumerator')
+  - [Remove(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Remove-`0,`1- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.Remove(`0,`1)')
+  - [TryGetValue(key,value)](#M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-TryGetValue-`0,System-Collections-Generic-ICollection{`1}@- 'AndcultureCode.CSharp.Core.Models.Collections.OrderedList`2.TryGetValue(`0,System.Collections.Generic.ICollection{`1}@)')
+- [PagedResult\`1](#T-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1')
+  - [#ctor(rows,rowCount)](#M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-#ctor-`0,System-Int64- 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.#ctor(`0,System.Int64)')
+  - [#ctor(rows,rowCount,nextLinkParams)](#M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-#ctor-`0,System-Int64,System-Collections-Generic-Dictionary{System-String,System-String}- 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.#ctor(`0,System.Int64,System.Collections.Generic.Dictionary{System.String,System.String})')
+  - [ErrorCount](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-ErrorCount 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.ErrorCount')
+  - [Errors](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-Errors 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.Errors')
+  - [HasErrors](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-HasErrors 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.HasErrors')
+  - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.NextLinkParams')
+  - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.ResultObject')
+  - [RowCount](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-RowCount 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.RowCount')
 - [Provider](#T-AndcultureCode-CSharp-Core-Providers-Provider 'AndcultureCode.CSharp.Core.Providers.Provider')
   - [Implemented](#P-AndcultureCode-CSharp-Core-Providers-Provider-Implemented 'AndcultureCode.CSharp.Core.Providers.Provider.Implemented')
   - [Name](#P-AndcultureCode-CSharp-Core-Providers-Provider-Name 'AndcultureCode.CSharp.Core.Providers.Provider.Name')
@@ -277,6 +366,32 @@
   - [DEFAULT](#F-AndcultureCode-CSharp-Core-Constants-Queue-DEFAULT 'AndcultureCode.CSharp.Core.Constants.Queue.DEFAULT')
 - [Recurrence](#T-AndcultureCode-CSharp-Core-Enumerations-Recurrence 'AndcultureCode.CSharp.Core.Enumerations.Recurrence')
 - [RecurringOption](#T-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption')
+  - [Day](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Day 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Day')
+  - [DayOfWeek](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-DayOfWeek 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.DayOfWeek')
+  - [Hour](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Hour 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Hour')
+  - [Minute](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Minute 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Minute')
+  - [Month](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Month 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Month')
+  - [Recurrence](#P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Recurrence 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption.Recurrence')
+- [ResourceVerb](#T-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb')
+  - [#ctor(resource,verb)](#M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-#ctor-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.#ctor(System.String,System.String)')
+  - [#ctor(resourceVerb)](#M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-#ctor-System-String- 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.#ctor(System.String)')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Resource')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Verb')
+  - [ToString()](#M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-ToString 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.ToString')
+- [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Errors-Result`1 'AndcultureCode.CSharp.Core.Models.Errors.Result`1')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor')
+  - [#ctor(errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String)')
+  - [#ctor(errorKey,errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String,System.String)')
+  - [#ctor(resultObject)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-`0- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(`0)')
+  - [ErrorCount](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ErrorCount 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ErrorCount')
+  - [Errors](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Errors 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.Errors')
+  - [HasErrors](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-HasErrors 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.HasErrors')
+  - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.NextLinkParams')
+  - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ResultObject')
+- [ReverseComparer\`1](#T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor')
+  - [#ctor(comparer)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})')
+  - [Compare(x,y)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-Compare-`0,`0- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.Compare(`0,`0)')
 - [Rfc4646LanguageCodes](#T-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes')
   - [AF_ZA](#F-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes-AF_ZA 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes.AF_ZA')
   - [AR_AE](#F-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes-AR_AE 'AndcultureCode.CSharp.Core.Constants.Rfc4646LanguageCodes.AR_AE')
@@ -432,6 +547,8 @@
   - [Log\`\`1(message)](#M-AndcultureCode-CSharp-Core-SeedsBase`1-Log``1-System-String- 'AndcultureCode.CSharp.Core.SeedsBase`1.Log``1(System.String)')
 - [SeedsConfiguration](#T-AndcultureCode-CSharp-Business-Core-Models-Configuration-SeedsConfiguration 'AndcultureCode.CSharp.Business.Core.Models.Configuration.SeedsConfiguration')
   - [DefaultUserPassword](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-SeedsConfiguration-DefaultUserPassword 'AndcultureCode.CSharp.Business.Core.Models.Configuration.SeedsConfiguration.DefaultUserPassword')
+- [SpanishSpain](#T-AndcultureCode-CSharp-Core-Cultures-SpanishSpain 'AndcultureCode.CSharp.Core.Cultures.SpanishSpain')
+  - [Code](#P-AndcultureCode-CSharp-Core-Cultures-SpanishSpain-Code 'AndcultureCode.CSharp.Core.Cultures.SpanishSpain.Code')
 - [StringExtensions](#T-AndcultureCode-CSharp-Core-Extensions-StringExtensions 'AndcultureCode.CSharp.Core.Extensions.StringExtensions')
   - [LoadTranslations()](#M-AndcultureCode-CSharp-Core-Extensions-StringExtensions-LoadTranslations-System-String,System-String,Newtonsoft-Json-JsonSerializerSettings- 'AndcultureCode.CSharp.Core.Extensions.StringExtensions.LoadTranslations(System.String,System.String,Newtonsoft.Json.JsonSerializerSettings)')
 - [UriUtils](#T-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils 'AndcultureCode.CSharp.Core.Utilities.Network.UriUtils')
@@ -445,6 +562,146 @@
 - [UserMetadataTypes](#T-AndcultureCode-CSharp-Core-Constants-UserMetadataTypes 'AndcultureCode.CSharp.Core.Constants.UserMetadataTypes')
   - [ExternalUserId](#F-AndcultureCode-CSharp-Core-Constants-UserMetadataTypes-ExternalUserId 'AndcultureCode.CSharp.Core.Constants.UserMetadataTypes.ExternalUserId')
 - [WorkerProvider](#T-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider')
+  - [Delete(id)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Delete-System-String- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Delete(System.String)')
+  - [DeletedCount()](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-DeletedCount 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.DeletedCount')
+  - [Enqueue(methodCall)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Enqueue-System-Linq-Expressions-Expression{System-Action}- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Enqueue(System.Linq.Expressions.Expression{System.Action})')
+  - [Enqueue\`\`1(methodCall)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Enqueue``1-System-Linq-Expressions-Expression{System-Action{``0}}- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Enqueue``1(System.Linq.Expressions.Expression{System.Action{``0}})')
+  - [EnqueuedCount(queue)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-EnqueuedCount-System-String- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.EnqueuedCount(System.String)')
+  - [Recur(id,methodCall,recurringOptions)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur-System-String,System-Linq-Expressions-Expression{System-Action},AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Recur(System.String,System.Linq.Expressions.Expression{System.Action},AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption)')
+  - [Recur\`\`1(id,methodCall,chronExpression)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur``1-System-String,System-Linq-Expressions-Expression{System-Action{``0}},System-String- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Recur``1(System.String,System.Linq.Expressions.Expression{System.Action{``0}},System.String)')
+  - [Recur\`\`1(id,methodCall,recurringOptions)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur``1-System-String,System-Linq-Expressions-Expression{System-Action{``0}},AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Recur``1(System.String,System.Linq.Expressions.Expression{System.Action{``0}},AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption)')
+  - [RecurringCount()](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-RecurringCount 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.RecurringCount')
+  - [RemoveRecurrence(id)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-RemoveRecurrence-System-String- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.RemoveRecurrence(System.String)')
+  - [Schedule(methodCall,enqueueOn)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule-System-Linq-Expressions-Expression{System-Action},System-DateTimeOffset- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Schedule(System.Linq.Expressions.Expression{System.Action},System.DateTimeOffset)')
+  - [Schedule(methodCall,delay)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule-System-Linq-Expressions-Expression{System-Action},System-TimeSpan- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Schedule(System.Linq.Expressions.Expression{System.Action},System.TimeSpan)')
+  - [Schedule\`\`1(methodCall,enqueueOn)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-DateTimeOffset- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Schedule``1(System.Linq.Expressions.Expression{System.Action{``0}},System.DateTimeOffset)')
+  - [Schedule\`\`1(methodCall,delay)](#M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-TimeSpan- 'AndcultureCode.CSharp.Core.Providers.Worker.WorkerProvider.Schedule``1(System.Linq.Expressions.Expression{System.Action{``0}},System.TimeSpan)')
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Security-AccessRule'></a>
+## AccessRule `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Security
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-AccessRule-#ctor-System-String,System-String,System-String-'></a>
+### #ctor(resource,verb,subject) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resource | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| verb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Subject'></a>
+### Subject `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl'></a>
+## Acl `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Entities.Acls
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Subject'></a>
+### Subject `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Security-Allow'></a>
+## Allow `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Security
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-Allow-#ctor-System-String,System-String,System-String-'></a>
+### #ctor(resource,verb,subject) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resource | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| verb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-Allow-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 <a name='T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider'></a>
 ## AmazonEBConfigurationProvider `type`
@@ -460,6 +717,31 @@ Adds support to read environment variables from an Amazon Elastic Beanstalk EC2 
  At this time AWS stores these environment variables in its own proprietary configuration
  that we are forced to read and pipe to the application.
 
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Initializes a new instance of the [AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider') class with default values for [ConfigurationFilePath](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-ConfigurationFilePath 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.ConfigurationFilePath') and [StdoutEnabled](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-StdoutEnabled 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.StdoutEnabled')
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-#ctor-System-Boolean,System-String-'></a>
+### #ctor(stdoutEnabled,configurationFilePath) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider') class with optional values for [ConfigurationFilePath](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-ConfigurationFilePath 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.ConfigurationFilePath') and [StdoutEnabled](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-StdoutEnabled 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.StdoutEnabled')
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| stdoutEnabled | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Enables logging to standard output |
+| configurationFilePath | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Path to configuration file, if not provided the value of [CONFIGURATION_FILE_PATH](#F-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CONFIGURATION_FILE_PATH 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.CONFIGURATION_FILE_PATH') will be used |
+
 <a name='F-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-CONFIGURATION_FILE_PATH'></a>
 ### CONFIGURATION_FILE_PATH `constants`
 
@@ -474,6 +756,54 @@ Absolute path to the AWS Elastic Beanstalk windows instance configuration file
 
 Must be static to cache initially loaded configuration across multiple requests
 
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-ConfigurationFilePath'></a>
+### ConfigurationFilePath `property`
+
+##### Summary
+
+Path for the AWS Elastic Beanstalk configuration file
+
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-StdoutEnabled'></a>
+### StdoutEnabled `property`
+
+##### Summary
+
+Determines if logging to standard output should be enabled
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Get-System-String-'></a>
+### Get(key) `method`
+
+##### Summary
+
+Gets the value of an environment variable by the given `key`
+
+##### Returns
+
+The environment variable or `null` if the key isn't present
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string identifying the requested variable |
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Has-System-String-'></a>
+### Has(key) `method`
+
+##### Summary
+
+Checks if an environment variable by the given `key` is present in the configuration
+
+##### Returns
+
+`true` if the variable exists `false` otherwise
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string identifying the requested variable |
+
 <a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Load'></a>
 ### Load() `method`
 
@@ -485,12 +815,65 @@ Load the configuration into the inherited 'Data' dictionary for use by Configura
 
 This method has no parameters.
 
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-Read'></a>
+### Read() `method`
+
+##### Summary
+
+Reads the configuration from the [ConfigurationFilePath](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider-ConfigurationFilePath 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider.ConfigurationFilePath') and returns it as an IDictionary
+
+##### Returns
+
+A dictionary of key/values for all the environment variables in the configuration
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+If the configuration file doesn't exist it returns an empty dictionary
+
+The return value might be cached
+
+<a name='T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationSource'></a>
+## AmazonEBConfigurationSource `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Utilities.Configuration
+
+##### Summary
+
+Class used to create a [IConfigurationProvider](#T-Microsoft-Extensions-Configuration-IConfigurationProvider 'Microsoft.Extensions.Configuration.IConfigurationProvider') that reads Amazon Elastic Beanstalk instance environment variables
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationSource-Build-Microsoft-Extensions-Configuration-IConfigurationBuilder-'></a>
+### Build(builder) `method`
+
+##### Summary
+
+Builds a [IConfigurationProvider](#T-Microsoft-Extensions-Configuration-IConfigurationProvider 'Microsoft.Extensions.Configuration.IConfigurationProvider') that reads Amazon Elastic Beanstalk instance environment variables
+
+##### Returns
+
+A new [AmazonEBConfigurationProvider](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-AmazonEBConfigurationProvider 'AndcultureCode.CSharp.Core.Utilities.Configuration.AmazonEBConfigurationProvider') with default values
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| builder | [Microsoft.Extensions.Configuration.IConfigurationBuilder](#T-Microsoft-Extensions-Configuration-IConfigurationBuilder 'Microsoft.Extensions.Configuration.IConfigurationBuilder') |  |
+
 <a name='T-AndcultureCode-CSharp-Core-Utilities-Hosting-AndcultureCodeWebHost'></a>
 ## AndcultureCodeWebHost `type`
 
 ##### Namespace
 
 AndcultureCode.CSharp.Core.Utilities.Hosting
+
+##### Summary
+
+Static class related to our custom [WebHost](#T-Microsoft-AspNetCore-WebHost 'Microsoft.AspNetCore.WebHost') builder pattern
 
 <a name='M-AndcultureCode-CSharp-Core-Utilities-Hosting-AndcultureCodeWebHost-Preload-System-String[]-'></a>
 ### Preload() `method`
@@ -499,6 +882,64 @@ AndcultureCode.CSharp.Core.Utilities.Hosting
 
 Entry point to our custom WebHost builder pattern.
 From here extensions methods can but hung off of IAndcultureCodeWebHostBuilder
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder'></a>
+## AndcultureCodeWebHostBuilder `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Hosting
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-#ctor-System-String[]-'></a>
+### #ctor(args) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| args | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-Args'></a>
+### Args `property`
+
+##### Summary
+
+The command line args to dotnet process. Ultimately piped to AspNetCore WebHost.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Hosting-AndcultureCodeWebHostBuilder-CreateDefaultBuilder'></a>
+### CreateDefaultBuilder() `method`
+
+##### Summary
+
+Simple wrapper around AspNetCore WebHost.CreateDefaultBuilder
+to support our own extensibility model
 
 ##### Returns
 
@@ -526,6 +967,59 @@ Common application constants
 
 Key name used to identify the API web application's primary
 database in the 'ConnectionStrings' section
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Auditable'></a>
+## Auditable `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-CreatedById'></a>
+### CreatedById `property`
+
+##### Summary
+
+The identifier of the user who created the record
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-CreatedOn'></a>
+### CreatedOn `property`
+
+##### Summary
+
+The date and time of the record creation
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-DeletedById'></a>
+### DeletedById `property`
+
+##### Summary
+
+The identifier of the user who performed the Delete
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-DeletedOn'></a>
+### DeletedOn `property`
+
+##### Summary
+
+The date and time of the record deletion
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-UpdatedById'></a>
+### UpdatedById `property`
+
+##### Summary
+
+The identifier of the user who performed the Update
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Auditable-UpdatedOn'></a>
+### UpdatedOn `property`
+
+##### Summary
+
+The date and time of the record update
 
 <a name='T-AndcultureCode-CSharp-Core-Models-Configuration-BasicAuthenticationConfiguration'></a>
 ## BasicAuthenticationConfiguration `type`
@@ -837,6 +1331,44 @@ Identifiers used for IConfigurationRoot configured sections and values
 
 General data seeding section
 
+<a name='T-AndcultureCode-CSharp-Core-Models-Localization-Culture'></a>
+## Culture `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Localization
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Localization-Culture-Code'></a>
+### Code `property`
+
+##### Summary
+
+RFC-4646 5-character Culture code (xx-XX)
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Localization-Culture-CultureTranslations'></a>
+### CultureTranslations `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Localization-Culture-IsDefault'></a>
+### IsDefault `property`
+
+##### Summary
+
+Is this the default locale in the application? There can only be one
+
 <a name='T-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation'></a>
 ## CultureTranslation `type`
 
@@ -849,6 +1381,13 @@ AndcultureCode.CSharp.Core.Models.Localization
 Translation of a specific term/key for the related culture.
 
  Keys are in the language of the default culture. (Hopefully the language of this code base :)
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-CultureCode'></a>
+### CultureCode `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 <a name='P-AndcultureCode-CSharp-Core-Models-Localization-CultureTranslation-FilePath'></a>
 ### FilePath `property`
@@ -882,6 +1421,13 @@ AndcultureCode.CSharp.Core.Models.Configuration
 
 Commonly used string lengths for various types of data
 
+<a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-EXTRA_SHORT_STRING_LENGTH'></a>
+### EXTRA_SHORT_STRING_LENGTH `constants`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
 <a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-IP_ADDRESS_LENGTH'></a>
 ### IP_ADDRESS_LENGTH `constants`
 
@@ -890,12 +1436,73 @@ Commonly used string lengths for various types of data
 Maximum storage length for IP address columns.
 IPv4 is 15 characters and IPv6 is 39 characters
 
+<a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-LONG_DESCRIPTION_LENGTH'></a>
+### LONG_DESCRIPTION_LENGTH `constants`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_DESCRIPTION_LENGTH'></a>
+### SHORT_DESCRIPTION_LENGTH `constants`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_STRING_LENGTH'></a>
+### SHORT_STRING_LENGTH `constants`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-SHORT_TITLE_LENGTH'></a>
+### SHORT_TITLE_LENGTH `constants`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
 <a name='F-AndcultureCode-CSharp-Core-Models-Configuration-DataConfiguration-URL_LENGTH'></a>
 ### URL_LENGTH `constants`
 
 ##### Summary
 
 IE has a max of 2083
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Security-Deny'></a>
+## Deny `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Security
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-Deny-#ctor-System-String,System-String,System-String-'></a>
+### #ctor(resource,verb,subject) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resource | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| verb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| subject | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-Deny-Permission'></a>
+### Permission `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 <a name='T-AndcultureCode-CSharp-Core-Do`1'></a>
 ## Do\`1 `type`
@@ -1179,6 +1786,49 @@ Base 64 encoded string of the salt
 | ---- | ---- | ----------- |
 | bits | [System.UInt16](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt16 'System.UInt16') | Size of the salt to generate in bits (must be a multiple of 8) |
 
+<a name='T-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates'></a>
+## EnglishUnitedStates `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Cultures
+
+##### Summary
+
+Localization Culture for United States English (en-US)
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-Code'></a>
+### Code `property`
+
+##### Summary
+
+*Inherit from parent.*
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-IsDefault'></a>
+### IsDefault `property`
+
+##### Summary
+
+*Inherit from parent.*
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Entity'></a>
+## Entity `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Entities
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Entity-Id'></a>
+### Id `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
 <a name='T-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions'></a>
 ## EnumerableExtensions `type`
 
@@ -1276,6 +1926,38 @@ Common environment related values
 ##### Summary
 
 Testing environment identifier
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-Error'></a>
+## Error `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Errors
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-ErrorType'></a>
+### ErrorType `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-Key'></a>
+### Key `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-Message'></a>
+### Message `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 <a name='T-AndcultureCode-CSharp-Core-Constants-ErrorConstants'></a>
 ## ErrorConstants `type`
@@ -3598,12 +4280,95 @@ This method has no parameters.
 
 AndcultureCode.CSharp.Core.Utilities.Localization
 
+##### Summary
+
+Static class with helper functions related to localization
+
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureInfos'></a>
+### CultureInfos `property`
+
+##### Summary
+
+List of supported CultureInfo
+
 <a name='P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-Cultures'></a>
 ### Cultures `property`
 
 ##### Summary
 
 Current cultures supported by the application
+
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCulture'></a>
+### DefaultCulture `property`
+
+##### Summary
+
+Default culture for the application
+
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCultureCode'></a>
+### DefaultCultureCode `property`
+
+##### Summary
+
+Code of the default culture for the application
+
+<a name='P-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-DefaultCultureInfo'></a>
+### DefaultCultureInfo `property`
+
+##### Summary
+
+CultureInfo of the default culture fore the application
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureByCode-System-String-'></a>
+### CultureByCode(cultureCode) `method`
+
+##### Summary
+
+Retrieves the [ICulture](#T-AndcultureCode-CSharp-Core-Interfaces-ICulture 'AndcultureCode.CSharp.Core.Interfaces.ICulture') from the supported Cultures by `cultureCode`
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| cultureCode | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureCodes-System-String-'></a>
+### CultureCodes(delimiter) `method`
+
+##### Summary
+
+Retrieves the codes of the current cultures supported by the application
+
+##### Returns
+
+A concatenated string delimited by `delimiter`
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Utilities-Localization-LocalizationUtils-CultureExists-System-String-'></a>
+### CultureExists(cultureCode) `method`
+
+##### Summary
+
+Checks if a culture by the given `cultureCode` is supported by the application
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| cultureCode | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string identifying the requested culture |
 
 <a name='T-AndcultureCode-CSharp-Core-Models-Lockable'></a>
 ## Lockable `type`
@@ -3612,12 +4377,37 @@ Current cultures supported by the application
 
 AndcultureCode.CSharp.Core.Models
 
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
 <a name='P-AndcultureCode-CSharp-Core-Models-Lockable-IsLocked'></a>
 ### IsLocked `property`
 
 ##### Summary
 
 Calculated field based on if LockedUntil (when not null) is in the past or future.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Lockable-LockedById'></a>
+### LockedById `property`
+
+##### Summary
+
+The identifier of the user who locked the record
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Lockable-LockedOn'></a>
+### LockedOn `property`
+
+##### Summary
+
+The date and time of when the record was locked
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Lockable-LockedUntil'></a>
+### LockedUntil `property`
+
+##### Summary
+
+The date and time for when the record will stop being locked
 
 <a name='M-AndcultureCode-CSharp-Core-Models-Lockable-DetermineIfLocked'></a>
 ### DetermineIfLocked() `method`
@@ -3684,6 +4474,259 @@ Is this integration disabled?
 ##### Summary
 
 Is this integration enabled?
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2'></a>
+## OrderedList\`2 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Collections
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TKey |  |
+| TValue |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-#ctor-System-Collections-Generic-IComparer{`0}-'></a>
+### #ctor(comparer) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| comparer | [System.Collections.Generic.IComparer{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IComparer 'System.Collections.Generic.IComparer{`0}') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Count'></a>
+### Count `property`
+
+##### Summary
+
+Returns a count of items in the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1').
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-IsReadOnly'></a>
+### IsReadOnly `property`
+
+##### Summary
+
+Returns a value indicating if the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') is read-only.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Item-`0-'></a>
+### Item `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Keys'></a>
+### Keys `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Add-`0,`1-'></a>
+### Add(key,value) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [\`1](#T-`1 '`1') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Clear'></a>
+### Clear() `method`
+
+##### Summary
+
+Removes all items from the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1').
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-ContainsKey-`0-'></a>
+### ContainsKey(key) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-GetEnumerator'></a>
+### GetEnumerator() `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-Remove-`0,`1-'></a>
+### Remove(key,value) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [\`1](#T-`1 '`1') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-OrderedList`2-TryGetValue-`0,System-Collections-Generic-ICollection{`1}@-'></a>
+### TryGetValue(key,value) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [\`0](#T-`0 '`0') |  |
+| value | [System.Collections.Generic.ICollection{\`1}@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{`1}@') |  |
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1'></a>
+## PagedResult\`1 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Errors
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-#ctor-`0,System-Int64-'></a>
+### #ctor(rows,rowCount) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rows | [\`0](#T-`0 '`0') |  |
+| rowCount | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-#ctor-`0,System-Int64,System-Collections-Generic-Dictionary{System-String,System-String}-'></a>
+### #ctor(rows,rowCount,nextLinkParams) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rows | [\`0](#T-`0 '`0') |  |
+| rowCount | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') |  |
+| nextLinkParams | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-ErrorCount'></a>
+### ErrorCount `property`
+
+##### Summary
+
+Gets the number of errors, if there are any; otherwise, returns 0.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-Errors'></a>
+### Errors `property`
+
+##### Summary
+
+List of errors around a request
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-HasErrors'></a>
+### HasErrors `property`
+
+##### Summary
+
+Returns whether or not this result has any errors
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-NextLinkParams'></a>
+### NextLinkParams `property`
+
+##### Summary
+
+List of key value pairs to be used request the very next related Result
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-ResultObject'></a>
+### ResultObject `property`
+
+##### Summary
+
+Actual resulting value from the request
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-RowCount'></a>
+### RowCount `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 <a name='T-AndcultureCode-CSharp-Core-Providers-Provider'></a>
 ## Provider `type`
@@ -3756,7 +4799,284 @@ AndcultureCode.CSharp.Core.Models.Entities.Worker
 
 ##### Summary
 
-Recurrance configuration for a given worker
+Recurrence configuration for a given worker
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Day'></a>
+### Day `property`
+
+##### Summary
+
+Integer representation of the day
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-DayOfWeek'></a>
+### DayOfWeek `property`
+
+##### Summary
+
+Specifies the day of the week
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Hour'></a>
+### Hour `property`
+
+##### Summary
+
+Integer representation of the hour
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Minute'></a>
+### Minute `property`
+
+##### Summary
+
+Integer representation of the minute
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Month'></a>
+### Month `property`
+
+##### Summary
+
+Integer representation of the month
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-Recurrence'></a>
+### Recurrence `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb'></a>
+## ResourceVerb `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Security
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-#ctor-System-String,System-String-'></a>
+### #ctor(resource,verb) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resource | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| verb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-#ctor-System-String-'></a>
+### #ctor(resourceVerb) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resourceVerb | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource'></a>
+### Resource `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb'></a>
+### Verb `property`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-ToString'></a>
+### ToString() `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-Result`1'></a>
+## Result\`1 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Errors
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String-'></a>
+### #ctor(errorMessage) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String-'></a>
+### #ctor(errorKey,errorMessage) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-`0-'></a>
+### #ctor(resultObject) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| resultObject | [\`0](#T-`0 '`0') |  |
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ErrorCount'></a>
+### ErrorCount `property`
+
+##### Summary
+
+Gets the number of errors, if there are any; otherwise, returns 0.
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Errors'></a>
+### Errors `property`
+
+##### Summary
+
+List of errors around a request
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-HasErrors'></a>
+### HasErrors `property`
+
+##### Summary
+
+Returns whether or not this result has any error
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-NextLinkParams'></a>
+### NextLinkParams `property`
+
+##### Summary
+
+List of key value pairs to be used request the very next related Result
+
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ResultObject'></a>
+### ResultObject `property`
+
+##### Summary
+
+Actual resulting value from the request
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1'></a>
+## ReverseComparer\`1 `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Collections
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TKey |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}-'></a>
+### #ctor(comparer) `constructor`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| comparer | [System.Collections.Generic.IComparer{\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IComparer 'System.Collections.Generic.IComparer{`0}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-Compare-`0,`0-'></a>
+### Compare(x,y) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [\`0](#T-`0 '`0') |  |
+| y | [\`0](#T-`0 '`0') |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Constants-Rfc4646LanguageCodes'></a>
 ## Rfc4646LanguageCodes `type`
@@ -4930,6 +6250,24 @@ Configuration values around data seeding
 
 Password to use when new development/test users are seeded
 
+<a name='T-AndcultureCode-CSharp-Core-Cultures-SpanishSpain'></a>
+## SpanishSpain `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Cultures
+
+##### Summary
+
+Localization Culture for Spanish - Spain (es-US)
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-SpanishSpain-Code'></a>
+### Code `property`
+
+##### Summary
+
+*Inherit from parent.*
+
 <a name='T-AndcultureCode-CSharp-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`
 
@@ -5060,3 +6398,261 @@ AndcultureCode.CSharp.Core.Providers.Worker
 ##### Summary
 
 Base class for implementing common worker functionality
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Delete-System-String-'></a>
+### Delete(id) `method`
+
+##### Summary
+
+Deletes a job by its identifier
+
+##### Returns
+
+success status
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | job identifier |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-DeletedCount'></a>
+### DeletedCount() `method`
+
+##### Summary
+
+Count of deleted jobs
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Enqueue-System-Linq-Expressions-Expression{System-Action}-'></a>
+### Enqueue(methodCall) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action}') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Enqueue``1-System-Linq-Expressions-Expression{System-Action{``0}}-'></a>
+### Enqueue\`\`1(methodCall) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-EnqueuedCount-System-String-'></a>
+### EnqueuedCount(queue) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| queue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur-System-String,System-Linq-Expressions-Expression{System-Action},AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-'></a>
+### Recur(id,methodCall,recurringOptions) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| methodCall | [System.Linq.Expressions.Expression{System.Action}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action}') |  |
+| recurringOptions | [AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption](#T-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur``1-System-String,System-Linq-Expressions-Expression{System-Action{``0}},System-String-'></a>
+### Recur\`\`1(id,methodCall,chronExpression) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
+| chronExpression | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Recur``1-System-String,System-Linq-Expressions-Expression{System-Action{``0}},AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption-'></a>
+### Recur\`\`1(id,methodCall,recurringOptions) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
+| recurringOptions | [AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption](#T-AndcultureCode-CSharp-Core-Models-Entities-Worker-RecurringOption 'AndcultureCode.CSharp.Core.Models.Entities.Worker.RecurringOption') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-RecurringCount'></a>
+### RecurringCount() `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-RemoveRecurrence-System-String-'></a>
+### RemoveRecurrence(id) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| id | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule-System-Linq-Expressions-Expression{System-Action},System-DateTimeOffset-'></a>
+### Schedule(methodCall,enqueueOn) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action}') |  |
+| enqueueOn | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule-System-Linq-Expressions-Expression{System-Action},System-TimeSpan-'></a>
+### Schedule(methodCall,delay) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action}') |  |
+| delay | [System.TimeSpan](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.TimeSpan 'System.TimeSpan') |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-DateTimeOffset-'></a>
+### Schedule\`\`1(methodCall,enqueueOn) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
+| enqueueOn | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='M-AndcultureCode-CSharp-Core-Providers-Worker-WorkerProvider-Schedule``1-System-Linq-Expressions-Expression{System-Action{``0}},System-TimeSpan-'></a>
+### Schedule\`\`1(methodCall,delay) `method`
+
+##### Summary
+
+TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/39
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| methodCall | [System.Linq.Expressions.Expression{System.Action{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Linq.Expressions.Expression 'System.Linq.Expressions.Expression{System.Action{``0}}') |  |
+| delay | [System.TimeSpan](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.TimeSpan 'System.TimeSpan') |  |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AndcultureCode.CSharp.Testing" Version="0.3.1" />
+    <PackageReference Include="AndcultureCode.CSharp.Testing" Version="0.4.0" />
     <PackageReference Include="coverlet.msbuild" Version="2.6.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AndcultureCode.CSharp.Core\AndcultureCode.CSharp.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include=".\xunit.runner.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -29,6 +25,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="dotnet-reportgenerator-cli" Version="4.2.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AndcultureCode.CSharp.Core\AndcultureCode.CSharp.Core.csproj" />
   </ItemGroup>
 
 </Project>

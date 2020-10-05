@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "Key":"ERROR_RESOURCE_NOT_FOUND",
+        "Value": "The resource or related resource {0} that was requested was not found."
+    }
+]

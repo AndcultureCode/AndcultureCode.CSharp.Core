@@ -8,6 +8,9 @@ using AndcultureCode.CSharp.Core.Interfaces;
 
 namespace AndcultureCode.CSharp.Core.Utilities.Localization
 {
+    /// <summary>
+    /// Static class with helper functions related to localization
+    /// </summary>
     public static class LocalizationUtils
     {
         #region Private Properties
@@ -56,13 +59,24 @@ namespace AndcultureCode.CSharp.Core.Utilities.Localization
                 return _cultures;
             }
         }
+        /// <summary>
+        /// List of supported CultureInfo
+        /// </summary>
+        public static List<CultureInfo> CultureInfos { get => Cultures?.ToCultureInfos(); } 
 
-        public static List<CultureInfo> CultureInfos { get => Cultures?.ToCultureInfos(); }
-
+        /// <summary>
+        /// Default culture for the application
+        /// </summary>
         public static ICulture DefaultCulture { get => Cultures?.Default(); }
 
+        /// <summary>
+        /// Code of the default culture for the application
+        /// </summary>
         public static string DefaultCultureCode { get => DefaultCulture?.Code; }
 
+        /// <summary>
+        /// CultureInfo of the default culture fore the application
+        /// </summary>
         public static CultureInfo DefaultCultureInfo { get => DefaultCulture?.ToCultureInfo(); }
 
         #endregion Public Properties
@@ -70,6 +84,11 @@ namespace AndcultureCode.CSharp.Core.Utilities.Localization
 
         #region Public Methods
 
+        /// <summary>
+        /// Retrieves the <see cref="ICulture"/> from the supported Cultures by <paramref name="cultureCode"/>
+        /// </summary>
+        /// <param name="cultureCode"></param>
+        /// <returns></returns>
         public static ICulture CultureByCode(string cultureCode)
         {
             if (cultureCode == CultureInfo.InvariantCulture.Name)
@@ -80,9 +99,19 @@ namespace AndcultureCode.CSharp.Core.Utilities.Localization
             return Cultures.FirstOrDefault(e => e.Code.ToLower() == cultureCode.ToLower());
         }
 
+        /// <summary>
+        /// Retrieves the codes of the current cultures supported by the application
+        /// </summary>
+        /// <param name="delimiter"></param>
+        /// <returns>A concatenated string delimited by <paramref name="delimiter"/></returns>
         public static string CultureCodes(string delimiter = ", ")
             => Cultures.ToCultureCodes(delimiter);
 
+        /// <summary>
+        /// Checks if a culture by the given <paramref name="cultureCode"/> is supported by the application
+        /// </summary>
+        /// <param name="cultureCode">The string identifying the requested culture</param>
+        /// <returns></returns>
         public static bool CultureExists(string cultureCode) => Cultures.Exists(cultureCode);
 
         #endregion Public Methods

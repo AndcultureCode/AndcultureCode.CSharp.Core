@@ -13,10 +13,29 @@ namespace AndcultureCode.CSharp.Core.Models.Configuration
         /// </summary>
         public const int IP_ADDRESS_LENGTH = 39;
 
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public const int EXTRA_SHORT_STRING_LENGTH = 100;
+
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public const int LONG_DESCRIPTION_LENGTH = 1000;
+
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public const int SHORT_DESCRIPTION_LENGTH = 500;
+
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public const int SHORT_STRING_LENGTH = 150;
+
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public const int SHORT_TITLE_LENGTH = 60;
 
         /// <summary>

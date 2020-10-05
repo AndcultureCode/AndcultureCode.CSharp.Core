@@ -1,1 +1,6 @@
-[]
+[
+    {
+        "Key":"ERROR_RESOURCE_NOT_FOUND",
+        "Value": "No se encontró el recurso o recurso relacionado {0} que se solicitó."
+    }
+]

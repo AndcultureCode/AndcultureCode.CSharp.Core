@@ -3,14 +3,28 @@ using AndcultureCode.CSharp.Core.Interfaces.Entity;
 
 namespace AndcultureCode.CSharp.Core.Models
 {
+    /// <summary>
+    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+    /// </summary>
     public abstract class Lockable : Auditable, ILockable
     {
         #region ILockable Implementation
 
         #region Public Members
 
+        /// <summary>
+        /// The identifier of the user who locked the record
+        /// </summary>
         public long? LockedById { get; set; }
+
+        /// <summary>
+        /// The date and time of when the record was locked
+        /// </summary>
         public DateTimeOffset? LockedOn { get; set; }
+
+        /// <summary>
+        /// The date and time for when the record will stop being locked
+        /// </summary>
         public DateTimeOffset? LockedUntil { get; set; }
 
         #endregion Public Members

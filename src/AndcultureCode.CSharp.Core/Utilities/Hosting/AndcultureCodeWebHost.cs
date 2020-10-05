@@ -1,8 +1,12 @@
 using AndcultureCode.CSharp.Core.Interfaces.Hosting;
 using AndcultureCode.CSharp.Core.Models.Hosting;
+using Microsoft.AspNetCore;
 
 namespace AndcultureCode.CSharp.Core.Utilities.Hosting
 {
+    /// <summary>
+    /// Static class related to our custom <see cref="WebHost"/> builder pattern
+    /// </summary>
     public static class AndcultureCodeWebHost
     {
         /// <summary>

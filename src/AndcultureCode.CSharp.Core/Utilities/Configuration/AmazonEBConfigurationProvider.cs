@@ -27,7 +27,14 @@ namespace AndcultureCode.CSharp.Core.Utilities.Configuration
 
         #region Properties
 
+        /// <summary>
+        /// Path for the AWS Elastic Beanstalk configuration file
+        /// </summary>
         public string ConfigurationFilePath { get; set; }
+
+        /// <summary>
+        /// Determines if logging to standard output should be enabled
+        /// </summary>
         public bool StdoutEnabled { get; set; }
 
         #endregion Properties
@@ -35,7 +42,16 @@ namespace AndcultureCode.CSharp.Core.Utilities.Configuration
 
         #region Constructors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AmazonEBConfigurationProvider"></see> class with default values for <see cref="ConfigurationFilePath"/> and <see cref="StdoutEnabled"/>
+        /// </summary>
         public AmazonEBConfigurationProvider() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AmazonEBConfigurationProvider"></see> class with optional values for <see cref="ConfigurationFilePath"/> and <see cref="StdoutEnabled"/>
+        /// </summary>
+        /// <param name="stdoutEnabled">Enables logging to standard output</param>
+        /// <param name="configurationFilePath">Path to configuration file, if not provided the value of <see cref="CONFIGURATION_FILE_PATH"/> will be used</param>
         public AmazonEBConfigurationProvider(bool stdoutEnabled = false, string configurationFilePath = null)
         {
             ConfigurationFilePath = string.IsNullOrWhiteSpace(configurationFilePath) ? CONFIGURATION_FILE_PATH : configurationFilePath;
@@ -57,10 +73,28 @@ namespace AndcultureCode.CSharp.Core.Utilities.Configuration
 
         #region Public Methods
 
+        /// <summary>
+        /// Gets the value of an environment variable by the given <paramref name="key"/>
+        /// </summary>
+        /// <param name="key">The string identifying the requested variable</param>
+        /// <returns>The environment variable or <c>null</c> if the key isn't present</returns>
         public virtual string Get(string key) => Has(key) ? Read()[key] : null;
 
+        /// <summary>
+        /// Checks if an environment variable by the given <paramref name="key"/> is present in the configuration
+        /// </summary>
+        /// <param name="key">The string identifying the requested variable</param>
+        /// <returns><c>true</c> if the variable exists <c>false</c> otherwise</returns>
         public virtual bool Has(string key) => Read().ContainsKey(key);
 
+        /// <summary>
+        /// Reads the configuration from the <see cref="ConfigurationFilePath"/> and returns it as an IDictionary
+        /// </summary>
+        /// <remarks>
+        /// <para>If the configuration file doesn't exist it returns an empty dictionary</para>
+        /// <para>The return value might be cached</para>
+        /// </remarks>
+        /// <returns>A dictionary of key/values for all the environment variables in the configuration</returns>
         public virtual IDictionary<string, string> Read()
         {
             if (CachedConfiguration != null)

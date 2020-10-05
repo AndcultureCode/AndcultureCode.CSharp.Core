@@ -9,6 +9,9 @@ namespace AndcultureCode.CSharp.Core.Models.Localization
     {
         #region Properties
 
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
         public string CultureCode { get; set; }
 
         /// <summary>

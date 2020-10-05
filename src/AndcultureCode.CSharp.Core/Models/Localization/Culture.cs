@@ -10,6 +10,9 @@ using AndcultureCode.CSharp.Core.Extensions;
 
 namespace AndcultureCode.CSharp.Core.Models.Localization
 {
+    /// <summary>
+    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+    /// </summary>
     public abstract class Culture : ICulture
     {
         #region Private Properties
@@ -36,8 +39,15 @@ namespace AndcultureCode.CSharp.Core.Models.Localization
 
         #region Public Properties
 
+        /// <summary>
+        /// RFC-4646 5-character Culture code (xx-XX)
+        /// </summary>
         public abstract string Code { get; }
 
+        /// <summary>
+        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public List<CultureTranslation> CultureTranslations
         {
             get
@@ -76,6 +86,9 @@ namespace AndcultureCode.CSharp.Core.Models.Localization
             set { _translations = value; }
         }
 
+        /// <summary>
+        /// Is this the default locale in the application? There can only be one
+        /// </summary>
         public virtual bool IsDefault { get => false; }
 
         #endregion Public Properties
