@@ -9,11 +9,11 @@
   - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Resource 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Resource')
   - [Subject](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Subject 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Subject')
   - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-AccessRule-Verb 'AndcultureCode.CSharp.Core.Models.Security.AccessRule.Verb')
-- [Acl](#T-AndcultureCode-CSharp-Core-Models-Entities-Acl 'AndcultureCode.CSharp.Core.Models.Entities.Acl')
-  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Permission 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Permission')
-  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Resource 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Resource')
-  - [Subject](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Subject 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Subject')
-  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Verb 'AndcultureCode.CSharp.Core.Models.Entities.Acl.Verb')
+- [Acl](#T-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl')
+  - [Permission](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Permission 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Permission')
+  - [Resource](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Resource 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Resource')
+  - [Subject](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Subject 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Subject')
+  - [Verb](#P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Verb 'AndcultureCode.CSharp.Core.Models.Entities.Acls.Acl.Verb')
 - [Allow](#T-AndcultureCode-CSharp-Core-Models-Security-Allow 'AndcultureCode.CSharp.Core.Models.Security.Allow')
   - [#ctor(resource,verb,subject)](#M-AndcultureCode-CSharp-Core-Models-Security-Allow-#ctor-System-String,System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Security.Allow.#ctor(System.String,System.String,System.String)')
   - [Permission](#P-AndcultureCode-CSharp-Core-Models-Security-Allow-Permission 'AndcultureCode.CSharp.Core.Models.Security.Allow.Permission')
@@ -120,6 +120,9 @@
 - [EncryptionUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils')
   - [GenerateHash(value,salt,iterationCount,bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateHash-System-String,System-String,System-Int32,System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateHash(System.String,System.String,System.Int32,System.UInt16)')
   - [GenerateSalt(bits)](#M-AndcultureCode-CSharp-Core-Utilities-Security-EncryptionUtils-GenerateSalt-System-UInt16- 'AndcultureCode.CSharp.Core.Utilities.Security.EncryptionUtils.GenerateSalt(System.UInt16)')
+- [EnglishUnitedStates](#T-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates')
+  - [Code](#P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-Code 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates.Code')
+  - [IsDefault](#P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-IsDefault 'AndcultureCode.CSharp.Core.Cultures.EnglishUnitedStates.IsDefault')
 - [Entity](#T-AndcultureCode-CSharp-Core-Models-Entities-Entity 'AndcultureCode.CSharp.Core.Models.Entities.Entity')
   - [Id](#P-AndcultureCode-CSharp-Core-Models-Entities-Entity-Id 'AndcultureCode.CSharp.Core.Models.Entities.Entity.Id')
 - [EnumerableExtensions](#T-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions')
@@ -129,10 +132,10 @@
   - [Join(pair,delimiter)](#M-AndcultureCode-CSharp-Core-Extensions-EnumerableExtensions-Join-System-Collections-Generic-KeyValuePair{System-String,System-String},System-String- 'AndcultureCode.CSharp.Core.Extensions.EnumerableExtensions.Join(System.Collections.Generic.KeyValuePair{System.String,System.String},System.String)')
 - [EnvironmentConstants](#T-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants')
   - [TESTING](#F-AndcultureCode-CSharp-Core-Constants-EnvironmentConstants-TESTING 'AndcultureCode.CSharp.Core.Constants.EnvironmentConstants.TESTING')
-- [Error](#T-AndcultureCode-CSharp-Core-Models-Error 'AndcultureCode.CSharp.Core.Models.Error')
-  - [ErrorType](#P-AndcultureCode-CSharp-Core-Models-Error-ErrorType 'AndcultureCode.CSharp.Core.Models.Error.ErrorType')
-  - [Key](#P-AndcultureCode-CSharp-Core-Models-Error-Key 'AndcultureCode.CSharp.Core.Models.Error.Key')
-  - [Message](#P-AndcultureCode-CSharp-Core-Models-Error-Message 'AndcultureCode.CSharp.Core.Models.Error.Message')
+- [Error](#T-AndcultureCode-CSharp-Core-Models-Errors-Error 'AndcultureCode.CSharp.Core.Models.Errors.Error')
+  - [ErrorType](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-ErrorType 'AndcultureCode.CSharp.Core.Models.Errors.Error.ErrorType')
+  - [Key](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-Key 'AndcultureCode.CSharp.Core.Models.Errors.Error.Key')
+  - [Message](#P-AndcultureCode-CSharp-Core-Models-Errors-Error-Message 'AndcultureCode.CSharp.Core.Models.Errors.Error.Message')
 - [ErrorConstants](#T-AndcultureCode-CSharp-Core-Constants-ErrorConstants 'AndcultureCode.CSharp.Core.Constants.ErrorConstants')
   - [ERROR_RESOURCE_NOT_FOUND_KEY](#F-AndcultureCode-CSharp-Core-Constants-ErrorConstants-ERROR_RESOURCE_NOT_FOUND_KEY 'AndcultureCode.CSharp.Core.Constants.ErrorConstants.ERROR_RESOURCE_NOT_FOUND_KEY')
 - [GuidUtils](#T-AndcultureCode-CSharp-Core-Utilities-Security-GuidUtils 'AndcultureCode.CSharp.Core.Utilities.Security.GuidUtils')
@@ -354,16 +357,16 @@
   - [Resource](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Resource 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Resource')
   - [Verb](#P-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-Verb 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.Verb')
   - [ToString()](#M-AndcultureCode-CSharp-Core-Models-Security-ResourceVerb-ToString 'AndcultureCode.CSharp.Core.Models.Security.ResourceVerb.ToString')
-- [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Result`1 'AndcultureCode.CSharp.Core.Models.Result`1')
-  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor 'AndcultureCode.CSharp.Core.Models.Result`1.#ctor')
-  - [#ctor(errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-System-String- 'AndcultureCode.CSharp.Core.Models.Result`1.#ctor(System.String)')
-  - [#ctor(errorKey,errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Result`1.#ctor(System.String,System.String)')
-  - [#ctor(resultObject)](#M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-`0- 'AndcultureCode.CSharp.Core.Models.Result`1.#ctor(`0)')
-  - [ErrorCount](#P-AndcultureCode-CSharp-Core-Models-Result`1-ErrorCount 'AndcultureCode.CSharp.Core.Models.Result`1.ErrorCount')
-  - [Errors](#P-AndcultureCode-CSharp-Core-Models-Result`1-Errors 'AndcultureCode.CSharp.Core.Models.Result`1.Errors')
-  - [HasErrors](#P-AndcultureCode-CSharp-Core-Models-Result`1-HasErrors 'AndcultureCode.CSharp.Core.Models.Result`1.HasErrors')
-  - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Result`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Result`1.NextLinkParams')
-  - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Result`1.ResultObject')
+- [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Errors-Result`1 'AndcultureCode.CSharp.Core.Models.Errors.Result`1')
+  - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor')
+  - [#ctor(errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String)')
+  - [#ctor(errorKey,errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String,System.String)')
+  - [#ctor(resultObject)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-`0- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(`0)')
+  - [ErrorCount](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ErrorCount 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ErrorCount')
+  - [Errors](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Errors 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.Errors')
+  - [HasErrors](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-HasErrors 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.HasErrors')
+  - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.NextLinkParams')
+  - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ResultObject')
 - [ReverseComparer\`1](#T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1')
   - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor')
   - [#ctor(comparer)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})')
@@ -523,6 +526,8 @@
   - [Log\`\`1(message)](#M-AndcultureCode-CSharp-Core-SeedsBase`1-Log``1-System-String- 'AndcultureCode.CSharp.Core.SeedsBase`1.Log``1(System.String)')
 - [SeedsConfiguration](#T-AndcultureCode-CSharp-Business-Core-Models-Configuration-SeedsConfiguration 'AndcultureCode.CSharp.Business.Core.Models.Configuration.SeedsConfiguration')
   - [DefaultUserPassword](#P-AndcultureCode-CSharp-Business-Core-Models-Configuration-SeedsConfiguration-DefaultUserPassword 'AndcultureCode.CSharp.Business.Core.Models.Configuration.SeedsConfiguration.DefaultUserPassword')
+- [SpanishSpain](#T-AndcultureCode-CSharp-Core-Cultures-SpanishSpain 'AndcultureCode.CSharp.Core.Cultures.SpanishSpain')
+  - [Code](#P-AndcultureCode-CSharp-Core-Cultures-SpanishSpain-Code 'AndcultureCode.CSharp.Core.Cultures.SpanishSpain.Code')
 - [StringExtensions](#T-AndcultureCode-CSharp-Core-Extensions-StringExtensions 'AndcultureCode.CSharp.Core.Extensions.StringExtensions')
   - [LoadTranslations()](#M-AndcultureCode-CSharp-Core-Extensions-StringExtensions-LoadTranslations-System-String,System-String,Newtonsoft-Json-JsonSerializerSettings- 'AndcultureCode.CSharp.Core.Extensions.StringExtensions.LoadTranslations(System.String,System.String,Newtonsoft.Json.JsonSerializerSettings)')
 - [UriUtils](#T-AndcultureCode-CSharp-Core-Utilities-Network-UriUtils 'AndcultureCode.CSharp.Core.Utilities.Network.UriUtils')
@@ -605,39 +610,39 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Acl'></a>
+<a name='T-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl'></a>
 ## Acl `type`
 
 ##### Namespace
 
-AndcultureCode.CSharp.Core.Models.Entities
+AndcultureCode.CSharp.Core.Models.Entities.Acls
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Permission'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Permission'></a>
 ### Permission `property`
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Resource'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Resource'></a>
 ### Resource `property`
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Subject'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Subject'></a>
 ### Subject `property`
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acl-Verb'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Entities-Acls-Acl-Verb'></a>
 ### Verb `property`
 
 ##### Summary
@@ -1760,6 +1765,31 @@ Base 64 encoded string of the salt
 | ---- | ---- | ----------- |
 | bits | [System.UInt16](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt16 'System.UInt16') | Size of the salt to generate in bits (must be a multiple of 8) |
 
+<a name='T-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates'></a>
+## EnglishUnitedStates `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Cultures
+
+##### Summary
+
+Localization Culture for United States English (en-US)
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-Code'></a>
+### Code `property`
+
+##### Summary
+
+*Inherit from parent.*
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-EnglishUnitedStates-IsDefault'></a>
+### IsDefault `property`
+
+##### Summary
+
+*Inherit from parent.*
+
 <a name='T-AndcultureCode-CSharp-Core-Models-Entities-Entity'></a>
 ## Entity `type`
 
@@ -1876,32 +1906,32 @@ Common environment related values
 
 Testing environment identifier
 
-<a name='T-AndcultureCode-CSharp-Core-Models-Error'></a>
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-Error'></a>
 ## Error `type`
 
 ##### Namespace
 
-AndcultureCode.CSharp.Core.Models
+AndcultureCode.CSharp.Core.Models.Errors
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Error-ErrorType'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-ErrorType'></a>
 ### ErrorType `property`
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Error-Key'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-Key'></a>
 ### Key `property`
 
 ##### Summary
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Error-Message'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Error-Message'></a>
 ### Message `property`
 
 ##### Summary
@@ -4419,12 +4449,12 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 This method has no parameters.
 
-<a name='T-AndcultureCode-CSharp-Core-Models-Result`1'></a>
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-Result`1'></a>
 ## Result\`1 `type`
 
 ##### Namespace
 
-AndcultureCode.CSharp.Core.Models
+AndcultureCode.CSharp.Core.Models.Errors
 
 ##### Summary
 
@@ -4436,7 +4466,7 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 | ---- | ----------- |
 | T |  |
 
-<a name='M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor'></a>
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor'></a>
 ### #ctor() `constructor`
 
 ##### Summary
@@ -4447,7 +4477,7 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
 This constructor has no parameters.
 
-<a name='M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-System-String-'></a>
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String-'></a>
 ### #ctor(errorMessage) `constructor`
 
 ##### Summary
@@ -4460,7 +4490,7 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 | ---- | ---- | ----------- |
 | errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
-<a name='M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-System-String,System-String-'></a>
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String-'></a>
 ### #ctor(errorKey,errorMessage) `constructor`
 
 ##### Summary
@@ -4474,7 +4504,7 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 | errorKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 | errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
-<a name='M-AndcultureCode-CSharp-Core-Models-Result`1-#ctor-`0-'></a>
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-`0-'></a>
 ### #ctor(resultObject) `constructor`
 
 ##### Summary
@@ -4487,35 +4517,35 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 | ---- | ---- | ----------- |
 | resultObject | [\`0](#T-`0 '`0') |  |
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-ErrorCount'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ErrorCount'></a>
 ### ErrorCount `property`
 
 ##### Summary
 
 Gets the number of errors, if there are any; otherwise, returns 0.
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-Errors'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Errors'></a>
 ### Errors `property`
 
 ##### Summary
 
 List of errors around a request
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-HasErrors'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-HasErrors'></a>
 ### HasErrors `property`
 
 ##### Summary
 
 Returns whether or not this result has any error
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-NextLinkParams'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-NextLinkParams'></a>
 ### NextLinkParams `property`
 
 ##### Summary
 
 List of key value pairs to be used request the very next related Result
 
-<a name='P-AndcultureCode-CSharp-Core-Models-Result`1-ResultObject'></a>
+<a name='P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ResultObject'></a>
 ### ResultObject `property`
 
 ##### Summary
@@ -5752,6 +5782,24 @@ Configuration values around data seeding
 ##### Summary
 
 Password to use when new development/test users are seeded
+
+<a name='T-AndcultureCode-CSharp-Core-Cultures-SpanishSpain'></a>
+## SpanishSpain `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Cultures
+
+##### Summary
+
+Localization Culture for Spanish - Spain (es-US)
+
+<a name='P-AndcultureCode-CSharp-Core-Cultures-SpanishSpain-Code'></a>
+### Code `property`
+
+##### Summary
+
+*Inherit from parent.*
 
 <a name='T-AndcultureCode-CSharp-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`

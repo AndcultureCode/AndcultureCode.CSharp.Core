@@ -1,23 +1,24 @@
+using AndcultureCode.CSharp.Core.Enumerations;
+using AndcultureCode.CSharp.Core.Extensions;
+using AndcultureCode.CSharp.Core.Interfaces;
+using AndcultureCode.CSharp.Core.Models.Errors;
+using AndcultureCode.CSharp.Extensions;
+using AndcultureCode.CSharp.Testing.Extensions;
+using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Internal;
+using Moq;
 using Shouldly;
 using System;
 using System.Collections.Generic;
 using Xunit;
 using Xunit.Abstractions;
-using AndcultureCode.CSharp.Extensions;
-using AndcultureCode.CSharp.Testing.Extensions;
-using AndcultureCode.CSharp.Core.Models;
-using AndcultureCode.CSharp.Core.Extensions;
-using AndcultureCode.CSharp.Core.Interfaces;
-using AndcultureCode.CSharp.Core.Enumerations;
-using Microsoft.Extensions.Localization;
-using Microsoft.Extensions.Logging;
-using Moq;
-using Microsoft.Extensions.Logging.Internal;
 
 namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
 {
     public class IResultExtensionsTest : CoreUnitTest
     {
+
         #region Setup
 
         public IResultExtensionsTest(ITestOutputHelper output) : base(output) { }

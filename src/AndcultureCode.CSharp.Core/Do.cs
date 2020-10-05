@@ -1,6 +1,6 @@
 ﻿using AndcultureCode.CSharp.Core.Extensions;
 using AndcultureCode.CSharp.Core.Interfaces;
-using AndcultureCode.CSharp.Core.Models;
+using AndcultureCode.CSharp.Core.Models.Errors;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;

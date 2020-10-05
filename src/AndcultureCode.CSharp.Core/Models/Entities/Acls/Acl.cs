@@ -1,7 +1,7 @@
 using AndcultureCode.CSharp.Core.Enumerations;
 using AndcultureCode.CSharp.Core.Interfaces.Security;
 
-namespace AndcultureCode.CSharp.Core.Models.Entities
+namespace AndcultureCode.CSharp.Core.Models.Entities.Acls
 {
     /// <summary>
     /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38

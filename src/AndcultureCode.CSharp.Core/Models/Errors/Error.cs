@@ -1,7 +1,7 @@
 ﻿using AndcultureCode.CSharp.Core.Enumerations;
 using AndcultureCode.CSharp.Core.Interfaces;
 
-namespace AndcultureCode.CSharp.Core.Models
+namespace AndcultureCode.CSharp.Core.Models.Errors
 {
     /// <summary>
     /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
